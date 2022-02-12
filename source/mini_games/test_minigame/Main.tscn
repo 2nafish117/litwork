@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 267.0
+margin_top = 158.0
+margin_right = 731.0
+margin_bottom = 485.0
+text = "Testing mini game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
