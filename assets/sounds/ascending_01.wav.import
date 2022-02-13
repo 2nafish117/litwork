@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ascending_01.wav-fc582ae8f2d559a0e089e8e2b11e74f6.sample"
+
+[deps]
+
+source_file="res://assets/sounds/ascending_01.wav"
+dest_files=[ "res://.import/ascending_01.wav-fc582ae8f2d559a0e089e8e2b11e74f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

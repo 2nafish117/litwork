@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Office" type="Node2D"]
+
+[node name="Floor1" type="Node2D" parent="."]
+
+[node name="Floor2" type="Node2D" parent="."]
+
+[node name="Floor3" type="Node2D" parent="."]

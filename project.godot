@@ -9,19 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Player",
+"base": "Position2D",
+"class": "Floor",
 "language": "GDScript",
-"path": "res://source/player/Player.gd"
+"path": "res://source/interactibles/Floor.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerCharecter",
+"language": "GDScript",
+"path": "res://source/player_charecter/PlayerCharecter.gd"
+}, {
+"base": "RigidBody2D",
+"class": "PlayerVehicle",
+"language": "GDScript",
+"path": "res://source/player_vehicle/PlayerVehicle.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Floor": "",
+"PlayerCharecter": "",
+"PlayerVehicle": ""
 }
 
 [application]
 
 config/name="litwork"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalDetails="*res://source/autoloads/GlobalDetails.tscn"
+GlobalTimer="*res://source/autoloads/GlobalTimer.tscn"
+GlobalUi="*res://source/autoloads/GlobalUi.tscn"
 
 [display]
 

@@ -1,5 +1,5 @@
+class_name PlayerCharecter
 extends KinematicBody2D
-class_name Player
 
 const MAX_SPEED = 200.0
 
