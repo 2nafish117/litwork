@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[sub_resource type="AtlasTexture" id=1]
+
+[resource]
+atlas = SubResource( 1 )

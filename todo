@@ -1,0 +1,14 @@
+1. need assets for
+	* elevator doors, interior, etc.
+	* all charecter walk cycle needs to be same resolution or animation will jump 
+	* more frames for the charecter walk
+	* female walk cycle has error
+	* animations for other charecters?
+	* office floor repeatable texture (office carpet)
+	* office walls repeatable textures, one for each floor (office wallpaper)
+	* more shading on the assets? to give some depth?
+	* footsteps, people talking sfx
+2. simple ai framework for moving people
+3. objective system?
+4. interactible system
+5. 

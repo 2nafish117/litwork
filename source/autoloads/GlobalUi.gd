@@ -4,14 +4,14 @@ onready var label := $MarginContainer/RichTextLabel
 
 func _ready() -> void:
 	GlobalTimer.start()
-
+	pass
+	
 func format_time(secs: float) -> Array:
 	var minutes = int(secs / 60.0)
 	secs = int(fmod(secs, 60.0))
 	return [minutes, secs]
-	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t: Array = format_time(GlobalTimer.time_left)
 	var minutes: int = t[0]
 	var seconds: int = t[1]

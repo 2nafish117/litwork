@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Position2D",
+"base": "StaticBody2D",
 "class": "Floor",
 "language": "GDScript",
-"path": "res://source/interactibles/Floor.gd"
+"path": "res://source/interactibles/elevator/Floor.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "PlayerCharecter",

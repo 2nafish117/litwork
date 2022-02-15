@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/interactibles/elevator/Elevator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/interactibles/elevator/Floor.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 191, 43 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 186.063, 70 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 456.5, 70 )
+
+[node name="TestElevator" type="Node2D"]
+
+[node name="Elevator" parent="." instance=ExtResource( 2 )]
+single_exit = true
+floors_path = NodePath("../ElevatorFloors")
+
+[node name="ElevatorFloors" type="Node2D" parent="."]
+
+[node name="Floor4" parent="ElevatorFloors" instance=ExtResource( 3 )]
+position = Vector2( 0, -1500 )
+floor_number = 4
+floor_name = "sdgdsgs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor4"]
+shape = SubResource( 3 )
+
+[node name="Floor3" parent="ElevatorFloors" instance=ExtResource( 3 )]
+position = Vector2( 1, -1000 )
+floor_number = 2
+floor_name = "terrace"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor3"]
+position = Vector2( 0, 70 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Floor2" parent="ElevatorFloors" instance=ExtResource( 3 )]
+position = Vector2( 0, -500 )
+floor_number = 1
+floor_name = "cafe"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ElevatorFloors/Floor2"]
+position = Vector2( 0, 70 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Floor" parent="ElevatorFloors" instance=ExtResource( 3 )]
+floor_name = "ground"
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ElevatorFloors/Floor"]
+position = Vector2( 2, 70 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="PlayerCharecter" parent="." instance=ExtResource( 1 )]
+position = Vector2( -268, 0 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharecter"]
+position = Vector2( 0, -112 )
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -268, -112 )
+current = true
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D"]
+position = Vector2( -641.5, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Floors"]
+position = Vector2( -832, -500 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D2"]
+position = Vector2( 189.5, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Floors"]
+position = Vector2( -832, -1000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D3"]
+position = Vector2( 189.5, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Floors"]
+position = Vector2( 1288, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D4"]
+position = Vector2( -641.5, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Floors"]
+position = Vector2( 456, -500 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D5"]
+position = Vector2( 189.5, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Floors"]
+position = Vector2( 456, -1000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D6"]
+position = Vector2( 189.5, 70 )
+shape = SubResource( 1 )
+
+[editable path="ElevatorFloors/Floor3"]
+[editable path="ElevatorFloors/Floor2"]
+[editable path="ElevatorFloors/Floor"]
