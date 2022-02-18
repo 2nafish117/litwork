@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=1]
+[ext_resource path="res://source/ui/SceneTransitionButton.gd" type="Script" id=2]
+[ext_resource path="res://source/scenes/Cab.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="CanvasLayer"]
 
@@ -36,13 +38,12 @@ margin_bottom = 32.0
 margin_top = 36.0
 margin_right = 624.0
 margin_bottom = 60.0
-text = "The whole expirience takes about 30 min."
+text = "The total duration of the expirience"
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 64.0
 margin_right = 624.0
 margin_bottom = 88.0
-text = "Follow the prompts to complete the challenges."
 
 [node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 92.0
@@ -62,3 +63,5 @@ margin_right = 387.0
 margin_bottom = 152.0
 size_flags_horizontal = 4
 text = "    continue    "
+script = ExtResource( 2 )
+next_scene = ExtResource( 3 )

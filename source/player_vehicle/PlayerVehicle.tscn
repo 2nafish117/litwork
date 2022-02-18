@@ -23,7 +23,7 @@ absorbent = true
 [sub_resource type="CircleShape2D" id=2]
 radius = 38.0526
 
-[node name="PlayerVehicle" type="RigidBody2D"]
+[node name="PlayerVehicle" type="RigidBody2D" groups=["player"]]
 mass = 100.0
 gravity_scale = 5.0
 script = ExtResource( 2 )

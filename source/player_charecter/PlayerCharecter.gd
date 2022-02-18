@@ -1,6 +1,8 @@
 class_name PlayerCharecter
 extends KinematicBody2D
 
+signal speech_spoken
+
 const MAX_SPEED = 200.0
 const ACCEL := 50.0
 const EPSILON_VELOCITY := 0.1
@@ -8,6 +10,8 @@ const EPSILON_VELOCITY := 0.1
 export var male: bool = true
 
 var speed := MAX_SPEED
+
+var movement_modifier: float = 1.0
 
 var movement: float
 var input_interact: bool
@@ -23,6 +27,7 @@ onready var animated_sprite: AnimatedSprite = $AnimatedSpriteMale
 func _ready() -> void:
 	$AnimatedSpriteFemale.visible = false
 	$AnimatedSpriteMale.visible = false
+	$SpeechHover/SpeechBox.visible = false
 	
 	# testing
 	#GlobalDetails.player_info["sex"] = "female"
@@ -36,6 +41,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	movement *= movement_modifier
 	input_interact = Input.is_action_just_pressed("action_interact")
 	
 	velocity.y += 300.0 * delta
@@ -65,6 +71,10 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 	pass
 
+func speak(speech: String, time: float):
+	$SpeechHover/SpeechBox.visible = true
+	$SpeechHover/SpeechBox.speak(speech, time)
+
 func interact(can_move: bool) -> void:
 	print("player interact")
 	state = INTERACT
@@ -77,3 +87,7 @@ func interact(can_move: bool) -> void:
 #	state = IDLE
 #	animated_sprite.animation = "idle"
 #	SPEED = MAX_SPEED
+
+
+func _on_SpeechBox_speech_spoken() -> void:
+	emit_signal("speech_spoken")

@@ -25,6 +25,7 @@ func set_default_player_info():
 	player_info["name"] = "mc"
 	player_info["sex"] = "male"
 	player_info["email"] = "mc@mc.com"
+	player_choices["questions_answers"] = []
 	
 func _ready() -> void:
 	set_default_player_info()

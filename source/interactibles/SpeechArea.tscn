@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/interactibles/SpeechArea.gd" type="Script" id=1]
+
+[node name="SpeechArea" type="Area2D"]
+script = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_SpeechArea_body_entered"]
+[connection signal="speech_spoken" from="." to="." method="_on_SpeechArea_speech_spoken"]
