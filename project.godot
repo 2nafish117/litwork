@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "PlayerVehicle",
 "language": "GDScript",
 "path": "res://source/player_vehicle/PlayerVehicle.gd"
+}, {
+"base": "NinePatchRect",
+"class": "SpeechBox",
+"language": "GDScript",
+"path": "res://source/ui/SpeechBox.gd"
 } ]
 _global_script_class_icons={
 "Floor": "",
 "PlayerCharecter": "",
-"PlayerVehicle": ""
+"PlayerVehicle": "",
+"SpeechBox": ""
 }
 
 [application]

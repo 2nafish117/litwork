@@ -61,6 +61,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, -119 )
 frames = SubResource( 2 )
 animation = "idle"
+playing = true
 
 [node name="AnimatedSpriteFemale" type="AnimatedSprite" parent="."]
 visible = false

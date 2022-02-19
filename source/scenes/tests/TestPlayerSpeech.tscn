@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=1]
-[ext_resource path="res://source/interactibles/SpeechArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 889.5, 43.5 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 155.978
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 72.5, 143 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 70.5, 177 )
 
 [node name="TestPlayerSpeech" type="Node2D"]
 
@@ -21,33 +26,66 @@ shape = SubResource( 1 )
 [node name="PlayerCharecter" parent="." instance=ExtResource( 1 )]
 position = Vector2( 36, 707 )
 
-[node name="Conversation" type="Node2D" parent="."]
+[node name="Dialogues" type="Node2D" parent="."]
 
-[node name="Player" type="Node2D" parent="Conversation"]
+[node name="DialogueArea" parent="Dialogues" instance=ExtResource( 2 )]
+position = Vector2( 338, 532 )
+next_prompt = NodePath("../DialogueArea2")
 
-[node name="SpeechArea" parent="Conversation/Player" instance=ExtResource( 2 )]
-position = Vector2( 384, 541 )
-speech = "hello world !!!!!!!"
-next_prompt = NodePath("../SpeechArea2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conversation/Player/SpeechArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea"]
+position = Vector2( 4.5, 61 )
 shape = SubResource( 2 )
 
-[node name="SpeechArea2" parent="Conversation/Player" instance=ExtResource( 2 )]
-position = Vector2( 384, 541 )
-speech = "second speech line"
-next_prompt = NodePath("../SpeechArea3")
+[node name="SpeechBox" parent="Dialogues/DialogueArea" instance=ExtResource( 3 )]
+margin_left = -65.0
+margin_top = -217.0
+margin_right = 235.0
+margin_bottom = -117.0
+bb_text = "helloddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox2" parent="Dialogues/DialogueArea" instance=ExtResource( 3 )]
+margin_left = -47.0
+margin_top = -195.0
+margin_right = 253.0
+margin_bottom = -95.0
+bb_text = "2asddddddddddddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox3" parent="Dialogues/DialogueArea" instance=ExtResource( 3 )]
+margin_left = -21.0
+margin_top = -175.0
+margin_right = 279.0
+margin_bottom = -75.0
+bb_text = "3sdaddddddddddddddddddddddddddddd"
+
+[node name="DialogueArea2" parent="Dialogues" instance=ExtResource( 2 )]
+position = Vector2( 1143, 694 )
 active = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conversation/Player/SpeechArea2"]
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea2"]
+position = Vector2( 1.5, -139 )
+shape = SubResource( 3 )
 
-[node name="SpeechArea3" parent="Conversation/Player" instance=ExtResource( 2 )]
-position = Vector2( 384, 541 )
-speech = "third speech line"
-active = false
+[node name="SpeechBox" parent="Dialogues/DialogueArea2" instance=ExtResource( 3 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "hello "
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conversation/Player/SpeechArea3"]
-shape = SubResource( 2 )
+[node name="SpeechBox2" parent="Dialogues/DialogueArea2" instance=ExtResource( 3 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "welcome to the office"
 
-[node name="Npc" type="Node2D" parent="Conversation"]
+[node name="SpeechBox3" parent="Dialogues/DialogueArea2" instance=ExtResource( 3 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "work!!!!!!!!!!!"
+
+[node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
+current = true
+player_path = NodePath("../PlayerCharecter")

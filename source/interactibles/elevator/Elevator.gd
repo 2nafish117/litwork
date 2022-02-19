@@ -13,6 +13,8 @@ onready var left_collision: CollisionShape2D = $Left
 onready var right_collision: CollisionShape2D = $Right
 
 onready var tween: Tween = $Tween
+onready var floor_reached_audio: AudioStreamPlayer = $FloorReached
+onready var button_pressed_audio: AudioStreamPlayer = $ButtonPressed
 
 onready var elevator_button_container := $ElevatorControl/MarginContainer/VBoxContainer
 
@@ -51,6 +53,7 @@ func _ready() -> void:
 			current_floor = c
 
 func go_to_floor(floor_number: int):
+	button_pressed_audio.play(0.0)
 	for f in floors:
 		if f.floor_number == floor_number:
 			target_floor = f
@@ -78,6 +81,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 		elevator_button_container.visible = false
 
 func _on_Tween_tween_completed(_object: Object, _key: NodePath) -> void:
+	floor_reached_audio.play(0.0)
 	current_floor = target_floor
 	target_floor = null
 	emit_signal("elevator_stop")

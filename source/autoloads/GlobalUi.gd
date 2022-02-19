@@ -8,8 +8,12 @@ onready var answer_options := $AnswerOptions
 var current_question: String
 var current_options: Array
 
+func show_timer():
+	label.visible = true
+
 func _ready() -> void:
 	answer_options.visible = false
+	label.visible = false
 	pass
 	
 func format_time(secs: float) -> Array:

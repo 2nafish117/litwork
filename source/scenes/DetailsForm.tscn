@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=1]
 [ext_resource path="res://source/scenes/DetailsForm.gd" type="Script" id=2]
+[ext_resource path="res://source/ui/font_heading.tres" type="DynamicFont" id=3]
+[ext_resource path="res://source/ui/font_ui_entry.tres" type="DynamicFont" id=4]
+[ext_resource path="res://source/scenes/Cab.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/ui/SceneTransitionButton.gd" type="Script" id=6]
 
 [node name="DetailsForm" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -33,19 +37,24 @@ custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 424.0
-margin_bottom = 24.0
+margin_bottom = 47.0
+custom_colors/font_color_shadow = Color( 0.490196, 0.254902, 0.254902, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 3 )
 text = "Tell us who you are."
 align = 1
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 44.0
+margin_top = 67.0
 margin_right = 424.0
-margin_bottom = 48.0
+margin_bottom = 71.0
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 68.0
+margin_top = 91.0
 margin_right = 424.0
-margin_bottom = 92.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 4 )
 align = 1
 placeholder_text = "name"
 caret_blink = true
@@ -54,10 +63,11 @@ __meta__ = {
 }
 
 [node name="LineEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 112.0
+margin_top = 166.0
 margin_right = 424.0
-margin_bottom = 136.0
+margin_bottom = 221.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 4 )
 align = 1
 placeholder_text = "email"
 __meta__ = {
@@ -65,23 +75,28 @@ __meta__ = {
 }
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 156.0
+margin_top = 241.0
 margin_right = 424.0
-margin_bottom = 180.0
+margin_bottom = 296.0
+custom_fonts/font = ExtResource( 4 )
 text = "male"
 align = 1
+expand_icon = true
 items = [ "male", null, false, 0, null, "female", null, false, 1, null ]
 selected = 0
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 200.0
+margin_top = 316.0
 margin_right = 424.0
-margin_bottom = 204.0
+margin_bottom = 320.0
 
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 224.0
+margin_top = 340.0
 margin_right = 424.0
-margin_bottom = 248.0
-text = "next"
+margin_bottom = 395.0
+custom_fonts/font = ExtResource( 4 )
+text = "continue"
+script = ExtResource( 6 )
+next_scene = ExtResource( 5 )
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

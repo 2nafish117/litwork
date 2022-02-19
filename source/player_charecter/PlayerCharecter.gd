@@ -27,7 +27,6 @@ onready var animated_sprite: AnimatedSprite = $AnimatedSpriteMale
 func _ready() -> void:
 	$AnimatedSpriteFemale.visible = false
 	$AnimatedSpriteMale.visible = false
-	$SpeechHover/SpeechBox.visible = false
 	
 	# testing
 	#GlobalDetails.player_info["sex"] = "female"
@@ -71,10 +70,6 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 	pass
 
-func speak(speech: String, time: float):
-	$SpeechHover/SpeechBox.visible = true
-	$SpeechHover/SpeechBox.speak(speech, time)
-
 func interact(can_move: bool) -> void:
 	print("player interact")
 	state = INTERACT
@@ -82,12 +77,3 @@ func interact(can_move: bool) -> void:
 		speed = 0.0
 		velocity.x = 0.0
 	pass
-
-#func _on_DialogBox_interaction_end() -> void:
-#	state = IDLE
-#	animated_sprite.animation = "idle"
-#	SPEED = MAX_SPEED
-
-
-func _on_SpeechBox_speech_spoken() -> void:
-	emit_signal("speech_spoken")

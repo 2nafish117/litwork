@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/interactibles/QuestionPromptArea.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/prompt.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/completing.wav" type="AudioStream" id=3]
 
 [node name="QuestionPromptArea" type="Area2D"]
 script = ExtResource( 1 )
+
+[node name="EntryAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="ExitAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Spatial_body_entered"]
