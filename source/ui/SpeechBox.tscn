@@ -57,7 +57,7 @@ rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "[b][color=red][Enter][/color] to continue[/b]"
-text = "[b][color=red][Enter][/color] to continue[/b]"
+text = "[Enter] to continue"
 
 [node name="Tween" type="Tween" parent="."]
 

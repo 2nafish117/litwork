@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/interactibles/ControlsPromptArea.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/prompt.wav" type="AudioStream" id=2]
+
+[node name="ControlsPromptArea" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_ButtonPromptsArea_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
