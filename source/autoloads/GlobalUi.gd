@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 	if minutes < 5:
 		time_string = "[color=red]" + String(minutes).pad_zeros(2) + ":" + String(seconds).pad_zeros(2) + "[/color]"
 	else:
-		time_string = String(minutes) + ":" + String(seconds)
+		time_string = String(minutes).pad_zeros(2) + ":" + String(seconds).pad_zeros(2)
 	label.bbcode_text = time_string
 	pass
 

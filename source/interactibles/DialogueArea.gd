@@ -19,11 +19,11 @@ func _ready() -> void:
 			c.connect("speech_spoken", self, "_on_speech_spoken")
 
 func _on_speech_spoken() -> void:
+	if index == len(speechboxes):
+		emit_signal("dialogue_end")
 	if index < len(speechboxes):
 		print(index)
 		speechboxes[index].speak()
-		if index == len(speechboxes) - 1:
-			emit_signal("dialogue_end")
 		index += 1
 
 func _on_DialogueArea_dialogue_end() -> void:

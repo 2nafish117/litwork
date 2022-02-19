@@ -59,7 +59,6 @@ shape = SubResource( 3 )
 [node name="PinJoint2D" type="PinJoint2D" parent="FrontWheel"]
 node_a = NodePath("../..")
 node_b = NodePath("..")
-softness = 0.03
 
 [node name="FrontWheel" type="Sprite" parent="FrontWheel"]
 texture = ExtResource( 4 )
@@ -75,7 +74,6 @@ shape = SubResource( 2 )
 [node name="PinJoint2D" type="PinJoint2D" parent="BackWheel"]
 node_a = NodePath("../..")
 node_b = NodePath("..")
-softness = 0.03
 
 [node name="BackWheel" type="Sprite" parent="BackWheel"]
 texture = ExtResource( 4 )

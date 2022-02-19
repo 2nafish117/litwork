@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/office_tiles/office_floor_01.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/textures/office_tiles/office_wall_03.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/office_tiles/office_wall_01.png" type="Texture" id=10]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 930, 38 )
@@ -51,12 +53,24 @@ extents = Vector2( 184, 38 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 68, 91 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 72.5, 143 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 70.5, 177 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 72, 144 )
+
 [node name="Office" type="Node2D"]
 
 [node name="GlobalTimerStart" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
 [node name="Floor1Collisions" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor1Collisions"]
 
@@ -77,6 +91,9 @@ position = Vector2( 4096, -350.5 )
 shape = SubResource( 5 )
 
 [node name="Floor2Collisions" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor2Collisions"]
 position = Vector2( 0, -750 )
@@ -98,6 +115,9 @@ position = Vector2( 4096, -432.5 )
 shape = SubResource( 10 )
 
 [node name="Floor3Collisions" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor3Collisions"]
 position = Vector2( 0, -1500 )
@@ -238,7 +258,7 @@ shape = SubResource( 6 )
 [node name="Interactive" type="Node2D" parent="."]
 
 [node name="QuestionPromptArea" parent="Interactive" instance=ExtResource( 11 )]
-position = Vector2( 1150, -212 )
+position = Vector2( 1049, -187 )
 question = "sdgfsdgsDG"
 option_a = "FGDJFGSJFSGJddddddddddddddddddddddddddddddddddddddddddd"
 option_b = "FGJFSGJ"
@@ -248,3 +268,85 @@ option_d = "FGJSFJG"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/QuestionPromptArea"]
 position = Vector2( 0, 2 )
 shape = SubResource( 13 )
+
+[node name="Ayush" type="Node2D" parent="Interactive"]
+
+[node name="QuestionPromptArea" parent="Interactive/Ayush" instance=ExtResource( 13 )]
+position = Vector2( 2550, -248 )
+next_prompt = NodePath("../Tjhing2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/QuestionPromptArea"]
+position = Vector2( 4.5, 61 )
+shape = SubResource( 14 )
+
+[node name="SpeechBox" parent="Interactive/Ayush/QuestionPromptArea" instance=ExtResource( 12 )]
+margin_left = -65.0
+margin_top = -217.0
+margin_right = 235.0
+margin_bottom = -117.0
+bb_text = "helloddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox2" parent="Interactive/Ayush/QuestionPromptArea" instance=ExtResource( 12 )]
+margin_left = -62.0
+margin_top = -216.0
+margin_right = 238.0
+margin_bottom = -116.0
+bb_text = "2asddddddddddddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox3" parent="Interactive/Ayush/QuestionPromptArea" instance=ExtResource( 12 )]
+margin_left = -63.0
+margin_top = -219.0
+margin_right = 237.0
+margin_bottom = -119.0
+bb_text = "3sdaddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox4" parent="Interactive/Ayush/QuestionPromptArea" instance=ExtResource( 12 )]
+margin_left = -65.0
+margin_top = -216.0
+margin_right = 235.0
+margin_bottom = -116.0
+bb_text = "asfasDFsdgkfnsdlkjgn"
+
+[node name="Tjhing2" parent="Interactive/Ayush" instance=ExtResource( 13 )]
+position = Vector2( 3355, -86 )
+active = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/Tjhing2"]
+position = Vector2( 1.5, -139 )
+shape = SubResource( 15 )
+
+[node name="SpeechBox" parent="Interactive/Ayush/Tjhing2" instance=ExtResource( 12 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "hello "
+
+[node name="SpeechBox2" parent="Interactive/Ayush/Tjhing2" instance=ExtResource( 12 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "welcome to the office"
+
+[node name="SpeechBox3" parent="Interactive/Ayush/Tjhing2" instance=ExtResource( 12 )]
+margin_left = -130.0
+margin_top = -375.0
+margin_right = 170.0
+margin_bottom = -275.0
+bb_text = "work!!!!!!!!!!!"
+
+[node name="Name1" parent="Interactive/Ayush" instance=ExtResource( 11 )]
+position = Vector2( 2552, -172 )
+question = "ads.kfjhsdgkjbsd???"
+option_a = "sdfdsg"
+option_b = "sdgsdg"
+option_c = "sdgsdg"
+option_d = "sdag"
+active = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/Name1"]
+position = Vector2( 4, -13 )
+shape = SubResource( 16 )
+
+[node name="Anshu" type="Node2D" parent="Interactive"]
