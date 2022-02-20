@@ -485,12 +485,12 @@ scale = Vector2( 0.31526, 0.31526 )
 texture = ExtResource( 15 )
 
 [node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 567.311, -91.9578 )
+position = Vector2( 554.583, -91.9578 )
 scale = Vector2( 0.59002, 0.59002 )
 texture = ExtResource( 21 )
 
 [node name="Desk 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 753.883, -116.829 )
+position = Vector2( 746.812, -142.285 )
 scale = Vector2( 0.580696, 0.580696 )
 texture = ExtResource( 43 )
 
@@ -538,13 +538,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3083.36, -172.988 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 12 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
 position = Vector2( 966.479, -170.904 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 13 )
-frame = 9
+frame = 7
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
@@ -606,7 +607,6 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 14 )
-frame = 14
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -638,6 +638,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 15 )
+frame = 6
 playing = true
 flip_h = true
 
@@ -645,7 +646,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 16 )
-frame = 10
+frame = 4
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -657,7 +658,7 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 17 )
-frame = 4
+frame = 2
 playing = true
 flip_h = true
 
@@ -761,7 +762,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1641.13 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 18 )
-frame = 15
+frame = 13
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
@@ -773,7 +774,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 19 )
-frame = 23
+frame = 25
 playing = true
 
 [node name="Elevator" type="Node2D" parent="."]
