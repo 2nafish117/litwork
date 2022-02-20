@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=210 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/office_tiles/office_floor_01.png" type="Texture" id=2]
@@ -13,6 +13,178 @@
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=12]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/textures/office_props/Seat 02.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/office_props/Seat 01.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(2).png" type="Texture" id=16]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(9).png" type="Texture" id=17]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(18).png" type="Texture" id=18]
+[ext_resource path="res://assets/textures/office_props/Side Table 05.png" type="Texture" id=19]
+[ext_resource path="res://assets/textures/office_props/Conference Table 01.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/office_props/Plant 02.png" type="Texture" id=21]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(3).png" type="Texture" id=22]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (11).png" type="Texture" id=23]
+[ext_resource path="res://assets/textures/office_props/Plant 03.png" type="Texture" id=24]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(13).png" type="Texture" id=25]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(11).png" type="Texture" id=26]
+[ext_resource path="res://assets/textures/office_props/Board 02.png" type="Texture" id=27]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(16).png" type="Texture" id=28]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (7).png" type="Texture" id=29]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(12).png" type="Texture" id=30]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (1).png" type="Texture" id=31]
+[ext_resource path="res://assets/textures/office_props/Plant 06.png" type="Texture" id=32]
+[ext_resource path="res://assets/textures/office_props/Window 05.png" type="Texture" id=33]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (13).png" type="Texture" id=34]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (3).png" type="Texture" id=35]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (23).png" type="Texture" id=36]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (4).png" type="Texture" id=37]
+[ext_resource path="res://assets/textures/office_props/Plant 04.png" type="Texture" id=38]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(4).png" type="Texture" id=39]
+[ext_resource path="res://assets/textures/office_props/File Cabinet 03.png" type="Texture" id=40]
+[ext_resource path="res://assets/textures/office_props/Door closed.png" type="Texture" id=41]
+[ext_resource path="res://assets/textures/office_props/File Cabinet 01.png" type="Texture" id=42]
+[ext_resource path="res://assets/textures/office_props/Desk 02.png" type="Texture" id=43]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (4).png" type="Texture" id=44]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (12).png" type="Texture" id=45]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(6).png" type="Texture" id=46]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(7).png" type="Texture" id=47]
+[ext_resource path="res://assets/textures/office_props/Plant 01.png" type="Texture" id=48]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(8).png" type="Texture" id=49]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (8).png" type="Texture" id=50]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(14).png" type="Texture" id=51]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(10).png" type="Texture" id=52]
+[ext_resource path="res://assets/textures/office_props/Window 01.png" type="Texture" id=53]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (2).png" type="Texture" id=54]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (5).png" type="Texture" id=55]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (2).png" type="Texture" id=56]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(15).png" type="Texture" id=57]
+[ext_resource path="res://assets/textures/office_props/Plant 07.png" type="Texture" id=58]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (14).png" type="Texture" id=59]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(17).png" type="Texture" id=60]
+[ext_resource path="res://assets/textures/office_props/Plant 05.png" type="Texture" id=61]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (21).png" type="Texture" id=62]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (5).png" type="Texture" id=63]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (14).png" type="Texture" id=64]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (21).png" type="Texture" id=65]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (12).png" type="Texture" id=66]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (2).png" type="Texture" id=67]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (13).png" type="Texture" id=68]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (17).png" type="Texture" id=69]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (21).png" type="Texture" id=70]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (16).png" type="Texture" id=71]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (7).png" type="Texture" id=72]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (20).png" type="Texture" id=73]
+[ext_resource path="res://assets/textures/office_props/Desk 05.png" type="Texture" id=74]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (1).png" type="Texture" id=75]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (13).png" type="Texture" id=76]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (14).png" type="Texture" id=77]
+[ext_resource path="res://assets/textures/office_props/Plant 09.png" type="Texture" id=78]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (18).png" type="Texture" id=79]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (10).png" type="Texture" id=80]
+[ext_resource path="res://assets/textures/office_props/Board 03.png" type="Texture" id=81]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (19).png" type="Texture" id=82]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (25).png" type="Texture" id=83]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (5).png" type="Texture" id=84]
+[ext_resource path="res://assets/textures/office_props/Board 04.png" type="Texture" id=85]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (17).png" type="Texture" id=86]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (16).png" type="Texture" id=87]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (12).png" type="Texture" id=88]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (22).png" type="Texture" id=89]
+[ext_resource path="res://assets/textures/office_props/Window 03.png" type="Texture" id=90]
+[ext_resource path="res://assets/textures/office_props/Board 01.png" type="Texture" id=91]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (8).png" type="Texture" id=92]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (15).png" type="Texture" id=93]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (8).png" type="Texture" id=94]
+[ext_resource path="res://assets/textures/office_props/Window 06.png" type="Texture" id=95]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (18).png" type="Texture" id=96]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (4).png" type="Texture" id=97]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (24).png" type="Texture" id=98]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (20).png" type="Texture" id=99]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (22).png" type="Texture" id=100]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (6).png" type="Texture" id=101]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (26).png" type="Texture" id=102]
+[ext_resource path="res://assets/textures/office_props/Seat 03-1.png" type="Texture" id=103]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (16).png" type="Texture" id=104]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (11).png" type="Texture" id=105]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (11).png" type="Texture" id=106]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (15).png" type="Texture" id=107]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (14).png" type="Texture" id=108]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (15).png" type="Texture" id=109]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (12).png" type="Texture" id=110]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (17).png" type="Texture" id=111]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(1).png" type="Texture" id=112]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(5).png" type="Texture" id=113]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (7).png" type="Texture" id=114]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (5).png" type="Texture" id=115]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (16).png" type="Texture" id=116]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (13).png" type="Texture" id=117]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (4).png" type="Texture" id=118]
+[ext_resource path="res://assets/textures/office_props/Conference Table 02.png" type="Texture" id=119]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (14).png" type="Texture" id=120]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (3).png" type="Texture" id=121]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (9).png" type="Texture" id=122]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (10).png" type="Texture" id=123]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (18).png" type="Texture" id=124]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (1).png" type="Texture" id=125]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (15).png" type="Texture" id=126]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (3).png" type="Texture" id=127]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (4).png" type="Texture" id=128]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (22).png" type="Texture" id=129]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (15).png" type="Texture" id=130]
+[ext_resource path="res://assets/textures/office_props/Side Table 08.png" type="Texture" id=131]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (2).png" type="Texture" id=132]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (9).png" type="Texture" id=133]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (14).png" type="Texture" id=134]
+[ext_resource path="res://assets/textures/office_props/Desk 09.png" type="Texture" id=135]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (6).png" type="Texture" id=136]
+[ext_resource path="res://assets/textures/office_props/Plant 08.png" type="Texture" id=137]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (18).png" type="Texture" id=138]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (7).png" type="Texture" id=139]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (13).png" type="Texture" id=140]
+[ext_resource path="res://assets/textures/characters/npcs/npc_males_handshake/npc_males_handshake (20).png" type="Texture" id=141]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (19).png" type="Texture" id=142]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (9).png" type="Texture" id=143]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (11).png" type="Texture" id=144]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (18).png" type="Texture" id=145]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (10).png" type="Texture" id=146]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (7).png" type="Texture" id=147]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (17).png" type="Texture" id=148]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (6).png" type="Texture" id=149]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (8).png" type="Texture" id=150]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (2).png" type="Texture" id=151]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (12).png" type="Texture" id=152]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (7).png" type="Texture" id=153]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (6).png" type="Texture" id=154]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (8).png" type="Texture" id=155]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (11).png" type="Texture" id=156]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (2).png" type="Texture" id=157]
+[ext_resource path="res://assets/textures/office_props/Side Table 02.png" type="Texture" id=158]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (3).png" type="Texture" id=159]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (9).png" type="Texture" id=160]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (15).png" type="Texture" id=161]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_02/npc_female_sitting_02 (5).png" type="Texture" id=162]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (1).png" type="Texture" id=163]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (10).png" type="Texture" id=164]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (3).png" type="Texture" id=165]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (8).png" type="Texture" id=166]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (17).png" type="Texture" id=167]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (6).png" type="Texture" id=168]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (5).png" type="Texture" id=169]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_explaining_01/npc_female_explaining_01 (18).png" type="Texture" id=170]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (13).png" type="Texture" id=171]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (16).png" type="Texture" id=172]
+[ext_resource path="res://assets/textures/office_props/Desk 04.png" type="Texture" id=173]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (23).png" type="Texture" id=174]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (19).png" type="Texture" id=175]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (2).png" type="Texture" id=176]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (10).png" type="Texture" id=177]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_01/npc_male_sitting_laptop (9).png" type="Texture" id=178]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_sitting_laptop_02/npc_male_sitting_laptop_02 (20).png" type="Texture" id=179]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (4).png" type="Texture" id=180]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (24).png" type="Texture" id=181]
+[ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_01/npc_male_explaining_01 (23).png" type="Texture" id=182]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (3).png" type="Texture" id=183]
+[ext_resource path="res://assets/textures/office_props/Desk 06.png" type="Texture" id=184]
+[ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (9).png" type="Texture" id=185]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 930, 38 )
@@ -20,46 +192,110 @@ extents = Vector2( 930, 38 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 931, 38 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 81.5, 431.5 )
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 930.5, 38 )
+extents = Vector2( 81.5, 431.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 930.5, 38 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 931.5, 38 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 81.5, 431.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 81.5, 431.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 930.5, 38 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 931.5, 38 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 81.5, 431.5 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 930.5, 38 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 931.5, 38 )
-
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 81.5, 431.5 )
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 81.5, 431.5 )
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 54 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 59 ), ExtResource( 141 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 112 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 39 ), ExtResource( 113 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 49 ), ExtResource( 17 ), ExtResource( 52 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 51 ), ExtResource( 57 ), ExtResource( 28 ), ExtResource( 60 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 56 ), ExtResource( 127 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 154 ), ExtResource( 29 ), ExtResource( 50 ), ExtResource( 133 ), ExtResource( 123 ), ExtResource( 23 ), ExtResource( 45 ), ExtResource( 34 ), ExtResource( 108 ), ExtResource( 93 ), ExtResource( 104 ), ExtResource( 69 ), ExtResource( 96 ), ExtResource( 175 ), ExtResource( 179 ), ExtResource( 62 ), ExtResource( 129 ), ExtResource( 174 ), ExtResource( 98 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 157 ), ExtResource( 162 ), ExtResource( 153 ), ExtResource( 150 ), ExtResource( 122 ), ExtResource( 140 ), ExtResource( 161 ), ExtResource( 145 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ ExtResource( 132 ), ExtResource( 159 ), ExtResource( 128 ), ExtResource( 115 ), ExtResource( 149 ), ExtResource( 114 ), ExtResource( 166 ), ExtResource( 160 ), ExtResource( 146 ), ExtResource( 156 ), ExtResource( 110 ), ExtResource( 117 ), ExtResource( 134 ), ExtResource( 126 ), ExtResource( 116 ), ExtResource( 167 ), ExtResource( 170 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 125 ), ExtResource( 176 ), ExtResource( 121 ), ExtResource( 97 ), ExtResource( 63 ), ExtResource( 136 ), ExtResource( 139 ), ExtResource( 92 ), ExtResource( 178 ), ExtResource( 177 ), ExtResource( 106 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 107 ), ExtResource( 87 ), ExtResource( 148 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 75 ), ExtResource( 67 ), ExtResource( 183 ), ExtResource( 180 ), ExtResource( 84 ), ExtResource( 101 ), ExtResource( 72 ), ExtResource( 94 ), ExtResource( 185 ), ExtResource( 80 ), ExtResource( 105 ), ExtResource( 88 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 130 ), ExtResource( 71 ), ExtResource( 86 ), ExtResource( 138 ), ExtResource( 82 ), ExtResource( 73 ), ExtResource( 65 ), ExtResource( 100 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 163 ), ExtResource( 151 ), ExtResource( 165 ), ExtResource( 118 ), ExtResource( 169 ), ExtResource( 168 ), ExtResource( 147 ), ExtResource( 155 ), ExtResource( 143 ), ExtResource( 164 ), ExtResource( 144 ), ExtResource( 152 ), ExtResource( 171 ), ExtResource( 120 ), ExtResource( 109 ), ExtResource( 172 ), ExtResource( 111 ), ExtResource( 124 ), ExtResource( 142 ), ExtResource( 99 ), ExtResource( 70 ), ExtResource( 89 ), ExtResource( 182 ), ExtResource( 181 ), ExtResource( 83 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 184, 38 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 68, 91 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 72.5, 143 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 70.5, 177 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 72, 144 )
 
 [node name="Office" type="Node2D"]
@@ -84,11 +320,11 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor1Collisions/StaticBody2D"]
 position = Vector2( -71.5, -345.5 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor1Collisions/StaticBody2D"]
 position = Vector2( 4096, -350.5 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Floor2Collisions" type="Node2D" parent="."]
 __meta__ = {
@@ -100,19 +336,19 @@ position = Vector2( 0, -750 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2Collisions/StaticBody2D2"]
 position = Vector2( 932.5, 38 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor2Collisions/StaticBody2D2"]
 position = Vector2( 3162.5, 38 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Floor2Collisions/StaticBody2D2"]
 position = Vector2( -71.5, -393.5 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Floor2Collisions/StaticBody2D2"]
 position = Vector2( 4096, -432.5 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [node name="Floor3Collisions" type="Node2D" parent="."]
 __meta__ = {
@@ -124,19 +360,19 @@ position = Vector2( 0, -1500 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3Collisions/StaticBody2D3"]
 position = Vector2( 932.5, 38 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor3Collisions/StaticBody2D3"]
 position = Vector2( 3162.5, 38 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Floor3Collisions/StaticBody2D3"]
 position = Vector2( -71.5, -459.5 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Floor3Collisions/StaticBody2D3"]
 position = Vector2( 4096, -498.5 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1775, -30 )
@@ -220,6 +456,326 @@ __meta__ = {
 motion_scale = Vector2( 0.8, 0.8 )
 motion_mirroring = Vector2( 1024, 0 )
 
+[node name="Floor1" type="Node" parent="ParallaxBackground/Props"]
+
+[node name="File Cabinet 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 3977.47, -151.055 )
+scale = Vector2( 0.428529, 0.428529 )
+texture = ExtResource( 40 )
+
+[node name="Door closed" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 3755.62, -218.03 )
+scale = Vector2( 0.518256, 0.518256 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="Board 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 951.562, -318.634 )
+scale = Vector2( 0.428529, 0.428529 )
+texture = ExtResource( 27 )
+
+[node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 1570.21, -118.389 )
+scale = Vector2( 0.383464, 0.383464 )
+texture = ExtResource( 19 )
+
+[node name="Seat 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 1458.4, -67.2347 )
+scale = Vector2( 0.31526, 0.31526 )
+texture = ExtResource( 15 )
+
+[node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 567.311, -91.9578 )
+scale = Vector2( 0.59002, 0.59002 )
+texture = ExtResource( 21 )
+
+[node name="Desk 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 753.883, -116.829 )
+scale = Vector2( 0.580696, 0.580696 )
+texture = ExtResource( 43 )
+
+[node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 1819.37, -96.7222 )
+scale = Vector2( 0.496598, 0.496598 )
+texture = ExtResource( 48 )
+
+[node name="Seat 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 1309.4, -108.688 )
+scale = Vector2( 0.403355, 0.403355 )
+texture = ExtResource( 14 )
+
+[node name="Seat 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 1174.35, -108.186 )
+scale = Vector2( 0.393125, 0.393125 )
+texture = ExtResource( 14 )
+
+[node name="File Cabinet 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 3906.61, -156.225 )
+scale = Vector2( 0.407451, 0.40745 )
+texture = ExtResource( 42 )
+
+[node name="Plant 07" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 3640.53, -110.744 )
+scale = Vector2( 0.43691, 0.43691 )
+texture = ExtResource( 58 )
+
+[node name="Side Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 2710.94, -100.21 )
+scale = Vector2( 0.675536, 0.533629 )
+texture = ExtResource( 158 )
+
+[node name="Seat 04" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 2550.43, -72.0067 )
+scale = Vector2( 0.348185, 0.348185 )
+texture = ExtResource( 15 )
+
+[node name="Seat 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 2878.41, -71.185 )
+scale = Vector2( 0.356302, 0.356302 )
+texture = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 3083.36, -172.988 )
+scale = Vector2( 1.07127, 1.07127 )
+frames = SubResource( 12 )
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 966.479, -170.904 )
+scale = Vector2( 1.07857, 1.07857 )
+frames = SubResource( 13 )
+frame = 9
+playing = true
+
+[node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+position = Vector2( 2404.37, -28.0826 )
+scale = Vector2( 0.519723, 0.519723 )
+texture = ExtResource( 32 )
+offset = Vector2( -234.74, -131.334 )
+
+[node name="Floor2" type="Node" parent="ParallaxBackground/Props"]
+
+[node name="Board 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 527.044, -1071.91 )
+scale = Vector2( 0.695784, 0.695784 )
+texture = ExtResource( 91 )
+
+[node name="Door closed2" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 1518.45, -961.398 )
+scale = Vector2( 0.518256, 0.518256 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="Window 05" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 1065.59, -1107.75 )
+scale = Vector2( 1.06728, 0.935717 )
+texture = ExtResource( 33 )
+
+[node name="Window 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 2992.93, -1072.73 )
+scale = Vector2( 0.692742, 0.741988 )
+texture = ExtResource( 53 )
+
+[node name="Board 03" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 3291.52, -1076.86 )
+scale = Vector2( 0.536495, 0.536495 )
+texture = ExtResource( 81 )
+
+[node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 1361.87, -855.053 )
+scale = Vector2( 0.765738, 0.765738 )
+texture = ExtResource( 21 )
+
+[node name="Plant 05" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 1812.3, -857.821 )
+scale = Vector2( 0.74287, 0.74287 )
+texture = ExtResource( 61 )
+
+[node name="File Cabinet 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 57.1192, -941.721 )
+scale = Vector2( 0.557067, 0.557067 )
+texture = ExtResource( 42 )
+flip_h = true
+
+[node name="Plant 03" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 214.508, -875.776 )
+scale = Vector2( 0.838928, 0.74481 )
+texture = ExtResource( 24 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 794.299, -910.374 )
+scale = Vector2( 0.889251, 0.889251 )
+frames = SubResource( 14 )
+frame = 14
+playing = true
+
+[node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 747.358, -866.432 )
+scale = Vector2( 0.695209, 0.617215 )
+texture = ExtResource( 20 )
+
+[node name="Side Table 08" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 3804.54, -864.307 )
+scale = Vector2( 0.473821, 0.473821 )
+texture = ExtResource( 131 )
+
+[node name="File Cabinet 04" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 3960.49, -943.691 )
+scale = Vector2( 0.618617, 0.618617 )
+texture = ExtResource( 40 )
+
+[node name="Plant 04" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 3648.26, -925.477 )
+scale = Vector2( 0.829869, 0.829869 )
+texture = ExtResource( 38 )
+
+[node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 2281.82, -857.821 )
+scale = Vector2( 0.74287, 0.74287 )
+texture = ExtResource( 61 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 1099.71, -903.632 )
+scale = Vector2( 0.956959, 0.956959 )
+frames = SubResource( 15 )
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 622.261, -920.692 )
+scale = Vector2( 1.10547, 1.10547 )
+frames = SubResource( 16 )
+frame = 10
+playing = true
+
+[node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 3094.34, -879.036 )
+scale = Vector2( 0.536183, 0.536183 )
+texture = ExtResource( 119 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+position = Vector2( 428.778, -895.82 )
+scale = Vector2( 0.830756, 0.830756 )
+frames = SubResource( 17 )
+frame = 4
+playing = true
+flip_h = true
+
+[node name="Floor3" type="Node" parent="ParallaxBackground/Props"]
+
+[node name="Window 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3031.66, -1821.25 )
+scale = Vector2( 0.708874, 0.708874 )
+texture = ExtResource( 90 )
+
+[node name="Window 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 480.375, -1937.6 )
+scale = Vector2( 0.739156, 0.739156 )
+texture = ExtResource( 95 )
+
+[node name="Plant 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 1799.68, -1579.94 )
+scale = Vector2( 0.562885, 0.562885 )
+texture = ExtResource( 137 )
+
+[node name="Plant 09" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 2263.33, -1583.72 )
+scale = Vector2( 0.562885, 0.562885 )
+texture = ExtResource( 137 )
+
+[node name="Desk 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 344.601, -1637.15 )
+scale = Vector2( 0.471227, 0.471227 )
+texture = ExtResource( 184 )
+
+[node name="Desk 09" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+self_modulate = Color( 0.976471, 0.898039, 0.898039, 1 )
+position = Vector2( 3623.45, -1581.27 )
+scale = Vector2( 0.499333, 0.499333 )
+texture = ExtResource( 135 )
+flip_h = true
+
+[node name="Seat 01" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3325.32, -1585.78 )
+scale = Vector2( 0.378319, 0.378319 )
+texture = ExtResource( 15 )
+
+[node name="Seat 03-1" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 1191.93, -1643.47 )
+scale = Vector2( 0.344074, 0.344074 )
+texture = ExtResource( 103 )
+
+[node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 706.62, -1658.57 )
+scale = Vector2( 0.582889, 0.582889 )
+texture = ExtResource( 19 )
+
+[node name="Door closed2" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 925.792, -1708.96 )
+scale = Vector2( 0.518256, 0.518256 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="Board 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 86.5659, -1871.26 )
+scale = Vector2( 0.645962, 0.645962 )
+texture = ExtResource( 85 )
+
+[node name="Board 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 1479.22, -1833.1 )
+scale = Vector2( 0.645962, 0.645962 )
+texture = ExtResource( 81 )
+
+[node name="Plant 10" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3961.3, -1635.45 )
+scale = Vector2( 0.684307, 0.684307 )
+texture = ExtResource( 78 )
+
+[node name="Desk 07" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 2710.95, -1637.77 )
+scale = Vector2( 0.507641, 0.507641 )
+texture = ExtResource( 74 )
+flip_h = true
+
+[node name="Plant 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 2576.47, -1625.51 )
+scale = Vector2( 0.539383, 0.539383 )
+texture = ExtResource( 38 )
+
+[node name="Board 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3551.16, -1779.86 )
+scale = Vector2( 0.449157, 0.449157 )
+texture = ExtResource( 81 )
+
+[node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3174.32, -1627.17 )
+scale = Vector2( 0.700053, 0.700053 )
+texture = ExtResource( 48 )
+
+[node name="Desk 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3005.74, -1639.01 )
+scale = Vector2( 0.507641, 0.507641 )
+texture = ExtResource( 74 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3369.2, -1641.13 )
+scale = Vector2( 0.783055, 0.783055 )
+frames = SubResource( 18 )
+frame = 15
+playing = true
+
+[node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 3389.27, -1613.88 )
+scale = Vector2( 0.442633, 0.442633 )
+texture = ExtResource( 173 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor3"]
+position = Vector2( 143.194, -1645.33 )
+scale = Vector2( 1.05274, 1.05274 )
+frames = SubResource( 19 )
+frame = 23
+playing = true
+
 [node name="Elevator" type="Node2D" parent="."]
 
 [node name="Elevator" parent="Elevator" instance=ExtResource( 6 )]
@@ -235,7 +791,7 @@ floor_name = "3rd floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor3"]
 position = Vector2( 0, 38 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 
 [node name="Floor2" parent="ElevatorFloors" instance=ExtResource( 7 )]
 position = Vector2( 2047, -751 )
@@ -244,7 +800,7 @@ floor_name = "2nd floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor2"]
 position = Vector2( 0, 39 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 
 [node name="Floor" parent="ElevatorFloors" instance=ExtResource( 7 )]
 position = Vector2( 2047, 0 )
@@ -253,7 +809,7 @@ floor_name = "1st floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor"]
 position = Vector2( 0, 38 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 
 [node name="Interactive" type="Node2D" parent="."]
 
@@ -267,7 +823,7 @@ option_d = "FGJSFJG"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/QuestionPromptArea"]
 position = Vector2( 0, 2 )
-shape = SubResource( 13 )
+shape = SubResource( 21 )
 
 [node name="Ayush" type="Node2D" parent="Interactive"]
 
@@ -277,7 +833,7 @@ next_prompt = NodePath("../Tjhing2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/QuestionPromptArea"]
 position = Vector2( 4.5, 61 )
-shape = SubResource( 14 )
+shape = SubResource( 22 )
 
 [node name="SpeechBox" parent="Interactive/Ayush/QuestionPromptArea" instance=ExtResource( 12 )]
 margin_left = -65.0
@@ -313,7 +869,7 @@ active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/Tjhing2"]
 position = Vector2( 1.5, -139 )
-shape = SubResource( 15 )
+shape = SubResource( 23 )
 
 [node name="SpeechBox" parent="Interactive/Ayush/Tjhing2" instance=ExtResource( 12 )]
 margin_left = -130.0
@@ -347,6 +903,6 @@ active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ayush/Name1"]
 position = Vector2( 4, -13 )
-shape = SubResource( 16 )
+shape = SubResource( 24 )
 
 [node name="Anshu" type="Node2D" parent="Interactive"]
