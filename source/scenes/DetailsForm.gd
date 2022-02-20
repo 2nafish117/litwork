@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 onready var name_field := $MarginContainer/HBoxContainer/VBoxContainer/LineEdit
 onready var email_field := $MarginContainer/HBoxContainer/VBoxContainer/LineEdit2

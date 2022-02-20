@@ -24,7 +24,7 @@ var player = null
 onready var entry_audio = $EntryAudio
 onready var exit_audio = $ExitAudio
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player != null and active:
 		if stop_for_question:
 			player.movement_modifier = 0.0

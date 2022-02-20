@@ -29,7 +29,7 @@ func _on_Timer_timeout() -> void:
 	for c in sprites:
 		c.visible = false
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for c in sprites:
 		c.global_position.y += 0.03 * sin(5.0 * $Timer.time_left)
 	pass
