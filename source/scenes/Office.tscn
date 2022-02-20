@@ -375,7 +375,7 @@ position = Vector2( 4096, -498.5 )
 shape = SubResource( 11 )
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1775, -30 )
+position = Vector2( 314.942, -30.212 )
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
 current = true
@@ -454,9 +454,9 @@ __meta__ = {
 
 [node name="Props" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.8, 0.8 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_mirroring = Vector2( 1, 1 )
 
-[node name="Floor1" type="Node" parent="ParallaxBackground/Props"]
+[node name="Floor1" type="Node2D" parent="ParallaxBackground/Props"]
 
 [node name="File Cabinet 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
 position = Vector2( 3977.47, -151.055 )
@@ -538,14 +538,13 @@ texture = ExtResource( 15 )
 position = Vector2( 3083.36, -172.988 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 12 )
-frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
 position = Vector2( 966.479, -170.904 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 13 )
-frame = 7
+frame = 15
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
@@ -554,7 +553,7 @@ scale = Vector2( 0.519723, 0.519723 )
 texture = ExtResource( 32 )
 offset = Vector2( -234.74, -131.334 )
 
-[node name="Floor2" type="Node" parent="ParallaxBackground/Props"]
+[node name="Floor2" type="Node2D" parent="ParallaxBackground/Props"]
 
 [node name="Board 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
 position = Vector2( 527.044, -1071.91 )
@@ -607,6 +606,7 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 14 )
+frame = 20
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -638,7 +638,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 15 )
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 
@@ -646,7 +646,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 16 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -658,11 +658,11 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 17 )
-frame = 2
+frame = 10
 playing = true
 flip_h = true
 
-[node name="Floor3" type="Node" parent="ParallaxBackground/Props"]
+[node name="Floor3" type="Node2D" parent="ParallaxBackground/Props"]
 
 [node name="Window 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
 position = Vector2( 3031.66, -1821.25 )
@@ -762,7 +762,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1641.13 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 18 )
-frame = 13
+frame = 19
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
@@ -774,7 +774,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 19 )
-frame = 25
+frame = 15
 playing = true
 
 [node name="Elevator" type="Node2D" parent="."]
