@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 signal speech_spoken
 
-const MAX_SPEED = 200.0
+const MAX_SPEED = 250.0
 const ACCEL := 50.0
 const EPSILON_VELOCITY := 0.1
 

@@ -1,16 +1,15 @@
-[gd_scene load_steps=215 format=2]
+[gd_scene load_steps=219 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
-[ext_resource path="res://assets/textures/office_tiles/office_floor_01.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/office_props/elevator_inside.png" type="Texture" id=2]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/textures/office_tiles/office_wall_02.png" type="Texture" id=5]
 [ext_resource path="res://source/interactibles/elevator/Elevator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interactibles/elevator/Floor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/textures/office_tiles/office_floor_02.png" type="Texture" id=8]
-[ext_resource path="res://assets/textures/office_tiles/office_wall_03.png" type="Texture" id=9]
-[ext_resource path="res://assets/textures/office_tiles/office_wall_01.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/office_props/elevator_door.png" type="Texture" id=8]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/textures/office_tiles/Floor00.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/office_tiles/Floor00_02.png" type="Texture" id=13]
 [ext_resource path="res://assets/textures/office_props/Seat 02.png" type="Texture" id=14]
 [ext_resource path="res://assets/textures/office_props/Seat 01.png" type="Texture" id=15]
 [ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(2).png" type="Texture" id=16]
@@ -183,6 +182,7 @@
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (3).png" type="Texture" id=183]
 [ext_resource path="res://assets/textures/office_props/Desk 06.png" type="Texture" id=184]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (9).png" type="Texture" id=185]
+[ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=186]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 930, 38 )
@@ -228,6 +228,185 @@ extents = Vector2( 81.5, 431.5 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 81.5, 431.5 )
+
+[sub_resource type="Animation" id=32]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../PlayerCharecter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 314.942, -30.212 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../PlayerCharecter:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("door_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -60, -155 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("door_l:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("door_r:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 52.9999, -155 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("door_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "elevator door"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_l:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -60, -155 ), Vector2( -171, -155 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_l:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("door_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 52.9999, -155 ), Vector2( 166, -155 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("door_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "elevator door close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_l:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -171, -155 ), Vector2( -61, -155 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_l:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("door_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 166, -155 ), Vector2( 52.9999, -155 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("door_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -298,6 +477,8 @@ extents = Vector2( 184, 38 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 68, 91 )
+
+[sub_resource type="RectangleShape2D" id=35]
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 55.8842, 120.479 )
@@ -419,10 +600,41 @@ shape = SubResource( 15 )
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 314.942, -30.212 )
+z_index = 1
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
 current = true
+limit_left = 0
+limit_right = 4100
 player_path = NodePath("../PlayerCharecter")
+
+[node name="Elevator" type="Node2D" parent="."]
+
+[node name="Elevator" parent="Elevator" instance=ExtResource( 6 )]
+position = Vector2( 2047, 0 )
+floors_path = NodePath("../../ElevatorFloors")
+
+[node name="door_l" type="Sprite" parent="Elevator/Elevator"]
+position = Vector2( -60, -155 )
+scale = Vector2( 1.13636, 1.16279 )
+z_index = 2
+texture = ExtResource( 8 )
+
+[node name="door_r" type="Sprite" parent="Elevator/Elevator"]
+position = Vector2( 52.9999, -155 )
+scale = Vector2( 1.13636, 1.16279 )
+z_index = 2
+texture = ExtResource( 8 )
+
+[node name="inside" type="Sprite" parent="Elevator/Elevator"]
+position = Vector2( -2.5, -155 )
+scale = Vector2( 1.13636, 1.16279 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimationPlayer" parent="Elevator/Elevator"]
+anims/RESET = SubResource( 32 )
+"anims/elevator door" = SubResource( 33 )
+"anims/elevator door close" = SubResource( 34 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -432,7 +644,7 @@ player_path = NodePath("../PlayerCharecter")
 margin_top = -728.0
 margin_right = 4096.0
 margin_bottom = 296.0
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -443,7 +655,7 @@ __meta__ = {
 margin_top = -1456.0
 margin_right = 4096.0
 margin_bottom = -712.0
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -454,7 +666,7 @@ __meta__ = {
 margin_top = -2224.0
 margin_right = 4096.0
 margin_bottom = -1480.0
-texture = ExtResource( 5 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -465,7 +677,7 @@ __meta__ = {
 margin_top = -2960.0
 margin_right = 4096.0
 margin_bottom = -2216.0
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -476,10 +688,35 @@ __meta__ = {
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Floor1" type="TextureRect" parent="ParallaxBackground/Floors"]
-margin_top = -53.0
+margin_top = -1.0
 margin_right = 4096.0
-margin_bottom = 296.0
-texture = ExtResource( 2 )
+margin_bottom = 97.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor1_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+margin_left = -2.0
+margin_top = 77.0
+margin_right = 4094.0
+margin_bottom = 354.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor2_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+visible = false
+margin_left = -2.0
+margin_top = -754.0
+margin_right = 4094.0
+margin_bottom = -537.0
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -489,28 +726,53 @@ __meta__ = {
 [node name="Floor2" type="TextureRect" parent="ParallaxBackground/Floors"]
 margin_top = -798.0
 margin_right = 4096.0
-margin_bottom = -563.0
-texture = ExtResource( 8 )
+margin_bottom = -698.0
+rect_pivot_offset = Vector2( 2801, 100 )
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor3_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+margin_left = -2.0
+margin_top = -1498.0
+margin_right = 4094.0
+margin_bottom = -1313.0
+texture = ExtResource( 13 )
+expand = true
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Floor3" type="TextureRect" parent="ParallaxBackground/Floors"]
-margin_top = -1547.0
+margin_top = -1502.0
 margin_right = 4096.0
-margin_bottom = -1362.0
-texture = ExtResource( 2 )
+margin_bottom = -1402.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor4_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+margin_left = -2.0
+margin_top = -2264.0
+margin_right = 4094.0
+margin_bottom = -2079.0
+texture = ExtResource( 13 )
+expand = true
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Floor4" type="TextureRect" parent="ParallaxBackground/Floors"]
-margin_top = -2307.0
+margin_top = -2253.0
 margin_right = 4096.0
-margin_bottom = -2115.0
-texture = ExtResource( 8 )
+margin_bottom = -2153.0
+texture = ExtResource( 12 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -521,97 +783,97 @@ __meta__ = {
 [node name="Floor1" type="Node2D" parent="ParallaxBackground/Props"]
 
 [node name="File Cabinet 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 3977.47, -151.055 )
+position = Vector2( 3977.47, -100.486 )
 scale = Vector2( 0.428529, 0.428529 )
 texture = ExtResource( 40 )
 
 [node name="Door closed" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 3755.62, -218.03 )
+position = Vector2( 3755.62, -165 )
 scale = Vector2( 0.518256, 0.518256 )
 texture = ExtResource( 41 )
 flip_h = true
 
 [node name="Board 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 951.562, -318.634 )
+position = Vector2( 951.562, -281.007 )
 scale = Vector2( 0.428529, 0.428529 )
 texture = ExtResource( 27 )
 
 [node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 1570.21, -118.389 )
+position = Vector2( 1570.21, -73 )
 scale = Vector2( 0.383464, 0.383464 )
 texture = ExtResource( 19 )
 
 [node name="Seat 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 1458.4, -67.2347 )
+position = Vector2( 1458.4, -29.6075 )
 scale = Vector2( 0.31526, 0.31526 )
 texture = ExtResource( 15 )
 
 [node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 554.583, -91.9578 )
+position = Vector2( 554, -49 )
 scale = Vector2( 0.59002, 0.59002 )
 texture = ExtResource( 21 )
 
 [node name="Desk 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 746.812, -142.285 )
+position = Vector2( 748, -116 )
 scale = Vector2( 0.580696, 0.580696 )
 texture = ExtResource( 43 )
 
 [node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 1819.37, -96.7222 )
+position = Vector2( 1819.37, -59.095 )
 scale = Vector2( 0.496598, 0.496598 )
 texture = ExtResource( 48 )
 
 [node name="Seat 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 1309.4, -108.688 )
+position = Vector2( 1309.4, -71.0608 )
 scale = Vector2( 0.403355, 0.403355 )
 texture = ExtResource( 14 )
 
 [node name="Seat 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 1174.35, -108.186 )
+position = Vector2( 1174.35, -70.5588 )
 scale = Vector2( 0.393125, 0.393125 )
 texture = ExtResource( 14 )
 
 [node name="File Cabinet 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 3906.61, -156.225 )
+position = Vector2( 3906.61, -105.656 )
 scale = Vector2( 0.407451, 0.40745 )
 texture = ExtResource( 42 )
 
 [node name="Plant 07" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 3640.53, -110.744 )
+position = Vector2( 3640.53, -60 )
 scale = Vector2( 0.43691, 0.43691 )
 texture = ExtResource( 58 )
 
 [node name="Side Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 2710.94, -100.21 )
+position = Vector2( 2710.94, -56 )
 scale = Vector2( 0.675536, 0.533629 )
 texture = ExtResource( 158 )
 
 [node name="Seat 04" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 2550.43, -72.0067 )
+position = Vector2( 2550.43, -34.3795 )
 scale = Vector2( 0.348185, 0.348185 )
 texture = ExtResource( 15 )
 
 [node name="Seat 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 2878.41, -71.185 )
+position = Vector2( 2878.41, -33.5578 )
 scale = Vector2( 0.356302, 0.356302 )
 texture = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 3083.36, -172.988 )
+position = Vector2( 3083.36, -135.361 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 16 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 966.479, -170.904 )
+position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 17 )
-frame = 12
+frame = 14
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
-position = Vector2( 2404.37, -28.0826 )
+position = Vector2( 2404.37, 14 )
 scale = Vector2( 0.519723, 0.519723 )
 texture = ExtResource( 32 )
 offset = Vector2( -234.74, -131.334 )
@@ -669,7 +931,7 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 18 )
-frame = 11
+frame = 7
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -701,7 +963,6 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 19 )
-frame = 6
 playing = true
 flip_h = true
 
@@ -709,6 +970,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 20 )
+frame = 16
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -720,34 +982,34 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 21 )
-frame = 7
+frame = 9
 playing = true
 flip_h = true
 
 [node name="Floor3" type="Node2D" parent="ParallaxBackground/Props"]
 
 [node name="Window 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3031.66, -1821.25 )
+position = Vector2( 3031.66, -1778.53 )
 scale = Vector2( 0.708874, 0.708874 )
 texture = ExtResource( 90 )
 
 [node name="Window 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 480.375, -1937.6 )
+position = Vector2( 480.375, -1844.97 )
 scale = Vector2( 0.739156, 0.739156 )
 texture = ExtResource( 95 )
 
 [node name="Plant 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 1799.68, -1579.94 )
+position = Vector2( 1799.68, -1544 )
 scale = Vector2( 0.562885, 0.562885 )
 texture = ExtResource( 137 )
 
 [node name="Plant 09" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 2263.33, -1583.72 )
+position = Vector2( 2274, -1546 )
 scale = Vector2( 0.562885, 0.562885 )
 texture = ExtResource( 137 )
 
 [node name="Desk 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 344.601, -1637.15 )
+position = Vector2( 344.601, -1600 )
 scale = Vector2( 0.471227, 0.471227 )
 texture = ExtResource( 184 )
 
@@ -764,67 +1026,67 @@ scale = Vector2( 0.378319, 0.378319 )
 texture = ExtResource( 15 )
 
 [node name="Seat 03-1" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 1191.93, -1643.47 )
+position = Vector2( 1191.93, -1599.67 )
 scale = Vector2( 0.344074, 0.344074 )
 texture = ExtResource( 103 )
 
 [node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 706.62, -1658.57 )
+position = Vector2( 706.62, -1614.77 )
 scale = Vector2( 0.582889, 0.582889 )
 texture = ExtResource( 19 )
 
 [node name="Door closed2" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 925.792, -1708.96 )
+position = Vector2( 925.792, -1665.16 )
 scale = Vector2( 0.518256, 0.518256 )
 texture = ExtResource( 41 )
 flip_h = true
 
 [node name="Board 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 86.5659, -1871.26 )
+position = Vector2( 86.5659, -1778.63 )
 scale = Vector2( 0.645962, 0.645962 )
 texture = ExtResource( 85 )
 
 [node name="Board 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 1479.22, -1833.1 )
+position = Vector2( 1479.22, -1736 )
 scale = Vector2( 0.645962, 0.645962 )
 texture = ExtResource( 81 )
 
 [node name="Plant 10" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3961.3, -1635.45 )
+position = Vector2( 3961.3, -1593 )
 scale = Vector2( 0.684307, 0.684307 )
 texture = ExtResource( 78 )
 
 [node name="Desk 07" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 2710.95, -1637.77 )
+position = Vector2( 2710.95, -1595.05 )
 scale = Vector2( 0.507641, 0.507641 )
 texture = ExtResource( 74 )
 flip_h = true
 
 [node name="Plant 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 2576.47, -1625.51 )
+position = Vector2( 2576.47, -1582.79 )
 scale = Vector2( 0.539383, 0.539383 )
 texture = ExtResource( 38 )
 
 [node name="Board 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3551.16, -1779.86 )
+position = Vector2( 3551.16, -1737.14 )
 scale = Vector2( 0.449157, 0.449157 )
 texture = ExtResource( 81 )
 
 [node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3174.32, -1627.17 )
+position = Vector2( 3174.32, -1584.45 )
 scale = Vector2( 0.700053, 0.700053 )
 texture = ExtResource( 48 )
 
 [node name="Desk 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3005.74, -1639.01 )
+position = Vector2( 3005.74, -1596.29 )
 scale = Vector2( 0.507641, 0.507641 )
 texture = ExtResource( 74 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor3"]
-position = Vector2( 3369.2, -1641.13 )
+position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 22 )
-frame = 6
+frame = 12
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
@@ -836,14 +1098,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 23 )
-frame = 8
 playing = true
-
-[node name="Elevator" type="Node2D" parent="."]
-
-[node name="Elevator" parent="Elevator" instance=ExtResource( 6 )]
-position = Vector2( 2047, 0 )
-floors_path = NodePath("../../ElevatorFloors")
 
 [node name="ElevatorFloors" type="Node2D" parent="."]
 
@@ -899,6 +1154,12 @@ next_prompt = NodePath("../../Interaction2/QuestionPromptArea")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/QuestionPromptArea"]
 position = Vector2( 0, 2 )
 shape = SubResource( 25 )
+
+[node name="DialogueArea" parent="InteractiveFloor1/Interaction1" instance=ExtResource( 186 )]
+position = Vector2( 652, -181 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/DialogueArea"]
+shape = SubResource( 35 )
 
 [node name="Interaction2" type="Node2D" parent="InteractiveFloor1"]
 

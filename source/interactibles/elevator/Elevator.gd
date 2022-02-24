@@ -72,6 +72,7 @@ func _on_Area2D_body_entered(body: Node) -> void:
 		print("player entered elevator")
 		player = body
 		elevator_button_container.visible = true
+		$AnimatedSprite.play("elevator door")
 
 func _on_Area2D_body_exited(body: Node) -> void:
 	# hide lift floor buttons
@@ -79,6 +80,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 		print("player exited elevator")
 		player = body
 		elevator_button_container.visible = false
+		$AnimatedSprite.play("elevator door close")
 
 func _on_Tween_tween_completed(_object: Object, _key: NodePath) -> void:
 	floor_reached_audio.play(0.0)
