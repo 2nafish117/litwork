@@ -1,10 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://source/player_vehicle/PlayerVehicle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/interactibles/LevelTransitionArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/scenes/Office.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/scenes/Tutorial.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (1).png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/environment/road.jpeg" type="Texture" id=7]
 [ext_resource path="res://assets/textures/environment/buildings/building2.png" type="Texture" id=8]
@@ -18,33 +18,46 @@
 [ext_resource path="res://assets/textures/environment/road_objects/p2.png" type="Texture" id=16]
 [ext_resource path="res://assets/textures/environment/road_objects/p3.png" type="Texture" id=17]
 [ext_resource path="res://source/interactibles/ControlsPromptArea.tscn" type="PackedScene" id=18]
-[ext_resource path="res://icon.png" type="Texture" id=19]
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 108, 195.25 )
+[ext_resource path="res://assets/fonts/bahnschrift.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/textures/ui/Interaction_indicator/01.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (7).png" type="Texture" id=21]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (8).png" type="Texture" id=22]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (3).png" type="Texture" id=23]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (5).png" type="Texture" id=24]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (4).png" type="Texture" id=25]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (6).png" type="Texture" id=26]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (10).png" type="Texture" id=27]
+[ext_resource path="res://assets/textures/environment/clouds/cloud (9).png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 108, 195.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2433, 158 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3392.5, 159.5 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=4]
 radius = 612.849
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 0.909804, 0.909804, 0.909804, 1, 0.54902, 0.905882, 0.941176, 1 )
 
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 7 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 68.0698, 45.5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 19 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 260, 45.5 )
-
-[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 141, 276 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 147.5, 263.5 )
 
 [node name="Cab" type="Node2D"]
@@ -58,45 +71,45 @@ __meta__ = {
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Road"]
 position = Vector2( -946, -192.75 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Road"]
 position = Vector2( 1242, 158 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Road"]
 position = Vector2( 7066.5, 159.5 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Road"]
 position = Vector2( 723, 582 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Road"]
 position = Vector2( 1050, 580 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Road"]
 position = Vector2( 2822, 579 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Road"]
 position = Vector2( 3218, 574 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Road"]
-position = Vector2( 6973, 580 )
+position = Vector2( 5314.94, 569.921 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Road"]
-position = Vector2( 7369, 575 )
+position = Vector2( 5710.94, 564.921 )
 rotation = 0.349066
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PlayerVehicle" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4155, 4 )
@@ -114,7 +127,7 @@ motion_mirroring = Vector2( 1024, 0 )
 [node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 rotation = -1.5708
 scale = Vector2( 0.40502, 1024 )
-texture = SubResource( 8 )
+texture = SubResource( 6 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -138,6 +151,10 @@ centered = false
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.8, 1 )
 
+[node name="cloud (4)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1068.55, -418.037 )
+texture = ExtResource( 25 )
+
 [node name="RoadProps" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2( 781.311, -559.092 )
 
@@ -154,7 +171,7 @@ position = Vector2( 660, -240 )
 texture = ExtResource( 12 )
 
 [node name="P2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 1801, -218 )
+position = Vector2( 2682.2, -206.108 )
 texture = ExtResource( 16 )
 
 [node name="P3" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
@@ -173,8 +190,72 @@ texture = ExtResource( 14 )
 position = Vector2( 287, -211 )
 texture = ExtResource( 13 )
 
+[node name="cloud (6)3" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 614.055, -436.28 )
+texture = ExtResource( 26 )
+
+[node name="cloud (7)2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1979.81, -431.24 )
+texture = ExtResource( 21 )
+
+[node name="cloud (6)4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1848.78, -521.955 )
+texture = ExtResource( 26 )
+
+[node name="cloud (7)3" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 2262.03, -481.637 )
+texture = ExtResource( 21 )
+
+[node name="cloud (5)2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 2776.08, -516.915 )
+texture = ExtResource( 24 )
+
+[node name="cloud (4)2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 2463.62, -484.913 )
+texture = ExtResource( 25 )
+
+[node name="cloud (1)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1188.58, -313.564 )
+texture = ExtResource( 6 )
+
+[node name="cloud (9)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -2112.42, -393 )
+texture = ExtResource( 28 )
+
+[node name="cloud (10)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 59.6892, -443.397 )
+texture = ExtResource( 27 )
+
+[node name="cloud (5)3" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 84.8879, -496.756 )
+texture = ExtResource( 24 )
+
+[node name="cloud (3)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -506.621, -391.325 )
+texture = ExtResource( 23 )
+
+[node name="cloud (5)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -2694, -480.508 )
+texture = ExtResource( 24 )
+
+[node name="cloud (6)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -1502.33, -371.467 )
+texture = ExtResource( 26 )
+
+[node name="cloud (7)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -1167.31, -392.656 )
+texture = ExtResource( 21 )
+
+[node name="cloud (8)" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -348.221, -395.67 )
+texture = ExtResource( 22 )
+
+[node name="cloud (6)2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -3110.27, -431.24 )
+texture = ExtResource( 26 )
+
 [node name="Cloud" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2( -3697, -436 )
+position = Vector2( -3707.08, -365.444 )
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -201,14 +282,28 @@ position = Vector2( 781.311, -559.092 )
 
 [node name="ControlsPromptArea" parent="Interactibles" instance=ExtResource( 18 )]
 position = Vector2( -4031, -111 )
+prompt_show_duration = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/ControlsPromptArea"]
-position = Vector2( -105, 35.5 )
-shape = SubResource( 9 )
+position = Vector2( 3.78955, 36.1674 )
+shape = SubResource( 7 )
 
-[node name="Icon" type="Sprite" parent="Interactibles/ControlsPromptArea"]
-position = Vector2( -34, -56 )
-texture = ExtResource( 19 )
+[node name="ind" type="Sprite" parent="Interactibles/ControlsPromptArea"]
+position = Vector2( -3.14697, -80.8836 )
+scale = Vector2( 0.566414, 0.566414 )
+texture = ExtResource( 20 )
+
+[node name="WLeftArrow" type="Label" parent="Interactibles/ControlsPromptArea/ind"]
+margin_left = -92.7866
+margin_top = 71.5855
+margin_right = 96.2134
+margin_bottom = 92.5855
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press W / Left Arrow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="QuestionPromptArea" parent="Interactibles" instance=ExtResource( 3 )]
 question = "SDgsadgsadfg"
@@ -219,12 +314,12 @@ option_d = "dfghadfhdfghsfgj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/QuestionPromptArea"]
 position = Vector2( -9, -266 )
-shape = SubResource( 6 )
+shape = SubResource( 9 )
 
 [node name="LevelTransitionArea" parent="Interactibles" instance=ExtResource( 2 )]
-position = Vector2( 6290, -194 )
+position = Vector2( 2807.58, -204.079 )
 scene = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/LevelTransitionArea"]
 position = Vector2( 45.5, -49.5 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
