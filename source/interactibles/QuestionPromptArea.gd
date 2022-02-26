@@ -10,6 +10,7 @@ export(String, MULTILINE) var option_d: String
 export(NodePath) var next_prompt: NodePath
 export var active: bool = false setget set_active
 export var first_objective: bool = false
+export(String, MULTILINE) var objective_text: String = ""
 
 func set_active(val: bool):
 	active = val

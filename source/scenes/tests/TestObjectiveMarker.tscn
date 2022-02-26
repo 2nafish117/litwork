@@ -40,6 +40,7 @@ position = Vector2( 605, -269 )
 next_prompt = NodePath("../WaypointArea2")
 active = true
 first_objective = true
+objective_text = "big pp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea"]
 position = Vector2( 10.5, 68 )
@@ -48,6 +49,7 @@ shape = SubResource( 2 )
 [node name="WaypointArea2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1017, -269 )
 next_prompt = NodePath("../WaypointArea3")
+objective_text = "smol pp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea2"]
 position = Vector2( 10.5, 68 )
@@ -55,6 +57,7 @@ shape = SubResource( 3 )
 
 [node name="WaypointArea3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1432, -214 )
+objective_text = "bigger pp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea3"]
 position = Vector2( 10.5, 68 )

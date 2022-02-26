@@ -3,6 +3,7 @@ extends CanvasLayer
 signal question_answered
 
 onready var label := $MarginContainer/RichTextLabel
+onready var objective_label := $MarginContainer2/ObjectiveLabel
 onready var answer_options := $AnswerOptions
 
 var current_question: String
@@ -14,8 +15,12 @@ func show_timer():
 func _ready() -> void:
 	answer_options.visible = false
 	label.visible = false
+	objective_label.text = ""
 	pass
-	
+
+func set_objective_text(obj_text: String):
+	objective_label.text = obj_text
+
 func format_time(secs: float) -> Array:
 	var minutes = int(secs / 60.0)
 	secs = int(fmod(secs, 60.0))

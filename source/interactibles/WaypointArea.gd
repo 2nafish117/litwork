@@ -6,6 +6,7 @@ signal dialogue_end
 export(NodePath) var next_prompt: NodePath
 export var active: bool = false
 export var first_objective: bool = false
+export(String, MULTILINE) var objective_text: String = ""
 
 var player = null
 

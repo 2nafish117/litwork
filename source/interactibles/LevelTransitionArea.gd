@@ -4,6 +4,7 @@ export var scene: PackedScene
 export var active: bool = false
 export var begin_on_enter: bool = true
 export var first_objective: bool = false
+export(String, MULTILINE) var objective_text: String = ""
 
 var player: Node2D = null
 

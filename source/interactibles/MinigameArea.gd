@@ -9,6 +9,7 @@ export var stop_for_minigame: bool = true
 export var begin_on_enter: bool = false
 export(PackedScene) var minigame: PackedScene
 export var first_objective: bool = false
+export(String, MULTILINE) var objective_text: String = ""
 
 var player = null
 

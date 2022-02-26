@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=1]
 [ext_resource path="res://source/autoloads/GlobalUi.gd" type="Script" id=2]
 [ext_resource path="res://source/ui/AnswerOptions.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/ui/font_heading.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/fonts/bahnschrift.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="GlobalUi" type="CanvasLayer"]
 layer = -99
@@ -34,7 +41,38 @@ bbcode_enabled = true
 bbcode_text = "[color=red]15:45[/color]"
 text = "15:45"
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObjectiveLabel" type="Label" parent="MarginContainer2"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 718.0
+mouse_filter = 1
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.792157, 0.384314, 0.384314, 1 )
+custom_colors/font_color_shadow = Color( 0.611765, 0.0980392, 0.0980392, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 1 )
+text = "Objective: "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnswerOptions" parent="." instance=ExtResource( 3 )]
+mouse_filter = 1
 
 [connection signal="pressed" from="AnswerOptions/VBoxContainer/HBoxContainerTop/OptionButton1" to="." method="_on_OptionButton1_pressed"]
 [connection signal="pressed" from="AnswerOptions/VBoxContainer/HBoxContainerTop/OptionButton2" to="." method="_on_OptionButton2_pressed"]

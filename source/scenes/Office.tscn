@@ -697,13 +697,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3083.36, -135.361 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 19 )
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 20 )
-frame = 3
+frame = 14
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -765,7 +766,7 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 21 )
-frame = 20
+frame = 19
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -797,7 +798,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 22 )
-frame = 7
+frame = 6
 playing = true
 flip_h = true
 
@@ -805,7 +806,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 23 )
-frame = 14
+frame = 10
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -817,7 +818,7 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 24 )
-frame = 16
+frame = 9
 playing = true
 flip_h = true
 
@@ -921,7 +922,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 13
+frame = 1
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -933,7 +934,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 26 )
-frame = 19
+frame = 8
 playing = true
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
@@ -1039,6 +1040,7 @@ position = Vector2( 662.898, -205.568 )
 next_prompt = NodePath("../QuestionPromptArea")
 active = true
 first_objective = true
+objective_text = "Go to the Reception Desk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/DialogueArea"]
 position = Vector2( 14.0137, 53.8648 )
@@ -1059,6 +1061,7 @@ option_b = "Approach the closest person around for help"
 option_c = "Meet people in the waiting area and ask them"
 option_d = "Call the number in the email you received from the company"
 next_prompt = NodePath("../../Interaction2/DialogueArea")
+objective_text = "answer the question"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/QuestionPromptArea"]
 shape = SubResource( 40 )
@@ -1068,6 +1071,7 @@ shape = SubResource( 40 )
 [node name="DialogueArea" parent="InteractiveFloor1/Interaction2" instance=ExtResource( 186 )]
 position = Vector2( 2745.4, -195.082 )
 next_prompt = NodePath("../DialogueArea2")
+objective_text = "Go meet THE guy."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/DialogueArea"]
 position = Vector2( 14.0137, 53.8648 )
@@ -1092,6 +1096,7 @@ bb_text = "As part of the onboarding, here are some forms to fill."
 [node name="DialogueArea2" parent="InteractiveFloor1/Interaction2" instance=ExtResource( 186 )]
 position = Vector2( 2758, -142 )
 next_prompt = NodePath("../QuestionPromptArea")
+objective_text = "xfgzsdg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/DialogueArea2"]
 shape = SubResource( 41 )
@@ -1118,6 +1123,7 @@ option_b = "Read the policy document while waiting for the Department Heads to b
 option_c = "Seek more clarity from HR on the best way to get these done"
 option_d = "Hurry up and get everything done as soon as possible"
 next_prompt = NodePath("../../../InteractiveFloor3/Interaction3/DialogueArea")
+objective_text = "dfhdfhdfh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/QuestionPromptArea"]
 shape = SubResource( 40 )
@@ -1263,6 +1269,7 @@ shape = SubResource( 33 )
 [node name="DialogueArea" parent="InteractiveFloor3/Interaction3" instance=ExtResource( 186 )]
 position = Vector2( 1369.25, -1634.88 )
 next_prompt = NodePath("../DialogueArea2")
+objective_text = "dsfsDGsDGSDG"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction3/DialogueArea"]
 shape = SubResource( 34 )
