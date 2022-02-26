@@ -43,7 +43,8 @@ func _physics_process(delta: float) -> void:
 	movement *= movement_modifier
 	input_interact = Input.is_action_just_pressed("action_interact")
 	
-	velocity.y += 300.0 * delta
+	if !is_on_floor():
+		velocity.y += 300.0 * delta
 	velocity.x = lerp(velocity.x, movement * speed, ACCEL * delta)
 
 	match state:
@@ -67,7 +68,8 @@ func _physics_process(delta: float) -> void:
 					animated_sprite.flip_h = true
 			pass
 
-	velocity = move_and_slide(velocity, Vector2.UP)
+	var snap: Vector2 = -get_floor_normal() * 100.0
+	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true, 4, PI/4.0, true)
 	pass
 
 func interact(can_move: bool) -> void:

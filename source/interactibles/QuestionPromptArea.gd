@@ -9,6 +9,7 @@ export(String, MULTILINE) var option_d: String
 
 export(NodePath) var next_prompt: NodePath
 export var active: bool = false setget set_active
+export var first_objective: bool = false
 
 func set_active(val: bool):
 	active = val
@@ -35,6 +36,8 @@ func _process(_delta: float) -> void:
 		GlobalUi.ask_question(question, [option_a, option_b, option_c, option_d])
 
 func _ready() -> void:
+	if first_objective:
+		ObjectiveController.set_current_objective(self)
 	var _throw = GlobalUi.connect("question_answered", self, "on_question_answered")
 	pass
 
@@ -44,6 +47,7 @@ func on_question_answered():
 		if next != null:
 			# if ERROR: make sure next_prompt is of type QuestionPromptArea!!!
 			next.active = true
+			ObjectiveController.set_current_objective(next)
 			print("question set next active")
 			print(next.name)
 		active = false

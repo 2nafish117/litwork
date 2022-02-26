@@ -1,14 +1,15 @@
-[gd_scene load_steps=216 format=2]
+[gd_scene load_steps=217 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
+[ext_resource path="res://source/ui/ObjectiveMarker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/interactibles/elevator/Elevator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interactibles/elevator/Floor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/textures/office_tiles/Floor00.png" type="Texture" id=12]
-[ext_resource path="res://assets/textures/office_tiles/Floor00_02.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/office_tiles/office_floor_03.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/office_tiles/office_wall_04.png" type="Texture" id=13]
 [ext_resource path="res://assets/textures/office_props/Seat 02.png" type="Texture" id=14]
 [ext_resource path="res://assets/textures/office_props/Seat 01.png" type="Texture" id=15]
 [ext_resource path="res://assets/textures/characters/npcs/npc_male_explaining_03/npc_male_explaining_03(2).png" type="Texture" id=16]
@@ -183,6 +184,9 @@
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (9).png" type="Texture" id=185]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=186]
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 184, 38 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 930, 38 )
 
@@ -292,9 +296,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 184, 38 )
-
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 72.5, 143 )
 
@@ -324,14 +325,56 @@ extents = Vector2( 37.3463, 76.9229 )
 
 [node name="Office" type="Node2D"]
 
+[node name="ObjectiveMarker" parent="." instance=ExtResource( 2 )]
+position = Vector2( -294, -75 )
+camera_path = NodePath("../PlayerCamera")
+
+[node name="GlobalTimerStart" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
 [node name="Elevator" type="Node2D" parent="."]
 
 [node name="Elevator" parent="Elevator" instance=ExtResource( 6 )]
 position = Vector2( 2047, 0 )
 floors_path = NodePath("../../ElevatorFloors")
 
-[node name="GlobalTimerStart" type="Node2D" parent="."]
-script = ExtResource( 1 )
+[node name="ElevatorFloors" type="Node2D" parent="."]
+
+[node name="Floor4" parent="ElevatorFloors" instance=ExtResource( 7 )]
+position = Vector2( 2047, -2250 )
+floor_number = 4
+floor_name = "4th floor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor4"]
+position = Vector2( 0, 38 )
+shape = SubResource( 27 )
+
+[node name="Floor3" parent="ElevatorFloors" instance=ExtResource( 7 )]
+position = Vector2( 2047, -1500 )
+floor_number = 3
+floor_name = "3rd floor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor3"]
+position = Vector2( 0, 38 )
+shape = SubResource( 27 )
+
+[node name="Floor2" parent="ElevatorFloors" instance=ExtResource( 7 )]
+position = Vector2( 2047, -751 )
+floor_number = 2
+floor_name = "2nd floor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor2"]
+position = Vector2( 0, 39 )
+shape = SubResource( 27 )
+
+[node name="Floor" parent="ElevatorFloors" instance=ExtResource( 7 )]
+position = Vector2( 2047, 0 )
+floor_number = 1
+floor_name = "1st floor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor"]
+position = Vector2( 0, 38 )
+shape = SubResource( 27 )
 
 [node name="Floor1Collisions" type="Node2D" parent="."]
 __meta__ = {
@@ -428,21 +471,11 @@ shape = SubResource( 14 )
 position = Vector2( 4096, -498.5 )
 shape = SubResource( 15 )
 
-[node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
-position = Vector2( 314.942, -30.212 )
-z_index = 1
+[node name="Background" type="ParallaxBackground" parent="."]
 
-[node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
-current = true
-limit_left = 0
-limit_right = 4100
-player_path = NodePath("../PlayerCharecter")
+[node name="Walls" type="ParallaxLayer" parent="Background"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Walls" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Wall1" type="TextureRect" parent="ParallaxBackground/Walls"]
+[node name="Wall1" type="TextureRect" parent="Background/Walls"]
 margin_top = -728.0
 margin_right = 4096.0
 margin_bottom = 296.0
@@ -453,7 +486,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wall2" type="TextureRect" parent="ParallaxBackground/Walls"]
+[node name="Wall2" type="TextureRect" parent="Background/Walls"]
 margin_top = -1456.0
 margin_right = 4096.0
 margin_bottom = -712.0
@@ -464,7 +497,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wall3" type="TextureRect" parent="ParallaxBackground/Walls"]
+[node name="Wall3" type="TextureRect" parent="Background/Walls"]
 margin_top = -2224.0
 margin_right = 4096.0
 margin_bottom = -1480.0
@@ -475,7 +508,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wall4" type="TextureRect" parent="ParallaxBackground/Walls"]
+[node name="Wall4" type="TextureRect" parent="Background/Walls"]
 margin_top = -2960.0
 margin_right = 4096.0
 margin_bottom = -2216.0
@@ -486,10 +519,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floors" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Floors" type="ParallaxLayer" parent="Background"]
 motion_mirroring = Vector2( 1024, 0 )
 
-[node name="Floor1" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor1" type="TextureRect" parent="Background/Floors"]
 margin_top = -1.0
 margin_right = 4096.0
 margin_bottom = 97.0
@@ -500,7 +533,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor1_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor1_2" type="TextureRect" parent="Background/Floors"]
 margin_left = -2.0
 margin_top = 77.0
 margin_right = 4094.0
@@ -512,7 +545,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor2_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor2_2" type="TextureRect" parent="Background/Floors"]
 visible = false
 margin_left = -2.0
 margin_top = -754.0
@@ -525,7 +558,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor2" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor2" type="TextureRect" parent="Background/Floors"]
 margin_top = -798.0
 margin_right = 4096.0
 margin_bottom = -698.0
@@ -536,7 +569,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor3_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor3_2" type="TextureRect" parent="Background/Floors"]
 margin_left = -2.0
 margin_top = -1498.0
 margin_right = 4094.0
@@ -548,7 +581,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor3" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor3" type="TextureRect" parent="Background/Floors"]
 margin_top = -1502.0
 margin_right = 4096.0
 margin_bottom = -1402.0
@@ -558,7 +591,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor4_2" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor4_2" type="TextureRect" parent="Background/Floors"]
 margin_left = -2.0
 margin_top = -2264.0
 margin_right = 4094.0
@@ -570,7 +603,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor4" type="TextureRect" parent="ParallaxBackground/Floors"]
+[node name="Floor4" type="TextureRect" parent="Background/Floors"]
 margin_top = -2253.0
 margin_right = 4096.0
 margin_bottom = -2153.0
@@ -580,187 +613,187 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Props" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Props" type="ParallaxLayer" parent="Background"]
 
-[node name="Floor1" type="Node2D" parent="ParallaxBackground/Props"]
+[node name="Floor1" type="Node2D" parent="Background/Props"]
 
-[node name="File Cabinet 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="File Cabinet 03" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 3977.47, -100.486 )
 scale = Vector2( 0.428529, 0.428529 )
 texture = ExtResource( 40 )
 
-[node name="Door closed" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Door closed" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 3755.62, -165 )
 scale = Vector2( 0.518256, 0.518256 )
 texture = ExtResource( 41 )
 flip_h = true
 
-[node name="Board 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Board 02" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 951.562, -281.007 )
 scale = Vector2( 0.428529, 0.428529 )
 texture = ExtResource( 27 )
 
-[node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Side Table 05" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 1570.21, -73 )
 scale = Vector2( 0.383464, 0.383464 )
 texture = ExtResource( 19 )
 
-[node name="Seat 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Seat 01" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 1458.4, -29.6075 )
 scale = Vector2( 0.31526, 0.31526 )
 texture = ExtResource( 15 )
 
-[node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Plant 02" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 554, -49 )
 scale = Vector2( 0.59002, 0.59002 )
 texture = ExtResource( 21 )
 
-[node name="Desk 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Desk 02" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 748, -116 )
 scale = Vector2( 0.580696, 0.580696 )
 texture = ExtResource( 43 )
 
-[node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Plant 01" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 1819.37, -59.095 )
 scale = Vector2( 0.496598, 0.496598 )
 texture = ExtResource( 48 )
 
-[node name="Seat 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Seat 02" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 1309.4, -71.0608 )
 scale = Vector2( 0.403355, 0.403355 )
 texture = ExtResource( 14 )
 
-[node name="Seat 03" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Seat 03" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 1174.35, -70.5588 )
 scale = Vector2( 0.393125, 0.393125 )
 texture = ExtResource( 14 )
 
-[node name="File Cabinet 01" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="File Cabinet 01" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 3906.61, -105.656 )
 scale = Vector2( 0.407451, 0.40745 )
 texture = ExtResource( 42 )
 
-[node name="Plant 07" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Plant 07" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 3640.53, -60 )
 scale = Vector2( 0.43691, 0.43691 )
 texture = ExtResource( 58 )
 
-[node name="Side Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Side Table 02" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 2710.94, -56 )
 scale = Vector2( 0.675536, 0.533629 )
 texture = ExtResource( 158 )
 
-[node name="Seat 04" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Seat 04" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 2550.43, -34.3795 )
 scale = Vector2( 0.348185, 0.348185 )
 texture = ExtResource( 15 )
 
-[node name="Seat 05" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Seat 05" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 2878.41, -33.5578 )
 scale = Vector2( 0.356302, 0.356302 )
 texture = ExtResource( 15 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 3083.36, -135.361 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 19 )
-frame = 4
 playing = true
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 20 )
-frame = 13
+frame = 3
 playing = true
 
-[node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
+[node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
 position = Vector2( 2404.37, 14 )
 scale = Vector2( 0.519723, 0.519723 )
 texture = ExtResource( 32 )
 offset = Vector2( -234.74, -131.334 )
 
-[node name="Floor2" type="Node2D" parent="ParallaxBackground/Props"]
+[node name="Floor2" type="Node2D" parent="Background/Props"]
 
-[node name="Board 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Board 01" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 527.044, -1071.91 )
 scale = Vector2( 0.695784, 0.695784 )
 texture = ExtResource( 91 )
 
-[node name="Door closed2" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Door closed2" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 1518.45, -961.398 )
 scale = Vector2( 0.518256, 0.518256 )
 texture = ExtResource( 41 )
 flip_h = true
 
-[node name="Window 05" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Window 05" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 1065.59, -1107.75 )
 scale = Vector2( 1.06728, 0.935717 )
 texture = ExtResource( 33 )
 
-[node name="Window 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Window 01" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 2992.93, -1072.73 )
 scale = Vector2( 0.692742, 0.741988 )
 texture = ExtResource( 53 )
 
-[node name="Board 03" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Board 03" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 3291.52, -1076.86 )
 scale = Vector2( 0.536495, 0.536495 )
 texture = ExtResource( 81 )
 
-[node name="Plant 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Plant 02" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 1361.87, -855.053 )
 scale = Vector2( 0.765738, 0.765738 )
 texture = ExtResource( 21 )
 
-[node name="Plant 05" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Plant 05" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 1812.3, -857.821 )
 scale = Vector2( 0.74287, 0.74287 )
 texture = ExtResource( 61 )
 
-[node name="File Cabinet 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="File Cabinet 02" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 57.1192, -941.721 )
 scale = Vector2( 0.557067, 0.557067 )
 texture = ExtResource( 42 )
 flip_h = true
 
-[node name="Plant 03" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Plant 03" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 214.508, -875.776 )
 scale = Vector2( 0.838928, 0.74481 )
 texture = ExtResource( 24 )
 
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Background/Props/Floor2"]
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 21 )
+frame = 20
 playing = true
 
-[node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 747.358, -866.432 )
 scale = Vector2( 0.695209, 0.617215 )
 texture = ExtResource( 20 )
 
-[node name="Side Table 08" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Side Table 08" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 3804.54, -864.307 )
 scale = Vector2( 0.473821, 0.473821 )
 texture = ExtResource( 131 )
 
-[node name="File Cabinet 04" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="File Cabinet 04" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 3960.49, -943.691 )
 scale = Vector2( 0.618617, 0.618617 )
 texture = ExtResource( 40 )
 
-[node name="Plant 04" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Plant 04" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 3648.26, -925.477 )
 scale = Vector2( 0.829869, 0.829869 )
 texture = ExtResource( 38 )
 
-[node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Plant 06" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 2281.82, -857.821 )
 scale = Vector2( 0.74287, 0.74287 )
 texture = ExtResource( 61 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background/Props/Floor2"]
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 22 )
@@ -768,178 +801,234 @@ frame = 7
 playing = true
 flip_h = true
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor2"]
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 23 )
-frame = 9
+frame = 14
 playing = true
 
-[node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
 position = Vector2( 3094.34, -879.036 )
 scale = Vector2( 0.536183, 0.536183 )
 texture = ExtResource( 119 )
 
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor2"]
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Background/Props/Floor2"]
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 24 )
-frame = 8
+frame = 16
 playing = true
 flip_h = true
 
-[node name="Floor3" type="Node2D" parent="ParallaxBackground/Props"]
+[node name="Floor3" type="Node2D" parent="Background/Props"]
 
-[node name="Window 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Window 03" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3031.66, -1778.53 )
 scale = Vector2( 0.708874, 0.708874 )
 texture = ExtResource( 90 )
 
-[node name="Window 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Window 06" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 480.375, -1844.97 )
 scale = Vector2( 0.739156, 0.739156 )
 texture = ExtResource( 95 )
 
-[node name="Plant 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Plant 08" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 1799.68, -1544 )
 scale = Vector2( 0.562885, 0.562885 )
 texture = ExtResource( 137 )
 
-[node name="Plant 09" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Plant 09" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 2274, -1546 )
 scale = Vector2( 0.562885, 0.562885 )
 texture = ExtResource( 137 )
 
-[node name="Desk 06" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Desk 06" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 344.601, -1600 )
 scale = Vector2( 0.471227, 0.471227 )
 texture = ExtResource( 184 )
 
-[node name="Desk 09" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Desk 09" type="Sprite" parent="Background/Props/Floor3"]
 self_modulate = Color( 0.976471, 0.898039, 0.898039, 1 )
 position = Vector2( 3623.45, -1581.27 )
 scale = Vector2( 0.499333, 0.499333 )
 texture = ExtResource( 135 )
 flip_h = true
 
-[node name="Seat 01" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Seat 01" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3325.32, -1585.78 )
 scale = Vector2( 0.378319, 0.378319 )
 texture = ExtResource( 15 )
 
-[node name="Seat 03-1" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Seat 03-1" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 1191.93, -1599.67 )
 scale = Vector2( 0.344074, 0.344074 )
 texture = ExtResource( 103 )
 
-[node name="Side Table 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Side Table 05" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 706.62, -1614.77 )
 scale = Vector2( 0.582889, 0.582889 )
 texture = ExtResource( 19 )
 
-[node name="Door closed2" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Door closed2" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 925.792, -1665.16 )
 scale = Vector2( 0.518256, 0.518256 )
 texture = ExtResource( 41 )
 flip_h = true
 
-[node name="Board 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Board 04" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 86.5659, -1778.63 )
 scale = Vector2( 0.645962, 0.645962 )
 texture = ExtResource( 85 )
 
-[node name="Board 03" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Board 03" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 1479.22, -1736 )
 scale = Vector2( 0.645962, 0.645962 )
 texture = ExtResource( 81 )
 
-[node name="Plant 10" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Plant 10" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3961.3, -1593 )
 scale = Vector2( 0.684307, 0.684307 )
 texture = ExtResource( 78 )
 
-[node name="Desk 07" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Desk 07" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 2710.95, -1595.05 )
 scale = Vector2( 0.507641, 0.507641 )
 texture = ExtResource( 74 )
 flip_h = true
 
-[node name="Plant 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Plant 04" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 2576.47, -1582.79 )
 scale = Vector2( 0.539383, 0.539383 )
 texture = ExtResource( 38 )
 
-[node name="Board 05" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Board 05" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3551.16, -1737.14 )
 scale = Vector2( 0.449157, 0.449157 )
 texture = ExtResource( 81 )
 
-[node name="Plant 01" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Plant 01" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3174.32, -1584.45 )
 scale = Vector2( 0.700053, 0.700053 )
 texture = ExtResource( 48 )
 
-[node name="Desk 08" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Desk 08" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3005.74, -1596.29 )
 scale = Vector2( 0.507641, 0.507641 )
 texture = ExtResource( 74 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background/Props/Floor3"]
 position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 12
+frame = 13
 playing = true
 
-[node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
 position = Vector2( 3389.27, -1613.88 )
 scale = Vector2( 0.442633, 0.442633 )
 texture = ExtResource( 173 )
 
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor3"]
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Background/Props/Floor3"]
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 26 )
-frame = 9
+frame = 19
 playing = true
 
-[node name="ElevatorFloors" type="Node2D" parent="."]
+[node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 87, -1 )
 
-[node name="Floor4" parent="ElevatorFloors" instance=ExtResource( 7 )]
-position = Vector2( 2047, -2250 )
-floor_number = 4
-floor_name = "4th floor"
+[node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
+current = true
+limit_left = 0
+limit_right = 4100
+player_path = NodePath("../PlayerCharecter")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor4"]
-position = Vector2( 0, 38 )
-shape = SubResource( 27 )
+[node name="Foreground" type="ParallaxBackground" parent="."]
+layer = 2
 
-[node name="Floor3" parent="ElevatorFloors" instance=ExtResource( 7 )]
-position = Vector2( 2047, -1500 )
-floor_number = 3
-floor_name = "3rd floor"
+[node name="ElevatorRoof" type="ParallaxLayer" parent="Foreground"]
+z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor3"]
-position = Vector2( 0, 38 )
-shape = SubResource( 27 )
+[node name="TextureRect" type="TextureRect" parent="Foreground/ElevatorRoof"]
+margin_left = 1852.0
+margin_top = -2960.0
+margin_right = 2223.0
+margin_bottom = -2619.0
+texture = ExtResource( 13 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Floor2" parent="ElevatorFloors" instance=ExtResource( 7 )]
-position = Vector2( 2047, -751 )
-floor_number = 2
-floor_name = "2nd floor"
+[node name="TextureRect2" type="TextureRect" parent="Foreground/ElevatorRoof"]
+margin_left = 1856.0
+margin_top = -2165.0
+margin_right = 2227.0
+margin_bottom = -1831.0
+texture = ExtResource( 13 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor2"]
-position = Vector2( 0, 39 )
-shape = SubResource( 27 )
+[node name="TextureRect3" type="TextureRect" parent="Foreground/ElevatorRoof"]
+margin_left = 1856.0
+margin_top = -1424.0
+margin_right = 2227.0
+margin_bottom = -1103.0
+texture = ExtResource( 13 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Floor" parent="ElevatorFloors" instance=ExtResource( 7 )]
-position = Vector2( 2047, 0 )
-floor_number = 1
-floor_name = "1st floor"
+[node name="TextureRect4" type="TextureRect" parent="Foreground/ElevatorRoof"]
+margin_left = 1861.0
+margin_top = -681.0
+margin_right = 2232.0
+margin_bottom = -340.0
+texture = ExtResource( 13 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor"]
-position = Vector2( 0, 38 )
-shape = SubResource( 27 )
+[node name="ElevatorFloor" type="ParallaxLayer" parent="Foreground"]
+
+[node name="TextureRect" type="TextureRect" parent="Foreground/ElevatorFloor"]
+margin_left = 1861.0
+margin_top = -798.0
+margin_right = 2232.0
+margin_bottom = -698.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Foreground/ElevatorFloor"]
+margin_left = 1861.0
+margin_top = -1502.0
+margin_right = 2232.0
+margin_bottom = -1402.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Foreground/ElevatorFloor"]
+margin_left = 1861.0
+margin_top = -2253.0
+margin_right = 2232.0
+margin_bottom = -2153.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="InteractiveFloor1" type="Node2D" parent="."]
 
@@ -948,6 +1037,8 @@ shape = SubResource( 27 )
 [node name="DialogueArea" parent="InteractiveFloor1/Interaction1" instance=ExtResource( 186 )]
 position = Vector2( 662.898, -205.568 )
 next_prompt = NodePath("../QuestionPromptArea")
+active = true
+first_objective = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/DialogueArea"]
 position = Vector2( 14.0137, 53.8648 )
@@ -977,7 +1068,6 @@ shape = SubResource( 40 )
 [node name="DialogueArea" parent="InteractiveFloor1/Interaction2" instance=ExtResource( 186 )]
 position = Vector2( 2745.4, -195.082 )
 next_prompt = NodePath("../DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/DialogueArea"]
 position = Vector2( 14.0137, 53.8648 )
@@ -1002,7 +1092,6 @@ bb_text = "As part of the onboarding, here are some forms to fill."
 [node name="DialogueArea2" parent="InteractiveFloor1/Interaction2" instance=ExtResource( 186 )]
 position = Vector2( 2758, -142 )
 next_prompt = NodePath("../QuestionPromptArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/DialogueArea2"]
 shape = SubResource( 41 )
@@ -1040,7 +1129,6 @@ shape = SubResource( 40 )
 [node name="DialogueArea" parent="InteractiveFloor2/Interaction5" instance=ExtResource( 186 )]
 position = Vector2( 1246.29, -924.014 )
 next_prompt = NodePath("../QuestionPromptArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/DialogueArea"]
 shape = SubResource( 32 )
@@ -1077,7 +1165,6 @@ shape = SubResource( 33 )
 [node name="DialogueArea2" parent="InteractiveFloor2/Interaction5" instance=ExtResource( 186 )]
 position = Vector2( 1246.29, -924.014 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/DialogueArea2"]
 shape = SubResource( 32 )
@@ -1109,7 +1196,6 @@ shape = SubResource( 33 )
 [node name="DialogueArea" parent="InteractiveFloor2/Interaction5/AfterMinigame2" instance=ExtResource( 186 )]
 position = Vector2( 1246.29, -924.014 )
 next_prompt = NodePath("../DialogueArea3")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/AfterMinigame2/DialogueArea"]
 shape = SubResource( 32 )
@@ -1131,7 +1217,6 @@ bb_text = "That was fun, let’s go for lunch"
 [node name="DialogueArea3" parent="InteractiveFloor2/Interaction5/AfterMinigame2" instance=ExtResource( 186 )]
 position = Vector2( 1246.29, -924.014 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/AfterMinigame2/DialogueArea3"]
 shape = SubResource( 32 )
@@ -1178,7 +1263,6 @@ shape = SubResource( 33 )
 [node name="DialogueArea" parent="InteractiveFloor3/Interaction3" instance=ExtResource( 186 )]
 position = Vector2( 1369.25, -1634.88 )
 next_prompt = NodePath("../DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction3/DialogueArea"]
 shape = SubResource( 34 )
@@ -1194,7 +1278,6 @@ bb_text = "All done? Now let’s go and meet your manager and your team"
 [node name="DialogueArea2" parent="InteractiveFloor3/Interaction3" instance=ExtResource( 186 )]
 position = Vector2( 551.895, -1631.51 )
 next_prompt = NodePath("../DialogueArea3")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction3/DialogueArea2"]
 shape = SubResource( 34 )
@@ -1220,7 +1303,6 @@ bb_text = "Have a great day!"
 [node name="DialogueArea3" parent="InteractiveFloor3/Interaction3" instance=ExtResource( 186 )]
 position = Vector2( 551.895, -1631.51 )
 next_prompt = NodePath("../DialogueArea4")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction3/DialogueArea3"]
 shape = SubResource( 34 )
@@ -1246,7 +1328,6 @@ bb_text = "Good morning, likewise! We are shooting a team video, we would like y
 [node name="DialogueArea4" parent="InteractiveFloor3/Interaction3" instance=ExtResource( 186 )]
 position = Vector2( 551.895, -1631.51 )
 next_prompt = NodePath("../../Interaction4/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction3/DialogueArea4"]
 shape = SubResource( 34 )
@@ -1264,7 +1345,6 @@ bb_text = "Why don't you go ahead and check out your desk!"
 [node name="DialogueArea" parent="InteractiveFloor3/Interaction4" instance=ExtResource( 186 )]
 position = Vector2( 2936.91, -1650.21 )
 next_prompt = NodePath("../../AfterMniGame1/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction4/DialogueArea"]
 shape = SubResource( 34 )
@@ -1288,7 +1368,6 @@ bb_text = "Sure this sounds fun!"
 [node name="DialogueArea" parent="InteractiveFloor3/AfterMniGame1" instance=ExtResource( 186 )]
 position = Vector2( 2936.91, -1650.21 )
 next_prompt = NodePath("../../../InteractiveFloor2/Interaction5/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/AfterMniGame1/DialogueArea"]
 shape = SubResource( 34 )
@@ -1319,7 +1398,6 @@ bb_text = "For now, you have to head to the conference room on the first floor."
 [node name="DialogueArea" parent="InteractiveFloor3/Interaction7" instance=ExtResource( 186 )]
 position = Vector2( 2936.91, -1650.21 )
 next_prompt = NodePath("../PlayerSitting/DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/DialogueArea"]
 shape = SubResource( 34 )
@@ -1350,7 +1428,6 @@ bb_text = "This sounds critical, I am on my way."
 [node name="DialogueArea2" parent="InteractiveFloor3/Interaction7/PlayerSitting" instance=ExtResource( 186 )]
 position = Vector2( 2936.91, -1650.21 )
 next_prompt = NodePath("../QuestionPromptArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/DialogueArea2"]
 shape = SubResource( 34 )
@@ -1387,7 +1464,6 @@ shape = SubResource( 39 )
 [node name="DialogueArea3" parent="InteractiveFloor3/Interaction7/PlayerSitting/TwoColleagues" instance=ExtResource( 186 )]
 position = Vector2( 2936.91, -1650.21 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/TwoColleagues/DialogueArea3"]
 shape = SubResource( 34 )
@@ -1433,7 +1509,6 @@ position = Vector2( -2935.65, 1642.59 )
 [node name="DialogueArea3" parent="InteractiveFloor3/Interaction7/PlayerSitting/ThirdColleague" instance=ExtResource( 186 )]
 position = Vector2( 5874.93, -3292.02 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/ThirdColleague/DialogueArea3"]
 shape = SubResource( 34 )
@@ -1468,7 +1543,6 @@ shape = SubResource( 39 )
 [node name="DialogueArea4" parent="InteractiveFloor3/Interaction7/PlayerSitting/ThirdColleague" instance=ExtResource( 186 )]
 position = Vector2( 5874.93, -3292.02 )
 next_prompt = NodePath("../../../../../InteractiveFloor4/Interaction8/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/ThirdColleague/DialogueArea4"]
 shape = SubResource( 34 )
@@ -1485,7 +1559,6 @@ bb_text = " C looks at watch and says, “It’s time for a cup of tea."
 [node name="DialogueArea4" parent="InteractiveFloor3/Interaction9" instance=ExtResource( 186 )]
 position = Vector2( 2941.19, -1648.29 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction9/DialogueArea4"]
 shape = SubResource( 34 )
@@ -1527,7 +1600,6 @@ shape = SubResource( 39 )
 [node name="DialogueArea5" parent="InteractiveFloor3/Interaction9" instance=ExtResource( 186 )]
 position = Vector2( 2941.19, -1648.29 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction9/DialogueArea5"]
 shape = SubResource( 34 )
@@ -1546,7 +1618,6 @@ bb_text = "Before you leave there is just a bit more left in the joining formali
 [node name="DialogueArea" parent="InteractiveFloor4/Interaction6" instance=ExtResource( 186 )]
 position = Vector2( 2871.89, -2433.85 )
 next_prompt = NodePath("../DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction6/DialogueArea"]
 shape = SubResource( 42 )
@@ -1570,7 +1641,6 @@ bb_text = "Sounds fun! I’m ready!"
 [node name="DialogueArea2" parent="InteractiveFloor4/Interaction6" instance=ExtResource( 186 )]
 position = Vector2( 2871.89, -2433.85 )
 next_prompt = NodePath("../../../InteractiveFloor3/Interaction7/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction6/DialogueArea2"]
 shape = SubResource( 42 )
@@ -1601,7 +1671,6 @@ bb_text = "Looks important, I should head back right away"
 [node name="DialogueArea" parent="InteractiveFloor4/Interaction8" instance=ExtResource( 186 )]
 position = Vector2( 1139.89, -2429.85 )
 next_prompt = NodePath("../DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction8/DialogueArea"]
 shape = SubResource( 42 )
@@ -1639,7 +1708,6 @@ bb_text = "Nice! Are you ready for your next challenge?"
 [node name="DialogueArea2" parent="InteractiveFloor4/Interaction8" instance=ExtResource( 186 )]
 position = Vector2( 1139.89, -2429.85 )
 next_prompt = NodePath("../QuestionPromptArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction8/DialogueArea2"]
 shape = SubResource( 42 )
@@ -1687,7 +1755,6 @@ shape = SubResource( 43 )
 [node name="DialogueArea3" parent="InteractiveFloor4/Interaction8" instance=ExtResource( 186 )]
 position = Vector2( 1139.89, -2429.85 )
 next_prompt = NodePath("../QuestionPromptArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction8/DialogueArea3"]
 shape = SubResource( 42 )

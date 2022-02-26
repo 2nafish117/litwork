@@ -7,12 +7,15 @@ export(NodePath) var next_prompt: NodePath
 export var active: bool = false
 export var stop_for_dialogue: bool = true
 export var begin_on_enter: bool = true
+export var first_objective: bool = false
 
 var player = null
 var speechboxes: Array = [] 
 var index = 0
 
 func _ready() -> void:
+	if first_objective:
+		ObjectiveController.set_current_objective(self)
 	for c in get_children():
 		if c is SpeechBox:
 			speechboxes.append(c)
@@ -33,6 +36,7 @@ func _on_DialogueArea_dialogue_end() -> void:
 		if next != null:
 			# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
 			next.active = true
+			ObjectiveController.set_current_objective(next)
 		if stop_for_dialogue:
 			player.movement_modifier = 1.0
 

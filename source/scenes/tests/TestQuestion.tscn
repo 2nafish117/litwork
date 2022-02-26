@@ -39,6 +39,7 @@ option_a = "godeem"
 option_b = "reeeeeeeeee"
 option_c = "asf"
 option_d = "asfsdgf"
+active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="QuestionPromptArea"]
 position = Vector2( -3, 2.5 )

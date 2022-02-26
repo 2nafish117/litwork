@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/ui/ObjectiveMarker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/interactibles/WaypointArea.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1683, 174 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 88.5, 132 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 88.5, 132 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 88.5, 132 )
+
+[node name="TestObjectiveMarker" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 532, 176 )
+shape = SubResource( 1 )
+
+[node name="PlayerCamera" parent="." instance=ExtResource( 1 )]
+current = true
+player_path = NodePath("../PlayerCharecter")
+
+[node name="PlayerCharecter" parent="." instance=ExtResource( 2 )]
+position = Vector2( 323, -24 )
+
+[node name="ObjectiveMarker" parent="." instance=ExtResource( 3 )]
+camera_path = NodePath("../PlayerCamera")
+
+[node name="WaypointArea" parent="." instance=ExtResource( 4 )]
+position = Vector2( 605, -269 )
+next_prompt = NodePath("../WaypointArea2")
+active = true
+first_objective = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea"]
+position = Vector2( 10.5, 68 )
+shape = SubResource( 2 )
+
+[node name="WaypointArea2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1017, -269 )
+next_prompt = NodePath("../WaypointArea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea2"]
+position = Vector2( 10.5, 68 )
+shape = SubResource( 3 )
+
+[node name="WaypointArea3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1432, -214 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaypointArea3"]
+position = Vector2( 10.5, 68 )
+shape = SubResource( 4 )

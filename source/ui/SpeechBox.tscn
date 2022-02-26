@@ -44,6 +44,8 @@ margin_bottom = 758.0
 margin_right = 1004.0
 margin_bottom = 719.0
 size_flags_vertical = 3
+custom_colors/default_color = Color( 0.419608, 0.576471, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "sadvsdfxcvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
 text = "sadvsdfxcvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
@@ -55,6 +57,8 @@ margin_right = 1004.0
 margin_bottom = 753.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
+custom_colors/default_color = Color( 0.419608, 0.576471, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[b][color=red][Enter][/color] to continue[/b]"
 text = "[Enter] to continue"

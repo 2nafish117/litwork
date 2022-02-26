@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Floor00.png-6a51f252c3e1b0cc907d58b8705af754.stex"
+path="res://.import/office_floor_03.png-432222463efafa4b8d3a25d5771af19b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/office_tiles/Floor00.png"
-dest_files=[ "res://.import/Floor00.png-6a51f252c3e1b0cc907d58b8705af754.stex" ]
+source_file="res://assets/textures/office_tiles/office_floor_03.png"
+dest_files=[ "res://.import/office_floor_03.png-432222463efafa4b8d3a25d5771af19b.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

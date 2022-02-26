@@ -187,7 +187,7 @@ position = Vector2( 0, -340 )
 shape = SubResource( 2 )
 
 [node name="Ramp" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -100, -25, 101, -25, 250, 50, -250, 51 )
+polygon = PoolVector2Array( -100, -27, 101, -27, 250, 50, -250, 51 )
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -199,7 +199,9 @@ shape = SubResource( 3 )
 [node name="Tween" type="Tween" parent="."]
 playback_process_mode = 0
 
-[node name="ElevatorControl" type="Control" parent="."]
+[node name="ElevatorControl" type="Node2D" parent="."]
+
+[node name="ElevatorControl" type="Control" parent="ElevatorControl"]
 margin_left = 185.0
 margin_top = -313.0
 margin_right = 280.0
@@ -208,14 +210,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ElevatorControl"]
+[node name="MarginContainer" type="MarginContainer" parent="ElevatorControl/ElevatorControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ElevatorControl/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ElevatorControl/ElevatorControl/MarginContainer"]
 margin_right = 95.0
 margin_bottom = 303.0
 custom_constants/separation = 10

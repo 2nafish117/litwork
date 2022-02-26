@@ -36,49 +36,62 @@ custom_constants/separation = 20
 [node name="Question" type="Label" parent="VBoxContainer"]
 margin_right = 624.0
 margin_bottom = 25.0
+custom_colors/font_color = Color( 0.419608, 0.576471, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
-custom_constants/shadow_offset_y = 2
+custom_constants/shadow_offset_y = 1
 custom_fonts/font = SubResource( 1 )
 text = "Question????"
 
 [node name="HBoxContainerTop" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 45.0
 margin_right = 624.0
-margin_bottom = 104.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="OptionButton1" parent="VBoxContainer/HBoxContainerTop" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 302.0
-margin_bottom = 59.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 option_text = "clicked option a"
 
 [node name="OptionButton2" parent="VBoxContainer/HBoxContainerTop" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 322.0
 margin_right = 624.0
-margin_bottom = 59.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 option_label = "B"
 option_text = "clicked option B"
 
 [node name="HBoxContainerBottom" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 124.0
+margin_top = 128.0
 margin_right = 624.0
-margin_bottom = 183.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="OptionButton3" parent="VBoxContainer/HBoxContainerBottom" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 302.0
-margin_bottom = 59.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
 option_label = "C"
 option_text = "clicked option C"
 
 [node name="OptionButton4" parent="VBoxContainer/HBoxContainerBottom" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 322.0
 margin_right = 624.0
-margin_bottom = 59.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
 option_label = "D"
 option_text = "clicked option D"

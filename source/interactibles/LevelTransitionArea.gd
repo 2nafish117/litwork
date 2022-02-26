@@ -3,8 +3,13 @@ extends Area2D
 export var scene: PackedScene
 export var active: bool = false
 export var begin_on_enter: bool = true
+export var first_objective: bool = false
 
 var player: Node2D = null
+
+func _ready() -> void:
+	if first_objective:
+		ObjectiveController.set_current_objective(self)
 
 func _process(delta: float) -> void:
 	if !active:

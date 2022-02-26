@@ -18,10 +18,11 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="TextureButton" type="TextureButton"]
-margin_right = 223.0
-margin_bottom = 64.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 3 )
+expand = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,11 +30,20 @@ __meta__ = {
 option_label = "A"
 option_text = "You do option A."
 
-[node name="OptionLabel" type="Label" parent="."]
-margin_left = 6.0
-margin_top = 5.0
-margin_right = 55.0
-margin_bottom = 54.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionLabel" type="Label" parent="HBoxContainer"]
+margin_top = 367.0
+margin_right = 306.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.43
+custom_colors/font_color = Color( 0.419608, 0.576471, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "A"
@@ -43,11 +53,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionText" type="Label" parent="."]
-margin_left = 62.0
-margin_top = 1.0
-margin_right = 196.0
-margin_bottom = 58.0
+[node name="OptionText" type="Label" parent="HBoxContainer"]
+margin_left = 310.0
+margin_top = 374.0
+margin_right = 1024.0
+margin_bottom = 393.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.419608, 0.576471, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "You do option A."

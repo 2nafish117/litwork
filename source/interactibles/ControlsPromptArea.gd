@@ -3,8 +3,7 @@ extends Area2D
 export var prompt_show_duration: float = 5.0
 export var active: bool = false
 
-var player: Node2D
-
+var player = null
 var sprites: Array
 
 func _ready() -> void:

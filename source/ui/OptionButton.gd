@@ -6,16 +6,16 @@ export(String, MULTILINE) var option_text: String setget set_option_text, get_op
 
 func set_option_label(val: String):
 	option_label = val
-	if has_node("OptionLabel"):
-		$OptionLabel.text = val
+	if has_node("HBoxContainer/OptionLabel"):
+		$HBoxContainer/OptionLabel.text = val
 	
 func get_option_label():
 	return option_label
 
 func set_option_text(val: String):
 	option_text = val
-	if has_node("OptionText"):
-		$OptionText.text = val
+	if has_node("HBoxContainer/OptionText"):
+		$HBoxContainer/OptionText.text = val
 	
 func get_option_text():
 	return option_text

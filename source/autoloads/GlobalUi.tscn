@@ -27,6 +27,7 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
 margin_bottom = 718.0
+custom_colors/default_color = Color( 0.211765, 0.972549, 0.168627, 1 )
 custom_colors/font_color_shadow = Color( 0.337255, 0.231373, 0.231373, 1 )
 custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true

@@ -17,7 +17,7 @@ onready var door_animation_player: AnimationPlayer = $DoorAnimationPlayer
 onready var floor_reached_audio: AudioStreamPlayer = $FloorReached
 onready var button_pressed_audio: AudioStreamPlayer = $ButtonPressed
 
-onready var elevator_button_container := $ElevatorControl/MarginContainer/VBoxContainer
+onready var elevator_button_container := $ElevatorControl/ElevatorControl/MarginContainer/VBoxContainer
 
 onready var door_l_closed_pos: Vector2 = $door_l.position
 onready var door_l_opened_pos: Vector2 = $door_l.position - Vector2(-150.0, 0.0)
@@ -89,6 +89,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 		print("player exited elevator")
 		$door_l.z_index = 0
 		$door_r.z_index = 0
+		$ElevatorControl.z_index = 0
 		player = null
 		elevator_button_container.visible = false
 		if !door_closed:
@@ -109,6 +110,7 @@ func _on_DoorAnimationPlayer_animation_finished(anim_name: String) -> void:
 	if player != null and anim_name == "elevator_doors_open":
 		$door_l.z_index = player.z_index + 1
 		$door_r.z_index = player.z_index + 1
+		$ElevatorControl.z_index = $door_r.z_index
 		enable_collisions(false)
 	elif player != null and anim_name == "elevator_doors_close":
 		var _throw = tween.interpolate_property(self, "global_position", current_floor.global_position, target_floor.global_position, elevator_duration, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)

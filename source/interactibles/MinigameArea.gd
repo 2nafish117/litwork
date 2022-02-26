@@ -8,10 +8,13 @@ export var active: bool = false
 export var stop_for_minigame: bool = true
 export var begin_on_enter: bool = false
 export(PackedScene) var minigame: PackedScene
+export var first_objective: bool = false
 
 var player = null
 
 func _ready() -> void:
+	if first_objective:
+		ObjectiveController.set_current_objective(self)
 	MinigameController.connect("minigame_end", self, "on_minigame_end")
 
 func _process(_delta: float) -> void:
@@ -50,6 +53,7 @@ func on_minigame_end() -> void:
 	if next != null:
 		# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
 		next.active = true
+		ObjectiveController.set_current_objective(next)
 
 
 func _on_MinigameArea_minigame_begin() -> void:
