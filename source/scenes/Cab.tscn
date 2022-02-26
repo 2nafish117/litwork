@@ -1,10 +1,10 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://source/player_vehicle/PlayerVehicle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/interactibles/LevelTransitionArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/scenes/Tutorial.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/textures/ui/buttons/Arrow_Left_Key_Dark.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (1).png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/environment/road.jpeg" type="Texture" id=7]
 [ext_resource path="res://assets/textures/environment/buildings/building2.png" type="Texture" id=8]
@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/textures/environment/road_objects/p3.png" type="Texture" id=17]
 [ext_resource path="res://source/interactibles/ControlsPromptArea.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/fonts/bahnschrift.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://assets/textures/ui/Interaction_indicator/01.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/ui/buttons/Arrow_Right_Key_Dark.png" type="Texture" id=20]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (7).png" type="Texture" id=21]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (8).png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (3).png" type="Texture" id=23]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/textures/environment/clouds/cloud (6).png" type="Texture" id=26]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (10).png" type="Texture" id=27]
 [ext_resource path="res://assets/textures/environment/clouds/cloud (9).png" type="Texture" id=28]
+[ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 108, 195.25 )
@@ -48,10 +49,12 @@ colors = PoolColorArray( 0.909804, 0.909804, 0.909804, 1, 0.54902, 0.905882, 0.9
 gradient = SubResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 68.0698, 45.5 )
+extents = Vector2( 454, 45.5 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 20
+[sub_resource type="DynamicFont" id=11]
+size = 32
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 19 )
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -282,28 +285,36 @@ position = Vector2( 781.311, -559.092 )
 
 [node name="ControlsPromptArea" parent="Interactibles" instance=ExtResource( 18 )]
 position = Vector2( -4031, -111 )
-prompt_show_duration = 3.0
+active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/ControlsPromptArea"]
-position = Vector2( 3.78955, 36.1674 )
+position = Vector2( -132, 36.1674 )
 shape = SubResource( 7 )
 
-[node name="ind" type="Sprite" parent="Interactibles/ControlsPromptArea"]
-position = Vector2( -3.14697, -80.8836 )
-scale = Vector2( 0.566414, 0.566414 )
-texture = ExtResource( 20 )
+[node name="Sprite" type="Sprite" parent="Interactibles/ControlsPromptArea"]
+position = Vector2( -156, -84 )
+texture = ExtResource( 5 )
 
-[node name="WLeftArrow" type="Label" parent="Interactibles/ControlsPromptArea/ind"]
-margin_left = -92.7866
-margin_top = 71.5855
-margin_right = 96.2134
-margin_bottom = 92.5855
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press W / Left Arrow"
+[node name="Label" type="Label" parent="Interactibles/ControlsPromptArea/Sprite"]
+margin_left = -96.0
+margin_top = -99.0
+margin_right = 257.0
+margin_bottom = -52.0
+theme = ExtResource( 29 )
+custom_colors/font_color = Color( 0.878431, 0.521569, 0.521569, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.345098, 0.345098, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 11 )
+text = "Hold Right/Left to move"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite2" type="Sprite" parent="Interactibles/ControlsPromptArea"]
+position = Vector2( -66, -84 )
+texture = ExtResource( 20 )
 
 [node name="QuestionPromptArea" parent="Interactibles" instance=ExtResource( 3 )]
 question = "SDgsadgsadfg"
@@ -311,6 +322,7 @@ option_a = "dfahdfahdafh"
 option_b = "dafhadfhadfh"
 option_c = "dfhfsgjfsgjfsgj"
 option_d = "dfghadfhdfghsfgj"
+active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/QuestionPromptArea"]
 position = Vector2( -9, -266 )
@@ -318,7 +330,7 @@ shape = SubResource( 9 )
 
 [node name="LevelTransitionArea" parent="Interactibles" instance=ExtResource( 2 )]
 position = Vector2( 2807.58, -204.079 )
-scene = ExtResource( 5 )
+active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/LevelTransitionArea"]
 position = Vector2( 45.5, -49.5 )

@@ -1,13 +1,11 @@
-[gd_scene load_steps=221 format=2]
+[gd_scene load_steps=216 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
-[ext_resource path="res://assets/textures/office_props/elevator_inside.png" type="Texture" id=2]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/interactibles/elevator/Elevator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interactibles/elevator/Floor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/textures/office_props/elevator_door.png" type="Texture" id=8]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/textures/office_tiles/Floor00.png" type="Texture" id=12]
 [ext_resource path="res://assets/textures/office_tiles/Floor00_02.png" type="Texture" id=13]
@@ -185,185 +183,6 @@
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_sitting_01/npc_female_sitting (9).png" type="Texture" id=185]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=186]
 
-[sub_resource type="Animation" id=16]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("../../PlayerCharecter:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 314.942, -30.212 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../PlayerCharecter:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("door_l:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -60, -155 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("door_l:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("door_r:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 52.9999, -155 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("door_r:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "elevator door"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("door_l:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -60, -155 ), Vector2( -171, -155 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("door_l:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("door_r:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 52.9999, -155 ), Vector2( 166, -155 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("door_r:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "elevator door close"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("door_l:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -171, -155 ), Vector2( -61, -155 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("door_l:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("door_r:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 166, -155 ), Vector2( 52.9999, -155 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("door_r:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 930, 38 )
 
@@ -510,26 +329,6 @@ extents = Vector2( 37.3463, 76.9229 )
 [node name="Elevator" parent="Elevator" instance=ExtResource( 6 )]
 position = Vector2( 2047, 0 )
 floors_path = NodePath("../../ElevatorFloors")
-
-[node name="inside" type="Sprite" parent="Elevator/Elevator"]
-position = Vector2( -2.5, -155 )
-scale = Vector2( 1.13636, 1.16279 )
-texture = ExtResource( 2 )
-
-[node name="door_l" type="Sprite" parent="Elevator/Elevator"]
-position = Vector2( -60, -155 )
-scale = Vector2( 1.13636, 1.16279 )
-texture = ExtResource( 8 )
-
-[node name="door_r" type="Sprite" parent="Elevator/Elevator"]
-position = Vector2( 52.9999, -155 )
-scale = Vector2( 1.13636, 1.16279 )
-texture = ExtResource( 8 )
-
-[node name="AnimatedSprite" type="AnimationPlayer" parent="Elevator/Elevator"]
-anims/RESET = SubResource( 16 )
-"anims/elevator door" = SubResource( 17 )
-"anims/elevator door close" = SubResource( 18 )
 
 [node name="GlobalTimerStart" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -865,13 +664,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3083.36, -135.361 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 19 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 20 )
-frame = 3
+frame = 13
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="ParallaxBackground/Props/Floor1"]
@@ -933,7 +733,6 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 21 )
-frame = 2
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -965,7 +764,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 22 )
-frame = 5
+frame = 7
 playing = true
 flip_h = true
 
@@ -973,6 +772,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 23 )
+frame = 9
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="ParallaxBackground/Props/Floor2"]
@@ -984,7 +784,7 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 24 )
-frame = 16
+frame = 8
 playing = true
 flip_h = true
 
@@ -1088,7 +888,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 7
+frame = 12
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="ParallaxBackground/Props/Floor3"]
@@ -1100,7 +900,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 26 )
-frame = 5
+frame = 9
 playing = true
 
 [node name="ElevatorFloors" type="Node2D" parent="."]
@@ -1168,7 +968,6 @@ option_b = "Approach the closest person around for help"
 option_c = "Meet people in the waiting area and ask them"
 option_d = "Call the number in the email you received from the company"
 next_prompt = NodePath("../../Interaction2/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction1/QuestionPromptArea"]
 shape = SubResource( 40 )
@@ -1230,7 +1029,6 @@ option_b = "Read the policy document while waiting for the Department Heads to b
 option_c = "Seek more clarity from HR on the best way to get these done"
 option_d = "Hurry up and get everything done as soon as possible"
 next_prompt = NodePath("../../../InteractiveFloor3/Interaction3/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor1/Interaction2/QuestionPromptArea"]
 shape = SubResource( 40 )
@@ -1271,7 +1069,6 @@ option_b = "Nominate yourself to lead the team"
 option_c = "Wait for the team to choose a leader"
 option_d = "Build on other people’s suggestions"
 next_prompt = NodePath("../DialogueArea2")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/QuestionPromptArea"]
 position = Vector2( 0, 26.939 )
@@ -1300,7 +1097,6 @@ option_b = "Quickly bond with your own team members"
 option_c = "Wait for the team to settle down"
 option_d = "Interact with other teams"
 next_prompt = NodePath("../AfterMinigame2/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/QuestionPromptArea2"]
 position = Vector2( 0, 26.939 )
@@ -1370,7 +1166,6 @@ option_b = "Propose changes in the rules to make all teams equal"
 option_c = "Discuss details of how the rule was broken to decide next steps"
 option_d = "It’s just a game. Let’s have fun!"
 next_prompt = NodePath("../../../../InteractiveFloor4/Interaction6/DialogueArea")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor2/Interaction5/AfterMinigame2/QuestionPromptArea2"]
 position = Vector2( 0, 26.939 )
@@ -1582,7 +1377,6 @@ option_b = "Wait for manager to return"
 option_c = "Ask your team members what to do"
 option_d = "Finish work on the data and send it"
 next_prompt = NodePath("../TwoColleagues/DialogueArea3")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/QuestionPromptArea"]
 position = Vector2( 0.00244141, 4.48535 )
@@ -1628,7 +1422,6 @@ option_b = "Take on both tasks simultaneously
 option_c = "Do one task at a time"
 option_d = "Take on the task that is different from what you have been doing so far"
 next_prompt = NodePath("../../ThirdColleague/DialogueArea3")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/TwoColleagues/QuestionPromptArea2"]
 position = Vector2( 0.00244141, 4.48535 )
@@ -1667,7 +1460,6 @@ option_b = "Share your work and enquire about big projects he is working on"
 option_c = "Briefly explain the work instead of showing"
 option_d = "Ask him to wait until you get your manager’s permission"
 next_prompt = NodePath("../DialogueArea4")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction7/PlayerSitting/ThirdColleague/QuestionPromptArea2"]
 position = Vector2( 0.00244141, 4.48535 )
@@ -1727,7 +1519,6 @@ option_b = "Work on familiar tasks and plan to complete the rest later"
 option_c = "Work on new tasks and leave the rest for later"
 option_d = "Plan to complete the tasks later at home"
 next_prompt = NodePath("../DialogueArea5")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor3/Interaction9/QuestionPromptArea2"]
 position = Vector2( 0.00244141, 4.48535 )
@@ -1889,7 +1680,6 @@ option_b = "You are happy to share these details and continue the conversation"
 option_c = "Answer briefly as a professional courtesy"
 option_d = "Enthusiastically respond, build rapport and make friends"
 next_prompt = NodePath("../DialogueArea3")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction8/QuestionPromptArea"]
 shape = SubResource( 43 )
@@ -1917,7 +1707,6 @@ option_b = "Stay and do what the other team members do"
 option_c = "Excuse yourself and head back to your desk "
 option_d = "Stay for another 5-10 minutes as you see nothing amiss"
 next_prompt = NodePath("../../../InteractiveFloor3/Interaction9/DialogueArea4")
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveFloor4/Interaction8/QuestionPromptArea2"]
 shape = SubResource( 43 )

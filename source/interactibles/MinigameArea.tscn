@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/interactibles/MinigameArea.gd" type="Script" id=1]
+
+[node name="MinigameArea" type="Area2D"]
+script = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_MinigameArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_MinigameArea_body_exited"]
+[connection signal="minigame_begin" from="." to="." method="_on_MinigameArea_minigame_begin"]

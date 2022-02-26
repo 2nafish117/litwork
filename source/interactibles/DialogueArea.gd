@@ -4,8 +4,9 @@ signal dialogue_begin
 signal dialogue_end
 
 export(NodePath) var next_prompt: NodePath
-export var active: bool = true
+export var active: bool = false
 export var stop_for_dialogue: bool = true
+export var begin_on_enter: bool = true
 
 var player = null
 var speechboxes: Array = [] 
@@ -35,13 +36,36 @@ func _on_DialogueArea_dialogue_end() -> void:
 		if stop_for_dialogue:
 			player.movement_modifier = 1.0
 
-func _input(event: InputEvent) -> void:
-	if active and player != null and event.is_action_pressed("action_interact"):
-		active = false
-		emit_signal("dialogue_begin")
-		_on_speech_spoken()
-		if stop_for_dialogue:
-			player.movement_modifier = 0.0
+func _process(_delta: float) -> void:
+	if !active:
+		return
+	
+	if begin_on_enter:
+		if player != null:
+			active = false
+			if len(speechboxes) > 0:
+				emit_signal("dialogue_begin")
+				if stop_for_dialogue:
+					player.movement_modifier = 0.0
+				_on_speech_spoken()
+			else:
+				var next = get_node_or_null(next_prompt)
+				if next != null:
+					# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
+					next.active = true
+	elif Input.is_action_just_pressed("action_interact"):
+		if player != null and len(speechboxes) > 0:
+			active = false
+			if len(speechboxes) > 0:
+				emit_signal("dialogue_begin")
+				if stop_for_dialogue:
+					player.movement_modifier = 0.0
+				_on_speech_spoken()
+			else:
+				var next = get_node_or_null(next_prompt)
+				if next != null:
+					# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
+					next.active = true
 
 func _on_DialogueArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):

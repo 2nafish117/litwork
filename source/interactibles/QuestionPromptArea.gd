@@ -8,7 +8,7 @@ export(String, MULTILINE) var option_c: String
 export(String, MULTILINE) var option_d: String
 
 export(NodePath) var next_prompt: NodePath
-export var active: bool = true setget set_active
+export var active: bool = false setget set_active
 
 func set_active(val: bool):
 	active = val
@@ -25,12 +25,14 @@ onready var entry_audio = $EntryAudio
 onready var exit_audio = $ExitAudio
 
 func _process(_delta: float) -> void:
+	if !active:
+		pass
+		
 	if player != null and active:
 		if stop_for_question:
 			player.movement_modifier = 0.0
 		entry_audio.play(0.0)
 		GlobalUi.ask_question(question, [option_a, option_b, option_c, option_d])
-		set_physics_process(false)
 
 func _ready() -> void:
 	var _throw = GlobalUi.connect("question_answered", self, "on_question_answered")
@@ -42,6 +44,8 @@ func on_question_answered():
 		if next != null:
 			# if ERROR: make sure next_prompt is of type QuestionPromptArea!!!
 			next.active = true
+			print("question set next active")
+			print(next.name)
 		active = false
 		exit_audio.play(0.0)
 		if stop_for_question:

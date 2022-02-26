@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/interactibles/WaypointArea.gd" type="Script" id=1]
+
+[node name="WaypointArea" type="Area2D"]
+script = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_WaypointArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_WaypointArea_body_exited"]

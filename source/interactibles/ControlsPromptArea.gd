@@ -1,7 +1,7 @@
 extends Area2D
 
 export var prompt_show_duration: float = 5.0
-export var active: bool = true
+export var active: bool = false
 
 var player: Node2D
 

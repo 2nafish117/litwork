@@ -35,6 +35,8 @@ position = Vector2( 36, 707 )
 [node name="DialogueArea" parent="Dialogues" instance=ExtResource( 2 )]
 position = Vector2( 338, 532 )
 next_prompt = NodePath("../QuestionPromptArea")
+active = true
+begin_on_enter = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea"]
 position = Vector2( 4.5, 61 )
@@ -75,7 +77,7 @@ option_a = "sdfdsg"
 option_b = "sdgsdg"
 option_c = "sdgsdg"
 option_d = "sdag"
-active = false
+next_prompt = NodePath("../DialogueArea2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/QuestionPromptArea"]
 position = Vector2( 4, -13 )
@@ -112,7 +114,6 @@ bb_text = "work!!!!!!!!!!!"
 
 [node name="DialogueArea3" parent="Dialogues" instance=ExtResource( 2 )]
 position = Vector2( 1143, 694 )
-active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea3"]
 position = Vector2( 1.5, -139 )

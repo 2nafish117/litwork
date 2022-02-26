@@ -1,8 +1,139 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://source/interactibles/elevator/Elevator.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/prompt.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/sounds/ascending_01.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/textures/office_props/elevator_inside.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/office_props/elevator_door.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door_l:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -82, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door_l:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door_r:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 82, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("door_r:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "elevator_doors_close"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door_r:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 232, -0.25, 0, 0.25, 0, 82, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door_r:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0, -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door_l:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -232, -0.25, 0, 0.25, 0, -82, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("door_l:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0, -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "elevator_doors_open"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door_l:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -82, -0.25, 0, 0.25, 0, -232, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door_l:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0, -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door_r:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 82, -0.25, 0, 0.25, 0, 232, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("door_r:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -165, -0.25, 0, 0.25, 0, -165, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 165 )
@@ -18,7 +149,26 @@ collision_layer = 0
 motion/sync_to_physics = true
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="inside" type="Sprite" parent="."]
+position = Vector2( -1.14441e-05, -165.5 )
+scale = Vector2( 1.65657, 1.09302 )
+texture = ExtResource( 4 )
+
+[node name="door_l" type="Sprite" parent="."]
+position = Vector2( -82, -165 )
+scale = Vector2( 1.65, 1.09967 )
+texture = ExtResource( 5 )
+
+[node name="door_r" type="Sprite" parent="."]
+position = Vector2( 82, -165 )
+scale = Vector2( 1.65, 1.09958 )
+texture = ExtResource( 5 )
+
+[node name="DoorAnimationPlayer" type="AnimationPlayer" parent="."]
+playback_default_blend_time = 0.5
+anims/RESET = SubResource( 7 )
+anims/elevator_doors_close = SubResource( 8 )
+anims/elevator_doors_open = SubResource( 6 )
 
 [node name="Right" type="CollisionShape2D" parent="."]
 position = Vector2( 175, -165 )
@@ -36,7 +186,11 @@ shape = SubResource( 2 )
 position = Vector2( 0, -340 )
 shape = SubResource( 2 )
 
+[node name="Ramp" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -100, -25, 101, -25, 250, 50, -250, 51 )
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.5, -157 )
@@ -75,6 +229,7 @@ stream = ExtResource( 3 )
 [node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
+[connection signal="animation_finished" from="DoorAnimationPlayer" to="." method="_on_DoorAnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
