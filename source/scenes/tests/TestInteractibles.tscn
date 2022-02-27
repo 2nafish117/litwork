@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://source/interactibles/WaypointArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/ui/ObjectiveMarker.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1269, 266.5 )
@@ -35,7 +36,7 @@ current = true
 player_path = NodePath("../PlayerCharecter")
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 2 )]
-position = Vector2( 602, -22 )
+position = Vector2( -91, -33 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -43,6 +44,7 @@ position = Vector2( 602, -22 )
 position = Vector2( 244, -90 )
 next_prompt = NodePath("../QuestionPromptArea")
 active = true
+first_objective = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DialogueArea"]
 position = Vector2( 2.5, -8 )
@@ -85,6 +87,7 @@ shape = SubResource( 5 )
 [node name="WaypointArea" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 467, -101 )
 next_prompt = NodePath("../DialogueArea2")
+objective_text = "go to 3rd floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/WaypointArea"]
 position = Vector2( 3, 4.5 )
@@ -117,3 +120,6 @@ margin_top = -228.0
 margin_right = 336.0
 margin_bottom = -128.0
 bb_text = "3"
+
+[node name="ObjectiveMarker" parent="." instance=ExtResource( 7 )]
+camera_path = NodePath("../PlayerCamera")

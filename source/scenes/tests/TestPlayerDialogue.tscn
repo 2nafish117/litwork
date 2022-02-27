@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=2]
@@ -9,8 +9,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 889.5, 43.5 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 72.5, 143 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 75.5, 143 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 67.5, 143 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 72, 144 )
@@ -39,8 +42,8 @@ active = true
 begin_on_enter = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea"]
-position = Vector2( 4.5, 61 )
-shape = SubResource( 2 )
+position = Vector2( 7.5, 61 )
+shape = SubResource( 5 )
 
 [node name="SpeechBox" parent="Dialogues/DialogueArea" instance=ExtResource( 3 )]
 margin_left = -65.0
@@ -64,6 +67,44 @@ margin_bottom = -119.0
 bb_text = "3sdaddddddddddddddddddddddddddddd"
 
 [node name="SpeechBox4" parent="Dialogues/DialogueArea" instance=ExtResource( 3 )]
+margin_left = -65.0
+margin_top = -216.0
+margin_right = 235.0
+margin_bottom = -116.0
+bb_text = "asfasDFsdgkfnsdlkjgn"
+
+[node name="DialogueArea4" parent="Dialogues" instance=ExtResource( 2 )]
+position = Vector2( 729, 528 )
+next_prompt = NodePath("../QuestionPromptArea")
+active = true
+begin_on_enter = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/DialogueArea4"]
+position = Vector2( 4.5, 61 )
+shape = SubResource( 6 )
+
+[node name="SpeechBox" parent="Dialogues/DialogueArea4" instance=ExtResource( 3 )]
+margin_left = -65.0
+margin_top = -217.0
+margin_right = 235.0
+margin_bottom = -117.0
+bb_text = "helloddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox2" parent="Dialogues/DialogueArea4" instance=ExtResource( 3 )]
+margin_left = -62.0
+margin_top = -216.0
+margin_right = 238.0
+margin_bottom = -116.0
+bb_text = "2asddddddddddddddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox3" parent="Dialogues/DialogueArea4" instance=ExtResource( 3 )]
+margin_left = -63.0
+margin_top = -219.0
+margin_right = 237.0
+margin_bottom = -119.0
+bb_text = "3sdaddddddddddddddddddddddddddddd"
+
+[node name="SpeechBox4" parent="Dialogues/DialogueArea4" instance=ExtResource( 3 )]
 margin_left = -65.0
 margin_top = -216.0
 margin_right = 235.0

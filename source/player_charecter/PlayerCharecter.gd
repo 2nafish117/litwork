@@ -22,6 +22,8 @@ var points := 0
 enum {IDLE, INTERACT, WALK}
 var state := IDLE
 
+export var can_input_on_ready: bool = true
+
 onready var animated_sprite: AnimatedSprite = $AnimatedSpriteMale
 
 func _ready() -> void:
@@ -39,8 +41,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	movement *= movement_modifier
+	if can_input_on_ready:
+		movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		movement *= movement_modifier
+	else:
+		movement = 0.0
+		
 	input_interact = Input.is_action_just_pressed("action_interact")
 	
 	if !is_on_floor():
@@ -79,3 +85,7 @@ func interact(can_move: bool) -> void:
 		speed = 0.0
 		velocity.x = 0.0
 	pass
+
+
+func _on_InputTimer_timeout() -> void:
+	can_input_on_ready = true

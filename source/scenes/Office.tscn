@@ -324,6 +324,7 @@ extents = Vector2( 38.8853, 86.4634 )
 extents = Vector2( 37.3463, 76.9229 )
 
 [node name="Office" type="Node2D"]
+position = Vector2( 24, 0 )
 
 [node name="ObjectiveMarker" parent="." instance=ExtResource( 2 )]
 position = Vector2( -294, -75 )
@@ -697,14 +698,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3083.36, -135.361 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 19 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 20 )
-frame = 14
+frame = 1
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -766,7 +767,7 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 21 )
-frame = 19
+frame = 18
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -798,7 +799,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 22 )
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 
@@ -806,7 +807,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 23 )
-frame = 10
+frame = 7
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -818,7 +819,7 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 24 )
-frame = 9
+frame = 14
 playing = true
 flip_h = true
 
@@ -922,7 +923,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 1
+frame = 15
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -934,11 +935,12 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 26 )
-frame = 8
+frame = 5
 playing = true
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 87, -1 )
+can_input_on_ready = false
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
 current = true
