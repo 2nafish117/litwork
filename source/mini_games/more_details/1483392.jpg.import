@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/05.png-ad99456dc168cc011ebbcf6488891d28.stex"
+path="res://.import/1483392.jpg-1d8a50ab993e246cda1caff004e899ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/characters/player_female/05.png"
-dest_files=[ "res://.import/05.png-ad99456dc168cc011ebbcf6488891d28.stex" ]
+source_file="res://source/mini_games/more_details/1483392.jpg"
+dest_files=[ "res://.import/1483392.jpg-1d8a50ab993e246cda1caff004e899ec.stex" ]
 
 [params]
 

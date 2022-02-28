@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.distance_to(objective.global_position) <= 200:
 		#global_position = objective.global_position + Vector2.UP * 50.0
-		pos = objective.global_position - Vector2(0.0, 1.0) * 100.0
+		pos = objective.global_position - Vector2(0.0, 1.0) * 150.0
 		pos.y += 4.0 * sin(time * 5.0)
 	
 	pos.x = clamp(pos.x, center.x - size.x + margin_horizontal, center.x + size.x - margin_horizontal)

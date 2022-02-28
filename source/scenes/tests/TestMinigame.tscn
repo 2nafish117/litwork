@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interactibles/MinigameArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/mini_games/more_details/MoreDetailsForm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1576, 167.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 171.5, 106.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 104.082, 123.464 )
 
 [node name="TestMinigame" type="Node2D"]
 
@@ -27,9 +32,23 @@ player_path = NodePath("../PlayerCharecter")
 
 [node name="MinigameArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 402, -145 )
+next_prompt = NodePath("../DialogueArea")
 active = true
+begin_on_enter = true
 minigame = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinigameArea"]
 position = Vector2( -26.5, -28.5 )
 shape = SubResource( 2 )
+
+[node name="DialogueArea" parent="." instance=ExtResource( 6 )]
+position = Vector2( 965.349, -191.724 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
+shape = SubResource( 3 )
+
+[node name="SpeechBox" parent="DialogueArea" instance=ExtResource( 5 )]
+margin_left = -18.4998
+margin_top = -230.406
+margin_right = 281.5
+margin_bottom = -130.406

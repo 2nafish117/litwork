@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=1]
 [ext_resource path="res://source/ui/font_heading.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/calendar_button/scripts/calendar_script.gd" type="Script" id=4]
 [ext_resource path="res://source/mini_games/more_details/MoreDetailsForm.gd" type="Script" id=5]
 [ext_resource path="res://source/ui/font_ui_entry.tres" type="DynamicFont" id=6]
+[ext_resource path="res://source/mini_games/more_details/1483392.jpg" type="Texture" id=7]
 
 [sub_resource type="Image" id=1]
 data = {
@@ -42,6 +43,11 @@ __meta__ = {
 }
 json_path = "res://assets/more_details_options.json"
 
+[node name="1483392" type="Sprite" parent="."]
+position = Vector2( 512, 384 )
+scale = Vector2( 0.533333, 0.64 )
+texture = ExtResource( 7 )
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,10 +76,10 @@ custom_constants/separation = 20
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 424.0
 margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0.490196, 0.254902, 0.254902, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
 text = "Tell us more."
 align = 1
 
