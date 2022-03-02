@@ -26,6 +26,9 @@ var player = null
 onready var entry_audio = $EntryAudio
 onready var exit_audio = $ExitAudio
 
+func activate():
+	active = true
+
 func _process(_delta: float) -> void:
 	if !active:
 		pass
@@ -47,7 +50,7 @@ func on_question_answered():
 		var next = get_node_or_null(next_prompt)
 		if next != null:
 			# if ERROR: make sure next_prompt is of type QuestionPromptArea!!!
-			next.active = true
+			next.activate()
 			ObjectiveController.set_current_objective(next)
 			print("question set next active")
 			print(next.name)

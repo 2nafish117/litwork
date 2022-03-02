@@ -45,15 +45,17 @@ func _on_MinigameArea_body_exited(body: Node) -> void:
 		print("player out of minigame")
 		player = null
 
+func activate():
+	active = true
 
 func on_minigame_end() -> void:
 	emit_signal("minigame_end")
-	if stop_for_minigame:
+	if player != null and stop_for_minigame:
 		player.movement_modifier = 1.0
 	var next = get_node_or_null(next_prompt)
 	if next != null:
 		# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
-		next.active = true
+		next.activate()
 		ObjectiveController.set_current_objective(next)
 
 

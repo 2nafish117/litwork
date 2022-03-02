@@ -60,6 +60,10 @@ func _ready() -> void:
 			var _throw = btn.connect("pressed", self, "go_to_floor", [c.floor_number])
 			current_floor = c
 
+func restrict_to_floor(f: int):
+	for b in elevator_button_container.get_children():
+		b.disabled = b.get_floor_number() != f
+
 func go_to_floor(floor_number: int):
 	button_pressed_audio.play(0.0)
 	for f in floors:

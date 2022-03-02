@@ -305,28 +305,28 @@ extents = Vector2( 64.7973, 135.961 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 63.4059, 135.943 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 60.9446, 145.87 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=74]
 extents = Vector2( 64.5354, 146.726 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=75]
 extents = Vector2( 60.8596, 143.652 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=76]
 extents = Vector2( 60.21, 143.17 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 40.1812, 131.691 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 66.8688, 145.675 )
 
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 54.847, 152.632 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 50.5761, 149.468 )
 
 [sub_resource type="RectangleShape2D" id=35]
@@ -526,7 +526,7 @@ __meta__ = {
 }
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor2Collisions"]
-position = Vector2( 0, -750 )
+position = Vector2( 0, -759 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2Collisions/StaticBody2D2"]
 position = Vector2( 932.5, 38 )
@@ -595,6 +595,9 @@ shape = SubResource( 16 )
 [node name="Background" type="ParallaxBackground" parent="."]
 
 [node name="Walls" type="ParallaxLayer" parent="Background"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wall1" type="TextureRect" parent="Background/Walls"]
 margin_top = -728.0
@@ -642,6 +645,9 @@ __meta__ = {
 
 [node name="Floors" type="ParallaxLayer" parent="Background"]
 motion_mirroring = Vector2( 1024, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor1" type="TextureRect" parent="Background/Floors"]
 margin_top = -1.0
@@ -735,6 +741,9 @@ __meta__ = {
 }
 
 [node name="Props" type="ParallaxLayer" parent="Background"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor1" type="Node2D" parent="Background/Props"]
 
@@ -818,14 +827,13 @@ texture = ExtResource( 15 )
 position = Vector2( 3310.7, -144.415 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 18 )
-frame = 16
+frame = 3
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -887,7 +895,7 @@ texture = ExtResource( 24 )
 position = Vector2( 794.299, -910.374 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 19 )
-frame = 21
+frame = 8
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -919,6 +927,7 @@ texture = ExtResource( 61 )
 position = Vector2( 1099.71, -903.632 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 20 )
+frame = 7
 playing = true
 flip_h = true
 
@@ -926,7 +935,7 @@ flip_h = true
 position = Vector2( 622.261, -920.692 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 21 )
-frame = 14
+frame = 2
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -938,7 +947,7 @@ texture = ExtResource( 119 )
 position = Vector2( 428.778, -895.82 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 22 )
-frame = 11
+frame = 16
 playing = true
 flip_h = true
 
@@ -1042,7 +1051,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1598.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 23 )
-frame = 12
+frame = 5
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -1054,7 +1063,7 @@ texture = ExtResource( 173 )
 position = Vector2( 143.194, -1645.33 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 24 )
-frame = 16
+frame = 23
 playing = true
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 3 )]
@@ -1076,7 +1085,7 @@ z_index = 5
 [node name="TextureRect" type="TextureRect" parent="Foreground/ElevatorRoof"]
 margin_left = 1852.0
 margin_top = -2960.0
-margin_right = 2223.0
+margin_right = 2232.0
 margin_bottom = -2619.0
 texture = ExtResource( 13 )
 stretch_mode = 2
@@ -1087,7 +1096,7 @@ __meta__ = {
 [node name="TextureRect2" type="TextureRect" parent="Foreground/ElevatorRoof"]
 margin_left = 1856.0
 margin_top = -2165.0
-margin_right = 2227.0
+margin_right = 2232.0
 margin_bottom = -1831.0
 texture = ExtResource( 13 )
 stretch_mode = 2
@@ -1098,7 +1107,7 @@ __meta__ = {
 [node name="TextureRect3" type="TextureRect" parent="Foreground/ElevatorRoof"]
 margin_left = 1856.0
 margin_top = -1424.0
-margin_right = 2227.0
+margin_right = 2232.0
 margin_bottom = -1103.0
 texture = ExtResource( 13 )
 stretch_mode = 2
@@ -1122,7 +1131,7 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="Foreground/ElevatorFloor"]
 margin_left = 1861.0
 margin_top = -798.0
-margin_right = 2232.0
+margin_right = 2236.0
 margin_bottom = -698.0
 texture = ExtResource( 12 )
 stretch_mode = 2
@@ -1133,7 +1142,7 @@ __meta__ = {
 [node name="TextureRect2" type="TextureRect" parent="Foreground/ElevatorFloor"]
 margin_left = 1861.0
 margin_top = -1502.0
-margin_right = 2232.0
+margin_right = 2235.0
 margin_bottom = -1402.0
 texture = ExtResource( 12 )
 stretch_mode = 2
@@ -1195,7 +1204,7 @@ next_prompt = NodePath("../DetailForm")
 objective_text = "Go to the HR Department"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea"]
-shape = SubResource( 27 )
+shape = SubResource( 73 )
 
 [node name="SpeechBox" parent="Interactions/HR/DialogueArea" instance=ExtResource( 5 )]
 margin_left = -361.092
@@ -1228,14 +1237,14 @@ minigame = ExtResource( 9 )
 objective_text = "Fill up the form"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DetailForm"]
-shape = SubResource( 28 )
+shape = SubResource( 74 )
 
 [node name="DialogueArea2" parent="Interactions/HR" instance=ExtResource( 186 )]
 position = Vector2( 2736.84, -163.993 )
 next_prompt = NodePath("../QuestionPromptArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea2"]
-shape = SubResource( 29 )
+shape = SubResource( 75 )
 
 [node name="SpeechBox" parent="Interactions/HR/DialogueArea2" instance=ExtResource( 5 )]
 margin_left = 20.217
@@ -1272,16 +1281,18 @@ next_prompt = NodePath("../WaypointArea")
 objective_text = "Go to the Elevator"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/QuestionPromptArea"]
-shape = SubResource( 30 )
+shape = SubResource( 76 )
 
 [node name="WaypointArea" parent="Interactions/HR" instance=ExtResource( 10 )]
 position = Vector2( 2045.5, -295.602 )
 next_prompt = NodePath("../DialogueArea3")
 objective_text = "Meet the HR at floor 3"
+elevator_path = NodePath("../../../Elevator/Elevator")
+active_floor = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/WaypointArea"]
 position = Vector2( 2, 115.578 )
-shape = SubResource( 31 )
+shape = SubResource( 77 )
 
 [node name="DialogueArea3" parent="Interactions/HR" instance=ExtResource( 186 )]
 position = Vector2( 1237.43, -1669.16 )
@@ -1290,7 +1301,7 @@ objective_text = "Meet the Manager"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea3"]
 position = Vector2( 0, 1.44971 )
-shape = SubResource( 32 )
+shape = SubResource( 78 )
 
 [node name="SpeechBox" parent="Interactions/HR/DialogueArea3" instance=ExtResource( 5 )]
 margin_left = -344.858
@@ -1331,10 +1342,11 @@ position = Vector2( -402.444, 1663.83 )
 
 [node name="DialogueArea2" parent="Interactions/Manager" instance=ExtResource( 186 )]
 position = Vector2( 50.1302, -5.32617 )
+next_prompt = NodePath("../DialogueArea3")
 objective_text = "Talk to Manager"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/DialogueArea2"]
-shape = SubResource( 34 )
+shape = SubResource( 79 )
 
 [node name="SpeechBox" parent="Interactions/Manager/DialogueArea2" instance=ExtResource( 5 )]
 margin_top = -322.154
@@ -1354,7 +1366,6 @@ We are shooting a team video, we would like you to be a part of it."
 
 [node name="Video" parent="Interactions/Manager" instance=ExtResource( 8 )]
 position = Vector2( 50.1302, -5.32605 )
-next_prompt = NodePath("../DialogueArea3")
 minigame = ExtResource( 9 )
 objective_text = "Video"
 
@@ -1364,7 +1375,6 @@ shape = SubResource( 35 )
 [node name="DialogueArea3" parent="Interactions/Manager" instance=ExtResource( 186 )]
 position = Vector2( 50.1302, -5.32593 )
 next_prompt = NodePath("../../Desk01/DialogueArea")
-objective_text = "Go to your Desk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/DialogueArea3"]
 shape = SubResource( 36 )
@@ -1372,7 +1382,7 @@ shape = SubResource( 36 )
 [node name="SpeechBox" parent="Interactions/Manager/DialogueArea3" instance=ExtResource( 5 )]
 margin_left = -406.041
 margin_top = -322.154
-margin_right = -56.0413
+margin_right = -56.041
 margin_bottom = -172.154
 rect_min_size = Vector2( 350, 150 )
 bb_text = "Why don’t you go ahead and check out your desk!"

@@ -31,12 +31,15 @@ func _on_speech_spoken() -> void:
 		speechboxes[index].speak()
 		index += 1
 
+func activate():
+	active = true
+
 func _on_DialogueArea_dialogue_end() -> void:
 	if player != null:
 		var next = get_node_or_null(next_prompt)
 		if next != null:
 			# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
-			next.active = true
+			next.activate()
 			ObjectiveController.set_current_objective(next)
 		if stop_for_dialogue:
 			player.movement_modifier = 1.0
