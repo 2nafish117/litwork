@@ -79,6 +79,7 @@ func go_to_floor(floor_number: int):
 
 func _on_Area2D_body_entered(body: Node) -> void:
 	# show lift floor buttons
+	
 	if body is PlayerCharecter:
 		print("player entered elevator")
 		player = body

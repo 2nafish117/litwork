@@ -5,10 +5,10 @@
 [ext_resource path="res://source/interactibles/elevator/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 186.063, 70 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 456.5, 70 )
 
 [node name="TestElevator" type="Node2D"]
@@ -25,7 +25,7 @@ floor_name = "terrace"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloors/Floor3"]
 position = Vector2( 0, 70 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor2" parent="ElevatorFloors" instance=ExtResource( 3 )]
 position = Vector2( 0, -500 )
@@ -34,14 +34,14 @@ floor_name = "cafe"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ElevatorFloors/Floor2"]
 position = Vector2( 0, 70 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor" parent="ElevatorFloors" instance=ExtResource( 3 )]
 floor_name = "ground"
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ElevatorFloors/Floor"]
 position = Vector2( 2, 70 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 1 )]
 position = Vector2( -268, 0 )
@@ -56,42 +56,42 @@ player_path = NodePath("../PlayerCharecter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D"]
 position = Vector2( -641.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floors"]
 position = Vector2( -832, -500 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D2"]
 position = Vector2( 189.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floors"]
 position = Vector2( -832, -1000 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D3"]
 position = Vector2( 189.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floors"]
 position = Vector2( 1288, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D4"]
 position = Vector2( -641.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floors"]
 position = Vector2( 456, -500 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D5"]
 position = Vector2( 189.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floors"]
 position = Vector2( 456, -1000 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D6"]
 position = Vector2( 189.5, 70 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [editable path="ElevatorFloors/Floor3"]
 [editable path="ElevatorFloors/Floor2"]

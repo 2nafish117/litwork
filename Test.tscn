@@ -1,64 +1,1045 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=55 format=2]
 
-[ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/interactibles/QuestionPromptArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/interactibles/WaypointArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/mini_games/test_minigame/Main.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/interactibles/MinigameArea.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72.5, 143 )
+extents = Vector2( 64.7973, 135.961 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 37.9547, 79.0461 )
+extents = Vector2( 63.4059, 135.943 )
 
-[node name="Test" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 60.9446, 145.87 )
 
-[node name="Interaction2" type="Node2D" parent="."]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64.5354, 146.726 )
 
-[node name="DialogueArea" parent="Interaction2" instance=ExtResource( 3 )]
-position = Vector2( 1665.15, -207.687 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 60.8596, 143.652 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 60.21, 143.17 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 111.898, 131.691 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 66.8688, 145.675 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 54.847, 152.632 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 50.5761, 149.468 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 55.6293, 147.686 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 56.4702, 154.501 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 57.7178, 144.784 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 70.1455, 150.669 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 70.1455, 150.669 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 110.813, 142.936 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 65.4764, 147.303 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 70.173, 147.746 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 65.6781, 144.749 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 62.6815, 141.753 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 70.173, 143.251 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 65.6781, 141.753 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 68.6747, 147.746 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 117.462, 170.411 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 75.4868, 184.812 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 98.7102, 193.361 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 97.2117, 190.364 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 125.637, 182.801 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 58.4407, 150.356 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 52.939, 146.031 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 61.2686, 148.401 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 54.9697, 144.262 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 60.7322, 147.589 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 61.4915, 144.469 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 62.7512, 145.729 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 115.017, 204.784 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 85.7279, 176.183 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 103.419, 183.583 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 100.055, 181.902 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 77.8331, 173.493 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 80.6119, 175.175 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 75.2534, 181.902 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 78.6171, 168.447 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 116.643, 162.801 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 61.5352, 145.116 )
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 61.5322, 146.089 )
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 62.0747, 146.923 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 60.5764, 146.173 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Interactions" type="Node2D" parent="."]
+
+[node name="Reception" type="Node2D" parent="Interactions"]
+
+[node name="DialogueArea" parent="Interactions/Reception" instance=ExtResource( 3 )]
+position = Vector2( 660.712, -150 )
 next_prompt = NodePath("../QuestionPromptArea")
-active = false
+active = true
+first_objective = true
+objective_text = "Go to the Reception"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction2/DialogueArea"]
-position = Vector2( 14.0137, 53.8648 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Reception/DialogueArea"]
 shape = SubResource( 1 )
 
-[node name="SpeechBox" parent="Interaction2/DialogueArea" instance=ExtResource( 1 )]
-margin_left = 319.29
-margin_top = -217.841
-margin_right = 619.29
-margin_bottom = -117.841
-bb_text = "helloddddddddddddddddddddddddddddddd"
+[node name="SpeechBox" parent="Interactions/Reception/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -66.071
+margin_top = -300.0
+margin_right = 283.929
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = "Oh! I don’t see anyone at the reception, but there are some people over there."
 
-[node name="SpeechBox2" parent="Interaction2/DialogueArea" instance=ExtResource( 1 )]
-margin_left = -62.0
-margin_top = -216.0
-margin_right = 238.0
-margin_bottom = -116.0
-bb_text = "2asddddddddddddddddddddddddddddddddddddddddd"
+[node name="QuestionPromptArea" parent="Interactions/Reception" instance=ExtResource( 1 )]
+position = Vector2( 660.199, -150 )
+question = "What are you most likely to do to find out where to go?"
+option_a = "Wait for the receptionist to return"
+option_b = "Approach the closest person around for help"
+option_c = "Meet people in the waiting area and ask them"
+option_d = "Call the number in the email you received from the company"
+next_prompt = NodePath("../../HR/DialogueArea")
+objective_text = "Go and meet the HR"
 
-[node name="SpeechBox3" parent="Interaction2/DialogueArea" instance=ExtResource( 1 )]
-margin_left = -63.0
-margin_top = -219.0
-margin_right = 237.0
-margin_bottom = -119.0
-bb_text = "3sdaddddddddddddddddddddddddddddd"
-
-[node name="SpeechBox4" parent="Interaction2/DialogueArea" instance=ExtResource( 1 )]
-margin_left = -65.0
-margin_top = -216.0
-margin_right = 235.0
-margin_bottom = -116.0
-bb_text = "asfasDFsdgkfnsdlkjgn"
-
-[node name="SpeechBox5" parent="Interaction2/DialogueArea" instance=ExtResource( 1 )]
-margin_left = -62.2263
-margin_top = -219.474
-margin_right = 237.774
-margin_bottom = -119.474
-
-[node name="QuestionPromptArea" parent="Interaction2" instance=ExtResource( 2 )]
-position = Vector2( 1674.71, -168.264 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction2/QuestionPromptArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Reception/QuestionPromptArea"]
 shape = SubResource( 2 )
+
+[node name="HR" type="Node2D" parent="Interactions"]
+position = Vector2( 2655.55, -201.815 )
+
+[node name="DialogueArea" parent="Interactions/HR" instance=ExtResource( 3 )]
+position = Vector2( 25.9331, 48.4639 )
+next_prompt = NodePath("../DetailForm")
+objective_text = "Go to the HR Department"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea"]
+shape = SubResource( 3 )
+
+[node name="SpeechBox" parent="Interactions/HR/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -361.092
+margin_top = -300.0
+margin_right = -11.092
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = "I am glad I found you here"
+
+[node name="SpeechBox2" parent="Interactions/HR/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 22.474
+margin_top = -300.0
+margin_right = 372.474
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = "Good to see you"
+
+[node name="SpeechBox3" parent="Interactions/HR/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 22.474
+margin_top = -300.0
+margin_right = 372.474
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = "As part of the onboarding, here are some forms to fill."
+
+[node name="DetailForm" parent="Interactions/HR" instance=ExtResource( 6 )]
+position = Vector2( 25.9331, 54.4004 )
+next_prompt = NodePath("../DialogueArea2")
+minigame = ExtResource( 5 )
+objective_text = "Fill up the form"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DetailForm"]
+shape = SubResource( 4 )
+
+[node name="DialogueArea2" parent="Interactions/HR" instance=ExtResource( 3 )]
+position = Vector2( 25.9333, 44.8151 )
+next_prompt = NodePath("../QuestionPromptArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea2"]
+shape = SubResource( 5 )
+
+[node name="SpeechBox" parent="Interactions/HR/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 20.217
+margin_top = -300.0
+margin_right = 370.217
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = "Done already? That’s great! Here are the next steps:"
+
+[node name="SpeechBox2" parent="Interactions/HR/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 22.474
+margin_top = -300.0
+margin_right = 372.474
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = " You need to get some forms signed by different Department Heads"
+
+[node name="SpeechBox3" parent="Interactions/HR/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 22.474
+margin_top = -300.0
+margin_right = 372.474
+margin_bottom = -150.0
+rect_min_size = Vector2( 350, 100 )
+bb_text = " and get your access card from the Admin department and read up this policy document."
+
+[node name="QuestionPromptArea" parent="Interactions/HR" instance=ExtResource( 1 )]
+position = Vector2( 25.9331, 51.8984 )
+question = "How are you mostly likely to complete all these tasks?"
+option_a = "Team up with a colleague and complete all tasks one by one"
+option_b = "Read the policy document while waiting for the Department Heads to be free"
+option_c = "Seek more clarity from HR on the best way to get these done"
+option_d = "Hurry up and get everything done as soon as possible"
+next_prompt = NodePath("../WaypointArea")
+objective_text = "Go to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/QuestionPromptArea"]
+shape = SubResource( 6 )
+
+[node name="WaypointArea" parent="Interactions/HR" instance=ExtResource( 2 )]
+position = Vector2( -611.734, -93.7867 )
+next_prompt = NodePath("../DialogueArea3")
+objective_text = "Meet the HR at floor 3"
+elevator_path = NodePath("../../../Elevator/Elevator")
+active_floor = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/WaypointArea"]
+position = Vector2( 2, 115.578 )
+shape = SubResource( 7 )
+
+[node name="DialogueArea3" parent="Interactions/HR" instance=ExtResource( 3 )]
+position = Vector2( 1237.43, -1669.16 )
+next_prompt = NodePath("../../Manager/DialogueArea")
+objective_text = "Meet the Manager"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR/DialogueArea3"]
+position = Vector2( 0, 1.44971 )
+shape = SubResource( 8 )
+
+[node name="SpeechBox" parent="Interactions/HR/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -344.858
+margin_top = -322.154
+margin_right = 5.1416
+margin_bottom = -172.154
+rect_min_size = Vector2( 350, 150 )
+bb_text = "All done? Now let’s go and meet your manager and your team"
+
+[node name="Manager" type="Node2D" parent="Interactions"]
+position = Vector2( 484.863, -1663.47 )
+
+[node name="DialogueArea" parent="Interactions/Manager" instance=ExtResource( 3 )]
+position = Vector2( 200.612, -3.64294 )
+next_prompt = NodePath("../DialogueArea2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/DialogueArea"]
+shape = SubResource( 9 )
+
+[node name="SpeechBox" parent="Interactions/Manager/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 1.58527
+margin_top = -323.837
+margin_right = 351.585
+margin_bottom = -173.837
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Have a great day!"
+
+[node name="SpeechBox2" parent="Interactions/Manager/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 1.58527
+margin_top = -323.837
+margin_right = 351.585
+margin_bottom = -173.837
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Hi, here is your new team member!"
+
+[node name="HRwalkAway" type="Node2D" parent="Interactions/Manager"]
+position = Vector2( -402.444, 1663.83 )
+
+[node name="DialogueArea2" parent="Interactions/Manager" instance=ExtResource( 3 )]
+position = Vector2( 50.1302, -5.32617 )
+next_prompt = NodePath("../Video")
+objective_text = "Talk to Manager"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/DialogueArea2"]
+shape = SubResource( 10 )
+
+[node name="SpeechBox" parent="Interactions/Manager/DialogueArea2" instance=ExtResource( 4 )]
+margin_top = -322.154
+margin_right = 350.0
+margin_bottom = -172.154
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Good morning, it’s nice to meet you."
+
+[node name="SpeechBox2" parent="Interactions/Manager/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -406.041
+margin_top = -322.154
+margin_right = -56.0413
+margin_bottom = -172.154
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Good morning, likewise! 
+We are shooting a team video, we would like you to be a part of it."
+
+[node name="Video" parent="Interactions/Manager" instance=ExtResource( 6 )]
+position = Vector2( 50.1302, -5.32605 )
+next_prompt = NodePath("../DialogueArea3")
+minigame = ExtResource( 5 )
+objective_text = "Video"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/Video"]
+shape = SubResource( 11 )
+
+[node name="DialogueArea3" parent="Interactions/Manager" instance=ExtResource( 3 )]
+position = Vector2( 50.1302, -5.32593 )
+next_prompt = NodePath("../../Desk01/DialogueArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Manager/DialogueArea3"]
+shape = SubResource( 12 )
+
+[node name="SpeechBox" parent="Interactions/Manager/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -406.041
+margin_top = -322.154
+margin_right = -56.041
+margin_bottom = -172.154
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Why don’t you go ahead and check out your desk!"
+
+[node name="Desk01" type="Node2D" parent="Interactions"]
+position = Vector2( 2715.65, -1629.29 )
+
+[node name="DialogueArea" parent="Interactions/Desk01" instance=ExtResource( 3 )]
+position = Vector2( -62.2957, 0 )
+next_prompt = NodePath("../MinigameArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk01/DialogueArea"]
+position = Vector2( 0, -45.1957 )
+shape = SubResource( 13 )
+
+[node name="SpeechBox" parent="Interactions/Desk01/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 72.2957
+margin_top = -369.213
+margin_right = 422.296
+margin_bottom = -219.213
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Hey, how’s your first day going. Let me tell you about some traditions all newcomers have to go through."
+
+[node name="SpeechBox2" parent="Interactions/Desk01/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -354.677
+margin_top = -369.213
+margin_right = -4.67749
+margin_bottom = -219.213
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Sure this sounds fun!"
+
+[node name="MinigameArea" parent="Interactions/Desk01" instance=ExtResource( 6 )]
+position = Vector2( -62.2957, -45.1957 )
+next_prompt = NodePath("../DialogueArea2")
+begin_on_enter = true
+minigame = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk01/MinigameArea"]
+shape = SubResource( 14 )
+
+[node name="DialogueArea2" parent="Interactions/Desk01" instance=ExtResource( 3 )]
+position = Vector2( -62.2957, -45.1957 )
+next_prompt = NodePath("../WaypointArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk01/DialogueArea2"]
+shape = SubResource( 15 )
+
+[node name="SpeechBox" parent="Interactions/Desk01/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -354.677
+margin_top = -324.018
+margin_right = -54.6775
+margin_bottom = -224.018
+rect_min_size = Vector2( 350, 150 )
+bb_text = "That was fun!"
+
+[node name="SpeechBox2" parent="Interactions/Desk01/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 72.2957
+margin_top = -324.018
+margin_right = 422.296
+margin_bottom = -174.018
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Glad you enjoyed it. There are a few more coming up later in your day."
+
+[node name="SpeechBox3" parent="Interactions/Desk01/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 72.2957
+margin_top = -324.018
+margin_right = 422.296
+margin_bottom = -174.018
+rect_min_size = Vector2( 350, 150 )
+bb_text = "For now, you have to head to the conference room on the second floor."
+
+[node name="WaypointArea" parent="Interactions/Desk01" instance=ExtResource( 2 )]
+position = Vector2( -670.151, -229.213 )
+next_prompt = NodePath("../../Conference/DialogueArea")
+objective_text = "Go to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk01/WaypointArea"]
+position = Vector2( -1.68188, 172.384 )
+shape = SubResource( 16 )
+
+[node name="Conference" type="Node2D" parent="Interactions"]
+position = Vector2( 932, -980.066 )
+
+[node name="DialogueArea" parent="Interactions/Conference" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/DialogueArea"]
+shape = SubResource( 17 )
+
+[node name="SpeechBox" parent="Interactions/Conference/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -654.369
+margin_top = -261.924
+margin_right = -304.369
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Good to see you, you will be part of this team."
+
+[node name="SpeechBox2" parent="Interactions/Conference/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -651.835
+margin_top = -261.924
+margin_right = -301.835
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Before we begin, each team needs to pick a team leader."
+
+[node name="QuestionPromptArea" parent="Interactions/Conference" instance=ExtResource( 1 )]
+question = "What would you do?"
+option_a = "Meet the team and state your preference"
+option_b = "Nominate yourself to lead the team"
+option_c = "Wait for the team to choose a leader"
+option_d = "Build on other people’s suggestions"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/QuestionPromptArea"]
+shape = SubResource( 18 )
+
+[node name="DialogueArea2" parent="Interactions/Conference" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/DialogueArea2"]
+shape = SubResource( 19 )
+
+[node name="SpeechBox" parent="Interactions/Conference/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -654.369
+margin_top = -261.924
+margin_right = -304.369
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Now that the leaders have been identified, we will begin soon."
+
+[node name="QuestionPromptArea2" parent="Interactions/Conference" instance=ExtResource( 1 )]
+question = " While you wait for the activities to start, what would you do?"
+option_a = "Have a conversation with a familiar face in the team"
+option_b = "Quickly bond with your own team members"
+option_c = "Wait for the team to settle down"
+option_d = "Interact with other teams"
+next_prompt = NodePath("../DialogueArea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/QuestionPromptArea2"]
+shape = SubResource( 20 )
+
+[node name="DialogueArea3" parent="Interactions/Conference" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/DialogueArea3"]
+shape = SubResource( 21 )
+
+[node name="SpeechBox" parent="Interactions/Conference/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -216.14
+margin_top = 209.275
+margin_right = 283.86
+margin_bottom = 319.275
+bb_text = "The activity has begun, you are now halfway through."
+
+[node name="SpeechBox2" parent="Interactions/Conference/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -447.136
+margin_top = -261.924
+margin_right = -97.1365
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Oh look! That team is not following the rules"
+
+[node name="SpeechBox3" parent="Interactions/Conference/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -654.369
+margin_top = -261.924
+margin_right = -304.369
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Let’s sort this out, what do you guys suggest we do?"
+
+[node name="QuestionPromptArea3" parent="Interactions/Conference" instance=ExtResource( 1 )]
+question = "What are you most likely to suggest? "
+option_a = "Rule breakers should be disqualified"
+option_b = "Propose changes in the rules to make all teams equal"
+option_c = "Discuss details of how the rule was broken to decide next steps"
+option_d = "It’s just a game. Let’s have fun!"
+next_prompt = NodePath("../DialogueArea4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/QuestionPromptArea3"]
+shape = SubResource( 22 )
+
+[node name="DialogueArea4" parent="Interactions/Conference" instance=ExtResource( 3 )]
+next_prompt = NodePath("../WaypointArea")
+objective_text = "Go to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/DialogueArea4"]
+shape = SubResource( 23 )
+
+[node name="SpeechBox2" parent="Interactions/Conference/DialogueArea4" instance=ExtResource( 4 )]
+margin_left = -447.136
+margin_top = -261.924
+margin_right = -97.1365
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Okay, now that the issue is resolved let us finish the game"
+
+[node name="SpeechBox" parent="Interactions/Conference/DialogueArea4" instance=ExtResource( 4 )]
+margin_left = -216.14
+margin_top = 209.275
+margin_right = 283.86
+margin_bottom = 319.275
+bb_text = "teams talking to each other in clusters"
+
+[node name="SpeechBox3" parent="Interactions/Conference/DialogueArea4" instance=ExtResource( 4 )]
+margin_left = -447.136
+margin_top = -261.924
+margin_right = -97.1365
+margin_bottom = -111.924
+rect_min_size = Vector2( 350, 150 )
+bb_text = "That was fun, let’s go for lunch"
+
+[node name="WaypointArea" parent="Interactions/Conference" instance=ExtResource( 2 )]
+position = Vector2( 1113.5, -109.927 )
+next_prompt = NodePath("../../Lunch/DialogueArea")
+objective_text = "Go to floor 4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Conference/WaypointArea"]
+position = Vector2( 0.890869, 105.126 )
+shape = SubResource( 24 )
+
+[node name="Lunch" type="Node2D" parent="Interactions"]
+position = Vector2( 2982.57, -2470.19 )
+
+[node name="DialogueArea" parent="Interactions/Lunch" instance=ExtResource( 3 )]
+next_prompt = NodePath("../MinigameArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Lunch/DialogueArea"]
+shape = SubResource( 25 )
+
+[node name="SpeechBox" parent="Interactions/Lunch/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 55.4375
+margin_top = -300.785
+margin_right = 405.438
+margin_bottom = -150.785
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Why don’t we continue with the office traditions"
+
+[node name="SpeechBox2" parent="Interactions/Lunch/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -411.918
+margin_top = -300.785
+margin_right = -61.9182
+margin_bottom = -150.785
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Sounds fun! I’m ready!"
+
+[node name="MinigameArea" parent="Interactions/Lunch" instance=ExtResource( 6 )]
+next_prompt = NodePath("../DialogueArea2")
+minigame = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Lunch/MinigameArea"]
+shape = SubResource( 26 )
+
+[node name="DialogueArea2" parent="Interactions/Lunch" instance=ExtResource( 3 )]
+next_prompt = NodePath("../WaypointArea")
+objective_text = "Go to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Lunch/DialogueArea2"]
+shape = SubResource( 27 )
+
+[node name="SpeechBox2" parent="Interactions/Lunch/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -411.918
+margin_top = -300.785
+margin_right = -61.9182
+margin_bottom = -150.785
+rect_min_size = Vector2( 350, 150 )
+bb_text = "That was interesting!"
+
+[node name="SpeechBox3" parent="Interactions/Lunch/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -213.255
+margin_top = 163.215
+margin_right = 286.745
+margin_bottom = 273.215
+rect_min_size = Vector2( 500, 110 )
+bb_text = " email notification on phone, open email"
+
+[node name="SpeechBox4" parent="Interactions/Lunch/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -213.255
+margin_top = 163.215
+margin_right = 286.745
+margin_bottom = 273.215
+rect_min_size = Vector2( 350, 110 )
+bb_text = "Email – from manager – important project"
+
+[node name="SpeechBox5" parent="Interactions/Lunch/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -411.918
+margin_top = -300.785
+margin_right = -61.9182
+margin_bottom = -150.785
+rect_min_size = Vector2( 350, 150 )
+bb_text = "Looks important, I should head back right away"
+
+[node name="WaypointArea" parent="Interactions/Lunch" instance=ExtResource( 2 )]
+position = Vector2( -937.068, -190.785 )
+next_prompt = NodePath("../../Desk02/DialogueArea")
+objective_text = "Go to floor 3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Lunch/WaypointArea"]
+position = Vector2( 4, 200 )
+shape = SubResource( 28 )
+
+[node name="Desk02" type="Node2D" parent="Interactions"]
+position = Vector2( 2982.57, -1674.48 )
+
+[node name="DialogueArea" parent="Interactions/Desk02" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/DialogueArea"]
+shape = SubResource( 29 )
+
+[node name="SpeechBox" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 137.209
+margin_right = 255.633
+margin_bottom = 247.209
+bb_text = "reaches desk and interacts with Manager"
+
+[node name="SpeechBox2" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -256.916
+margin_top = -324.017
+margin_right = 93.0837
+margin_bottom = -174.017
+bb_text = "I have sent you a file with the instructions and data required."
+
+[node name="SpeechBox3" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 137.209
+margin_right = 255.633
+margin_bottom = 247.209
+bb_text = " Manager’s phone ringing"
+
+[node name="SpeechBox4" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -256.916
+margin_top = -324.017
+margin_right = 93.0837
+margin_bottom = -174.017
+bb_text = "This sounds critical, I am on my way."
+
+[node name="SpeechBox5" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 137.209
+margin_right = 255.633
+margin_bottom = 247.209
+bb_text = "Candidate working on the desktop.
+Phone rings"
+
+[node name="SpeechBox6" parent="Interactions/Desk02/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 137.209
+margin_right = 255.633
+margin_bottom = 247.209
+bb_text = "Hi, I am X from the Sales department, send me the data you are working on right away."
+
+[node name="QuestionPromptArea" parent="Interactions/Desk02" instance=ExtResource( 1 )]
+question = "What are you most likely to do?"
+option_a = "Send the data to the sales department"
+option_b = "Wait for manager to return"
+option_c = "Ask your team members what to do"
+option_d = "Finish work on the data and send it"
+next_prompt = NodePath("../TwoColleague")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/QuestionPromptArea"]
+shape = SubResource( 30 )
+
+[node name="TwoColleague" parent="Interactions/Desk02" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/TwoColleague"]
+shape = SubResource( 31 )
+
+[node name="SpeechBox" parent="Interactions/Desk02/TwoColleague" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 135.85
+margin_right = 255.633
+margin_bottom = 245.85
+bb_text = "sitting at the desk. Two colleagues approach the desk"
+
+[node name="SpeechBox2" parent="Interactions/Desk02/TwoColleague" instance=ExtResource( 4 )]
+margin_left = -450.102
+margin_top = -324.017
+margin_right = -100.102
+margin_bottom = -174.017
+bb_text = "Hope you’re enjoying your first day. I have some work you can help me with."
+
+[node name="SpeechBox3" parent="Interactions/Desk02/TwoColleague" instance=ExtResource( 4 )]
+margin_left = -450.102
+margin_top = -324.017
+margin_right = -100.102
+margin_bottom = -174.017
+bb_text = "Even I need some help."
+
+[node name="QuestionPromptArea2" parent="Interactions/Desk02" instance=ExtResource( 1 )]
+question = "What are you mostly likely to do? "
+option_a = "Ask your colleagues which task to complete first"
+option_b = "Take on both tasks simultaneously"
+option_c = "Do one task at a time"
+option_d = "Take on the task that is different from what you have been doing so far"
+next_prompt = NodePath("../ThirdColl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/QuestionPromptArea2"]
+shape = SubResource( 32 )
+
+[node name="ThirdColl" parent="Interactions/Desk02" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/ThirdColl"]
+shape = SubResource( 33 )
+
+[node name="SpeechBox" parent="Interactions/Desk02/ThirdColl" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 135.85
+margin_right = 255.633
+margin_bottom = 245.85
+bb_text = "sitting and working
+"
+
+[node name="SpeechBox2" parent="Interactions/Desk02/ThirdColl" instance=ExtResource( 4 )]
+margin_left = -450.102
+margin_top = -324.024
+margin_right = -100.102
+margin_bottom = -174.024
+bb_text = "Hey, we met during the lunch. So, show me the big project you are working on."
+
+[node name="QuestionPromptArea3" parent="Interactions/Desk02" instance=ExtResource( 1 )]
+question = "What would you do? "
+option_a = "Freely show him the documents"
+option_b = "Share your work and enquire about big projects he is working on"
+option_c = "Briefly explain the work instead of showing"
+option_d = "Ask him to wait until you get your manager’s permission"
+next_prompt = NodePath("../DialogueArea2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/QuestionPromptArea3"]
+shape = SubResource( 34 )
+
+[node name="DialogueArea2" parent="Interactions/Desk02" instance=ExtResource( 3 )]
+next_prompt = NodePath("../WaypointArea")
+objective_text = "Go to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/DialogueArea2"]
+shape = SubResource( 35 )
+
+[node name="SpeechBox" parent="Interactions/Desk02/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -244.367
+margin_top = 135.85
+margin_right = 255.633
+margin_bottom = 245.85
+bb_text = " looks at watch "
+
+[node name="SpeechBox2" parent="Interactions/Desk02/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -156.23
+margin_top = -324.024
+margin_right = 193.77
+margin_bottom = -174.024
+bb_text = "It’s time for a cup of tea."
+
+[node name="WaypointArea" parent="Interactions/Desk02" instance=ExtResource( 2 )]
+position = Vector2( -937.071, -176.834 )
+next_prompt = NodePath("../../TeaBreak/DialogueArea")
+objective_text = "Go to floor 4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk02/WaypointArea"]
+position = Vector2( -1.68188, 107.635 )
+shape = SubResource( 36 )
+
+[node name="TeaBreak" type="Node2D" parent="Interactions"]
+position = Vector2( 1219.25, -2470.19 )
+
+[node name="DialogueArea" parent="Interactions/TeaBreak" instance=ExtResource( 3 )]
+position = Vector2( -182.193, 0 )
+next_prompt = NodePath("../MinigameArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/DialogueArea"]
+shape = SubResource( 37 )
+
+[node name="SpeechBox" parent="Interactions/TeaBreak/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -366.213
+margin_top = -295.785
+margin_right = -16.2126
+margin_bottom = -145.785
+bb_text = "Hey, you’re new! How many games have you played for the office tradition?"
+
+[node name="SpeechBox2" parent="Interactions/TeaBreak/DialogueArea" instance=ExtResource( 4 )]
+margin_left = 2.58716
+margin_top = -295.785
+margin_right = 352.587
+margin_bottom = -145.785
+bb_text = "Three"
+
+[node name="SpeechBox3" parent="Interactions/TeaBreak/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -366.213
+margin_top = -295.785
+margin_right = -16.2126
+margin_bottom = -145.785
+bb_text = "Nice! Are you ready for your next challenge?"
+
+[node name="MinigameArea" parent="Interactions/TeaBreak" instance=ExtResource( 6 )]
+position = Vector2( -182.193, 0 )
+next_prompt = NodePath("../DialogueArea2")
+minigame = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/MinigameArea"]
+shape = SubResource( 38 )
+
+[node name="DialogueArea2" parent="Interactions/TeaBreak" instance=ExtResource( 3 )]
+position = Vector2( -182.193, 0 )
+next_prompt = NodePath("../DialogueArea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/DialogueArea2"]
+shape = SubResource( 39 )
+
+[node name="SpeechBox" parent="Interactions/TeaBreak/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -366.213
+margin_top = -295.785
+margin_right = -16.2126
+margin_bottom = -145.785
+bb_text = "You did great!"
+
+[node name="SpeechBox2" parent="Interactions/TeaBreak/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = 2.58716
+margin_top = -295.785
+margin_right = 352.587
+margin_bottom = -145.785
+bb_text = "Thank you! I had fun!"
+
+[node name="DialogueArea3" parent="Interactions/TeaBreak" instance=ExtResource( 3 )]
+position = Vector2( -740.302, 0 )
+next_prompt = NodePath("../QuestionPromptArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/DialogueArea3"]
+shape = SubResource( 40 )
+
+[node name="SpeechBox" parent="Interactions/TeaBreak/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -198.788
+margin_top = 206.19
+margin_right = 301.212
+margin_bottom = 316.19
+rect_min_size = Vector2( 300, 110 )
+bb_text = "with cup of tea, another team member is sitting there"
+
+[node name="SpeechBox2" parent="Interactions/TeaBreak/DialogueArea3" instance=ExtResource( 4 )]
+margin_left = -198.788
+margin_top = 206.19
+margin_right = 301.212
+margin_bottom = 316.19
+rect_min_size = Vector2( 300, 110 )
+bb_text = "starts a conversation. In the conversation she asks you a personal question"
+
+[node name="QuestionPromptArea" parent="Interactions/TeaBreak" instance=ExtResource( 1 )]
+position = Vector2( -740.302, 0 )
+question = "How are you most likely to respond? "
+option_a = "Answer in a general way, but change the topic to more formal discussions"
+option_b = "You are happy to share these details and continue the conversation"
+option_c = "Answer briefly as a professional courtesy"
+option_d = "Enthusiastically respond, build rapport and make friends"
+next_prompt = NodePath("../DialogueArea4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/QuestionPromptArea"]
+shape = SubResource( 41 )
+
+[node name="DialogueArea4" parent="Interactions/TeaBreak" instance=ExtResource( 3 )]
+position = Vector2( 297.677, 0 )
+next_prompt = NodePath("../QuestionPromptArea2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/DialogueArea4"]
+shape = SubResource( 42 )
+
+[node name="SpeechBox" parent="Interactions/TeaBreak/DialogueArea4" instance=ExtResource( 4 )]
+margin_left = -237.64
+margin_top = 168.215
+margin_right = 262.36
+margin_bottom = 278.215
+bb_text = "Clock 4:10 in the cafeteria and thought bubble"
+
+[node name="SpeechBox2" parent="Interactions/TeaBreak/DialogueArea4" instance=ExtResource( 4 )]
+margin_left = -177.57
+margin_top = -295.785
+margin_right = 172.43
+margin_bottom = -145.785
+bb_text = "Oops! It’s 10 minutes beyond the tea break time but everyone seems to still be around."
+
+[node name="QuestionPromptArea2" parent="Interactions/TeaBreak" instance=ExtResource( 1 )]
+position = Vector2( 297.677, 0 )
+question = " What are you most likely to do? "
+option_a = "Head back to your desk and inform your manager"
+option_b = "Stay and do what the other team members do"
+option_c = "Excuse yourself and head back to your desk"
+option_d = "Stay for another 5-10 minutes as you see nothing amiss"
+next_prompt = NodePath("../WaypointArea")
+objective_text = "o to the Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/QuestionPromptArea2"]
+shape = SubResource( 43 )
+
+[node name="WaypointArea" parent="Interactions/TeaBreak" instance=ExtResource( 2 )]
+position = Vector2( 827.246, -190.785 )
+next_prompt = NodePath("../../Desk03/DialogueArea")
+objective_text = "Go to floor 3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/TeaBreak/WaypointArea"]
+position = Vector2( 4, 232 )
+shape = SubResource( 44 )
+
+[node name="Desk03" type="Node2D" parent="Interactions"]
+position = Vector2( 2982.74, -1673.67 )
+
+[node name="DialogueArea" parent="Interactions/Desk03" instance=ExtResource( 3 )]
+next_prompt = NodePath("../Manager/DialogueArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk03/DialogueArea"]
+shape = SubResource( 45 )
+
+[node name="SpeechBox" parent="Interactions/Desk03/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -242.941
+margin_top = 136.154
+margin_right = 257.059
+margin_bottom = 246.154
+bb_text = "sitting at desk working, Clock hands move"
+
+[node name="SpeechBox2" parent="Interactions/Desk03/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -242.941
+margin_top = 136.154
+margin_right = 257.059
+margin_bottom = 246.154
+bb_text = "sitting at desk working, Clock hands move"
+
+[node name="SpeechBox3" parent="Interactions/Desk03/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -156.176
+margin_top = -324.827
+margin_right = 193.824
+margin_bottom = -174.827
+bb_text = "It’s time to pack up"
+
+[node name="Manager" type="Node2D" parent="Interactions/Desk03"]
+
+[node name="DialogueArea" parent="Interactions/Desk03/Manager" instance=ExtResource( 3 )]
+next_prompt = NodePath("../QuestionPromptArea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk03/Manager/DialogueArea"]
+shape = SubResource( 46 )
+
+[node name="SpeechBox" parent="Interactions/Desk03/Manager/DialogueArea" instance=ExtResource( 4 )]
+margin_left = -376.322
+margin_top = -324.827
+margin_right = -26.322
+margin_bottom = -174.827
+bb_text = "Let me tell you what is lined up for you!"
+
+[node name="QuestionPromptArea" parent="Interactions/Desk03/Manager" instance=ExtResource( 1 )]
+question = "What are you most likely to do? "
+option_a = "Attempt to complete all the tasks right away"
+option_b = "Work on familiar tasks and plan to complete the rest later"
+option_c = "Work on new tasks and leave the rest for later"
+option_d = "Plan to complete the tasks later at home"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk03/Manager/QuestionPromptArea"]
+shape = SubResource( 47 )
+
+[node name="DialogueArea2" parent="Interactions/Desk03" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Desk03/DialogueArea2"]
+shape = SubResource( 48 )
+
+[node name="SpeechBox" parent="Interactions/Desk03/DialogueArea2" instance=ExtResource( 4 )]
+margin_left = -242.941
+margin_top = 31.8513
+margin_right = 257.059
+margin_bottom = 141.851
+bb_text = "Before you leave there is just a bit more left in the joining formalities."
