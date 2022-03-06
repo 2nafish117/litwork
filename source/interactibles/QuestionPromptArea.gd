@@ -28,6 +28,7 @@ onready var exit_audio = $ExitAudio
 
 func activate():
 	active = true
+	print("activated ", name, " [QuestionPromptArea]")
 
 func _process(_delta: float) -> void:
 	if !active:
@@ -52,22 +53,17 @@ func on_question_answered():
 			# if ERROR: make sure next_prompt is of type QuestionPromptArea!!!
 			next.activate()
 			ObjectiveController.set_current_objective(next)
-			print("question set next active")
-			print(next.name)
 		active = false
 		exit_audio.play(0.0)
 		if stop_for_question:
 			player.movement_modifier = 1.0
 
-func _on_Spatial_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		player = body
-#		if stop_for_question:
-#			body.movement_modifier = 0.0
-#		entry_audio.play(0.0)
-#		GlobalUi.ask_question(question, [option_a, option_b, option_c, option_d])
-
-
 func _on_QuestionPromptArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
+		print("player exit ", name, " [QuestionPromptArea]")
 		player = null
+
+func _on_QuestionPromptArea_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):
+		print("player enter ", name, " [QuestionPromptArea]")
+		player = body

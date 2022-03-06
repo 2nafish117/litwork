@@ -13,5 +13,5 @@ stream = ExtResource( 2 )
 [node name="ExitAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[connection signal="body_entered" from="." to="." method="_on_Spatial_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_QuestionPromptArea_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_QuestionPromptArea_body_exited"]

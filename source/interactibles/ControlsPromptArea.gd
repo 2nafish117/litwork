@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_ButtonPromptsArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player in prompt area")
+		print("player in ", name, "[ControlsPromptArea]")
 		$AudioStreamPlayer.play(0.0)
 		$Timer.start()
 		active = false

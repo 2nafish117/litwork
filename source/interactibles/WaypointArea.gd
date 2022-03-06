@@ -1,8 +1,5 @@
 extends Area2D
 
-signal dialogue_begin
-signal dialogue_end
-
 export(NodePath) var next_prompt: NodePath
 export var active: bool = false
 export var first_objective: bool = false
@@ -16,7 +13,7 @@ func _ready() -> void:
 	if first_objective:
 		ObjectiveController.set_current_objective(self)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !active:
 		return
 	
@@ -26,13 +23,11 @@ func _process(delta: float) -> void:
 		if next != null:
 			# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
 			next.activate()
-#			next.active = true
-#			if next.has_method("set_elevator_restriction"):
-#				next.set_elevator_restriction()
 			ObjectiveController.set_current_objective(next)
 
 func activate():
 	active = true
+	print("activated ", name, " [WaypointArea]")
 	set_elevator_restriction()
 
 func set_elevator_restriction():
@@ -44,10 +39,10 @@ func set_elevator_restriction():
 
 func _on_WaypointArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player entered waypoint")
+		print("player enter ", name, " [WaypointArea]")
 		player = body
 
 func _on_WaypointArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player entered waypoint")
+		print("player exit ", name, " [WaypointArea]")
 		player = null

@@ -6,7 +6,7 @@
 [ext_resource path="res://addons/calendar_button/scripts/calendar_script.gd" type="Script" id=4]
 [ext_resource path="res://source/mini_games/more_details/MoreDetailsForm.gd" type="Script" id=5]
 [ext_resource path="res://source/ui/font_ui_entry.tres" type="DynamicFont" id=6]
-[ext_resource path="res://source/mini_games/more_details/1483392.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/textures/ui/form_background.jpg" type="Texture" id=7]
 
 [sub_resource type="Image" id=1]
 data = {
@@ -76,10 +76,10 @@ custom_constants/separation = 20
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 424.0
 margin_bottom = 47.0
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0.490196, 0.254902, 0.254902, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 2 )
 text = "Tell us more."
 align = 1
 

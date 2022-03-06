@@ -17,7 +17,7 @@ export(String, FILE) var json_path
 
 func _ready() -> void:
 	var file := File.new()
-	file.open(json_path, file.READ)
+	var _throw = file.open(json_path, file.READ)
 	var text = file.get_as_text()
 	var result_json = JSON.parse(text)
 	if result_json.error != OK:

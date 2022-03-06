@@ -26,8 +26,10 @@ func _process(delta: float) -> void:
 
 func _on_LevelTransitionArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
+		print("player enter ", name, " [LevelTransitionArea]")
 		player = body
 
 func _on_LevelTransitionArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
+		print("player exit ", name, " [LevelTransitionArea]")
 		player = null

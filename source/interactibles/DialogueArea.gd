@@ -27,12 +27,12 @@ func _on_speech_spoken() -> void:
 	if index == len(speechboxes):
 		emit_signal("dialogue_end")
 	if index < len(speechboxes):
-		print(index)
 		speechboxes[index].speak()
 		index += 1
 
 func activate():
 	active = true
+	print("activated ", name, " [DialogueArea]")
 
 func _on_DialogueArea_dialogue_end() -> void:
 	if player != null:
@@ -77,10 +77,10 @@ func _process(_delta: float) -> void:
 
 func _on_DialogueArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player in dialouge")
+		print("player enter ", name, " [DialogueArea]")
 		player = body
 
 func _on_DialogueArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player out of dialouge")
+		print("player exit ", name, " [DialogueArea]")
 		player = null

@@ -1,8 +1,5 @@
 extends Area2D
 
-signal minigame_begin
-signal minigame_end
-
 export(NodePath) var next_prompt: NodePath
 export var active: bool = false
 export var stop_for_minigame: bool = true
@@ -16,7 +13,7 @@ var player = null
 func _ready() -> void:
 	if first_objective:
 		ObjectiveController.set_current_objective(self)
-	MinigameController.connect("minigame_end", self, "on_minigame_end")
+	var _throw = MinigameController.connect("minigame_end", self, "on_minigame_end")
 
 func _process(_delta: float) -> void:
 	if !active:
@@ -27,37 +24,34 @@ func _process(_delta: float) -> void:
 			active = false
 			if stop_for_minigame:
 				player.movement_modifier = 0.0
-			emit_signal("minigame_begin")
+			MinigameController.start_minigame(minigame)
 	elif Input.is_action_just_pressed("action_interact"):
 		if player != null:
 			active = false
 			if stop_for_minigame:
 				player.movement_modifier = 0.0
-			emit_signal("minigame_begin")
+			MinigameController.start_minigame(minigame)
+
+func activate():
+	active = true
+	print("activated ", name, " [MinigameArea]")
+
+func on_minigame_end() -> void:
+	if player != null:
+		if stop_for_minigame:
+			player.movement_modifier = 1.0
+		var next: Node2D = get_node_or_null(next_prompt)
+		if next != null:
+			# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
+			next.activate()
+			ObjectiveController.set_current_objective(next)
 
 func _on_MinigameArea_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player in minigame")
+		print("player enter ", name, " [MinigameArea]")
 		player = body
 
 func _on_MinigameArea_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("player out of minigame")
+		print("player exit ", name, " [MinigameArea]")
 		player = null
-
-func activate():
-	active = true
-
-func on_minigame_end() -> void:
-	emit_signal("minigame_end")
-	if player != null and stop_for_minigame:
-		player.movement_modifier = 1.0
-	var next = get_node_or_null(next_prompt)
-	if next != null:
-		# if ERROR: make sure next_prompt is of type DialogueArea or QuestionPromptArea!!!
-		next.activate()
-		ObjectiveController.set_current_objective(next)
-
-
-func _on_MinigameArea_minigame_begin() -> void:
-	MinigameController.start_minigame(minigame)

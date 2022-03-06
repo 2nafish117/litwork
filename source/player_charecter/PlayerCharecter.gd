@@ -1,8 +1,6 @@
 class_name PlayerCharecter
 extends KinematicBody2D
 
-signal speech_spoken
-
 const MAX_SPEED = 250.0
 const ACCEL := 50.0
 const EPSILON_VELOCITY := 0.1
@@ -77,15 +75,6 @@ func _physics_process(delta: float) -> void:
 	var snap: Vector2 = -get_floor_normal() * 100.0
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true, 4, PI/4.0, true)
 	pass
-
-func interact(can_move: bool) -> void:
-	print("player interact")
-	state = INTERACT
-	if not can_move:
-		speed = 0.0
-		velocity.x = 0.0
-	pass
-
 
 func _on_InputTimer_timeout() -> void:
 	can_input_on_ready = true

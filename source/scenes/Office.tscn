@@ -377,7 +377,7 @@ extents = Vector2( 59.3083, 125.585 )
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 53.2793, 132.585 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 55.7107, 131.924 )
 
 [sub_resource type="RectangleShape2D" id=33]
@@ -398,22 +398,22 @@ extents = Vector2( 46.9059, 105.605 )
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 41.6991, 107.873 )
 
-[sub_resource type="RectangleShape2D" id=39]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 41.8691, 106.873 )
 
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 41.6991, 107.325 )
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 41.5, 107 )
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 53.1599, 130.997 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 52.4153, 130.784 )
 
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 52.5527, 130.162 )
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 53, 130 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 104.171, 86.5896 )
 
 [sub_resource type="RectangleShape2D" id=48]
@@ -792,14 +792,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3122.87, -141.415 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 18 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 19 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -865,7 +865,7 @@ texture = ExtResource( 24 )
 position = Vector2( 662.297, -921.424 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 20 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -907,7 +907,7 @@ flip_h = true
 position = Vector2( 490.259, -931.742 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 22 )
-frame = 15
+frame = 9
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -919,6 +919,7 @@ texture = ExtResource( 119 )
 position = Vector2( 296.776, -906.87 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 23 )
+frame = 2
 playing = true
 flip_h = true
 
@@ -926,7 +927,7 @@ flip_h = true
 position = Vector2( 346.465, -1643.82 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 25 )
-frame = 25
+frame = 23
 playing = true
 
 [node name="Floor3" type="Node2D" parent="Background/Props"]
@@ -1033,7 +1034,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1600.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 24 )
-frame = 4
+frame = 16
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -1045,7 +1046,7 @@ texture = ExtResource( 173 )
 position = Vector2( 1261.43, -942.112 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 25 )
-frame = 23
+frame = 21
 playing = true
 flip_h = true
 
@@ -1255,7 +1256,6 @@ __meta__ = {
 position = Vector2( 87, -1 )
 z_index = 2
 z_as_relative = false
-can_input_on_ready = false
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 4 )]
 current = true
@@ -1286,7 +1286,7 @@ margin_left = -168.956
 margin_top = -297.318
 margin_right = 181.044
 margin_bottom = -147.318
-bb_text = "Oh! I don’t see anyone at the reception, but there are some people over there."
+bb_text = "Oh! I don't see anyone at the reception, but there are some people over there."
 
 [node name="q1" parent="Interactions/Reception" instance=ExtResource( 11 )]
 question = "What are you most likely to do to find out where to go?"
@@ -1346,36 +1346,36 @@ begin_on_enter = true
 minigame = ExtResource( 223 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/DetailForm"]
-shape = SubResource( 32 )
+shape = SubResource( 49 )
 
 [node name="HR2" parent="Interactions" instance=ExtResource( 219 )]
-position = Vector2( 2686.72, -147.415 )
+position = Vector2( 2687, -147 )
 next_prompt = NodePath("q2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HR2"]
 shape = SubResource( 33 )
 
 [node name="SpeechBox" parent="Interactions/HR2" instance=ExtResource( 5 )]
-margin_left = 20.217
-margin_top = -302.318
-margin_right = 370.217
-margin_bottom = -152.318
+margin_left = 22.0
+margin_top = -303.0
+margin_right = 372.0
+margin_bottom = -153.0
 rect_min_size = Vector2( 350, 100 )
-bb_text = "Done already? That’s great! Here are the next steps:"
+bb_text = "Done already? That's great! Here are the next steps:"
 
 [node name="SpeechBox2" parent="Interactions/HR2" instance=ExtResource( 5 )]
-margin_left = 22.4741
-margin_top = -302.318
-margin_right = 372.474
-margin_bottom = -152.318
+margin_left = 22.25
+margin_top = -303.0
+margin_right = 372.25
+margin_bottom = -153.0
 rect_min_size = Vector2( 350, 100 )
 bb_text = " You need to get some forms signed by different Department Heads"
 
 [node name="SpeechBox3" parent="Interactions/HR2" instance=ExtResource( 5 )]
-margin_left = 22.4741
-margin_top = -302.318
-margin_right = 372.474
-margin_bottom = -152.318
+margin_left = 22.25
+margin_top = -303.0
+margin_right = 372.25
+margin_bottom = -153.0
 rect_min_size = Vector2( 350, 100 )
 bb_text = " and get your access card from the Admin department and read up this policy document."
 
@@ -1414,7 +1414,7 @@ margin_top = -317.154
 margin_right = 23.5607
 margin_bottom = -167.154
 rect_min_size = Vector2( 350, 150 )
-bb_text = "All done? Now let’s go and meet your manager and your team"
+bb_text = "All done? Now let's go and meet your manager and your team"
 
 [node name="HR4" parent="Interactions" instance=ExtResource( 219 )]
 position = Vector2( 743.819, -1646.13 )
@@ -1451,7 +1451,7 @@ margin_top = -313.372
 margin_right = 350.0
 margin_bottom = -163.372
 rect_min_size = Vector2( 350, 150 )
-bb_text = "Good morning, it’s nice to meet you."
+bb_text = "Good morning, it's nice to meet you."
 
 [node name="SpeechBox2" parent="Interactions/M1" instance=ExtResource( 5 )]
 margin_left = -406.041
@@ -1468,7 +1468,7 @@ next_prompt = NodePath("../M2")
 minigame = ExtResource( 225 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Video"]
-shape = SubResource( 39 )
+shape = SubResource( 54 )
 
 [node name="M2" parent="Interactions" instance=ExtResource( 219 )]
 position = Vector2( 574.301, -1646.13 )
@@ -1477,7 +1477,8 @@ z_as_relative = false
 next_prompt = NodePath("../D1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/M2"]
-shape = SubResource( 43 )
+position = Vector2( 0.198975, 0.130005 )
+shape = SubResource( 52 )
 
 [node name="MS" parent="Interactions/M2" instance=ExtResource( 5 )]
 margin_left = -406.041
@@ -1485,7 +1486,7 @@ margin_top = -313.373
 margin_right = -56.041
 margin_bottom = -163.373
 rect_min_size = Vector2( 350, 150 )
-bb_text = "Why don’t you go ahead and check out your desk!"
+bb_text = "Why don't you go ahead and check out your desk!"
 
 [node name="D1" parent="Interactions" instance=ExtResource( 219 )]
 position = Vector2( 2674.98, -1646.13 )
@@ -1500,7 +1501,7 @@ margin_top = -312.844
 margin_right = 383.811
 margin_bottom = -162.844
 rect_min_size = Vector2( 350, 150 )
-bb_text = "Hey, how’s your first day going. Let me tell you about some traditions all newcomers have to go through."
+bb_text = "Hey, how's your first day going. Let me tell you about some traditions all newcomers have to go through."
 
 [node name="SpeechBox2" parent="Interactions/D1" instance=ExtResource( 5 )]
 margin_left = -393.162
@@ -1516,36 +1517,36 @@ next_prompt = NodePath("../D2")
 minigame = ExtResource( 225 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Minigame01"]
-shape = SubResource( 45 )
+shape = SubResource( 55 )
 
 [node name="D2" parent="Interactions" instance=ExtResource( 219 )]
-position = Vector2( 2674.98, -1646.13 )
+position = Vector2( 2675, -1646 )
 next_prompt = NodePath("../W2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/D2"]
-shape = SubResource( 46 )
+shape = SubResource( 53 )
 
 [node name="SpeechBox" parent="Interactions/D2" instance=ExtResource( 5 )]
-margin_left = -354.677
-margin_top = -312.845
-margin_right = -4.677
-margin_bottom = -162.845
+margin_left = -393.0
+margin_top = -313.0
+margin_right = -43.0
+margin_bottom = -163.0
 rect_min_size = Vector2( 350, 150 )
 bb_text = "That was fun!"
 
 [node name="SpeechBox2" parent="Interactions/D2" instance=ExtResource( 5 )]
-margin_left = 72.2957
-margin_top = -312.845
-margin_right = 422.296
-margin_bottom = -162.845
+margin_left = 33.98
+margin_top = -313.0
+margin_right = 383.98
+margin_bottom = -163.0
 rect_min_size = Vector2( 350, 150 )
 bb_text = "Glad you enjoyed it. There are a few more coming up later in your day."
 
 [node name="SpeechBox3" parent="Interactions/D2" instance=ExtResource( 5 )]
-margin_left = 72.2957
-margin_top = -312.845
-margin_right = 422.296
-margin_bottom = -162.845
+margin_left = 33.98
+margin_top = -313.0
+margin_right = 383.98
+margin_bottom = -163.0
 rect_min_size = Vector2( 350, 150 )
 bb_text = "For now, you have to head to the conference room on the second floor."
 
@@ -1557,7 +1558,7 @@ elevator_path = NodePath("../../Elevator/Elevator")
 active_floor = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/W2"]
-shape = SubResource( 47 )
+shape = SubResource( 51 )
 
 [node name="C1" parent="Interactions" instance=ExtResource( 219 )]
 position = Vector2( 1414.9, -950.373 )
