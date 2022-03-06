@@ -792,14 +792,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3122.87, -141.415 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 18 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 19 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -865,7 +865,7 @@ texture = ExtResource( 24 )
 position = Vector2( 662.297, -921.424 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 20 )
-frame = 6
+frame = 21
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -899,7 +899,7 @@ texture = ExtResource( 61 )
 position = Vector2( 967.708, -914.682 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 21 )
-frame = 1
+frame = 6
 playing = true
 flip_h = true
 
@@ -907,7 +907,7 @@ flip_h = true
 position = Vector2( 490.259, -931.742 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 22 )
-frame = 9
+frame = 4
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -919,7 +919,7 @@ texture = ExtResource( 119 )
 position = Vector2( 296.776, -906.87 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 23 )
-frame = 2
+frame = 17
 playing = true
 flip_h = true
 
@@ -927,7 +927,7 @@ flip_h = true
 position = Vector2( 346.465, -1643.82 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 25 )
-frame = 23
+frame = 16
 playing = true
 
 [node name="Floor3" type="Node2D" parent="Background/Props"]
@@ -1034,7 +1034,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1600.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 24 )
-frame = 16
+frame = 7
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -1046,7 +1046,7 @@ texture = ExtResource( 173 )
 position = Vector2( 1261.43, -942.112 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 25 )
-frame = 21
+frame = 14
 playing = true
 flip_h = true
 
