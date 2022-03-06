@@ -1,0 +1,14 @@
+
+[{"question":"What is  1+2?", "option1":"0", "option2":"2", "option3": "3", "option4": "3", "answer": "3"},
+
+{"question":"What is 6+4?", "option1":"10", "option2":"12", "option3": "31", "option4": "3", "answer": "10"},
+
+{"question":"What is  4*5?", "option1":"25", "option2":"20", "option3": "32", "option4": "3", "answer": "20"},
+
+{"question":"What is  5+(4*3)?", "option1":"12", "option2":"21", "option3": "27", "option4": "3", "answer": "17"},
+
+{"question":"What is  9/3+2?", "option1":"1", "option2":"4", "option3": "5", "option4": "3", "answer": "5"},
+
+{"question":"What is  10*2^(4)?", "option1":"320", "option2":"200", "option3": "160", "option4": "3", "answer": "160"}]
+
+

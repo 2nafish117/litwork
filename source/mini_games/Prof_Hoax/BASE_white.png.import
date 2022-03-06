@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/form_background.jpg-8859844abb7b5c8133a268b8c2019052.stex"
+path="res://.import/BASE_white.png-d8f29020ed94017210e32eb41b98650c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/form_background.jpg"
-dest_files=[ "res://.import/form_background.jpg-8859844abb7b5c8133a268b8c2019052.stex" ]
+source_file="res://source/mini_games/Prof_Hoax/BASE_white.png"
+dest_files=[ "res://.import/BASE_white.png-d8f29020ed94017210e32eb41b98650c.stex" ]
 
 [params]
 
