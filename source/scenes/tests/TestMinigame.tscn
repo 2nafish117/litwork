@@ -1,17 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/player_camera/PlayerCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/player_charecter/PlayerCharecter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interactibles/MinigameArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/mini_games/hoax/Main.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/ui/SpeechBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/interactibles/DialogueArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/mini_games/test_minigame/Main.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1576, 167.5 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 51.5, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 171.5, 106.5 )
@@ -23,6 +22,9 @@ extents = Vector2( 104.082, 123.464 )
 extents = Vector2( 83, 110.5 )
 
 [node name="TestMinigame" type="Node2D"]
+
+[node name="GlobalTimerStart" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -36,28 +38,13 @@ player_path = NodePath("../PlayerCharecter")
 
 [node name="PlayerCharecter" parent="." instance=ExtResource( 2 )]
 
-[node name="DialogueArea2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 215, -140 )
-next_prompt = NodePath("../MinigameArea")
-active = true
-first_objective = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea2"]
-position = Vector2( 41.5, -25.5 )
-shape = SubResource( 4 )
-
-[node name="SpeechBox" parent="DialogueArea2" instance=ExtResource( 5 )]
-margin_left = -73.0
-margin_top = -256.0
-margin_right = 237.0
-margin_bottom = -140.0
-bb_text = "sadvsdfxcvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvasdfasd"
-
 [node name="MinigameArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 402, -145 )
 next_prompt = NodePath("../DialogueArea")
+active = true
 begin_on_enter = true
-minigame = ExtResource( 7 )
+minigame = ExtResource( 4 )
+first_objective = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinigameArea"]
 position = Vector2( -26.5, -28.5 )

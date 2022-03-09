@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://source/mini_games/hoax/assets/button.png" type="Texture" id=1]
+[ext_resource path="res://source/mini_games/hoax/assets/button_pressed.png" type="Texture" id=2]
+[ext_resource path="res://source/mini_games/hoax/assets/button_hover.png" type="Texture" id=3]
+[ext_resource path="res://source/mini_games/hoax/OptionButton.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/bahnschrift.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="TextureButton" type="TextureButton"]
+margin_right = 367.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 4 )
+option_label = "A"
+option_text = "answer"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 347.0
+margin_bottom = 75.0
+mouse_filter = 2
+
+[node name="OptionLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0.878431, 0.435294, 0.435294, 1 )
+custom_colors/font_color_shadow = Color( 0.52549, 0.211765, 0.211765, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 1 )
+text = "A"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="OptionText" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 327.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "answer"
+align = 1
+valign = 1
+autowrap = true
