@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal question_answered
+signal question_answered(area)
 
 onready var label := $MarginContainer/RichTextLabel
 onready var objective_label := $MarginContainer2/ObjectiveLabel
@@ -8,6 +8,8 @@ onready var answer_options := $AnswerOptions
 
 var current_question: String
 var current_options: Array
+
+var current_question_area: Area2D = null
 
 func show_timer():
 	label.visible = true
@@ -26,7 +28,8 @@ func format_time(secs: float) -> Array:
 	secs = int(fmod(secs, 60.0))
 	return [minutes, secs]
 
-func ask_question(question: String, options: Array):
+func ask_question(area: Area2D, question: String, options: Array):
+	current_question_area = area
 	current_question = question
 	current_options = options
 	answer_options.visible = true
@@ -48,27 +51,27 @@ func _process(_delta: float) -> void:
 
 func _on_OptionButton1_pressed() -> void:
 	print("option1")
-	emit_signal("question_answered")
+	emit_signal("question_answered", current_question_area)
 	answer_options.visible = false
 	GlobalDetails.player_choices["questions_answers"].append({"question": current_question, "available_options": String(current_options), "chosen_option": current_options[0]})
 
 
 func _on_OptionButton2_pressed() -> void:
 	print("option2")
-	emit_signal("question_answered")
+	emit_signal("question_answered", current_question_area)
 	answer_options.visible = false
 	GlobalDetails.player_choices["questions_answers"].append({"question": current_question, "available_options": String(current_options), "chosen_option": current_options[1]})
 
 
 func _on_OptionButton3_pressed() -> void:
 	print("option3")
-	emit_signal("question_answered")
+	emit_signal("question_answered", current_question_area)
 	answer_options.visible = false
 	GlobalDetails.player_choices["questions_answers"].append({"question": current_question, "available_options": String(current_options), "chosen_option": current_options[2]})
 
 
 func _on_OptionButton4_pressed() -> void:
 	print("option4")
-	emit_signal("question_answered")
+	emit_signal("question_answered", current_question_area)
 	answer_options.visible = false
 	GlobalDetails.player_choices["questions_answers"].append({"question": current_question, "available_options": String(current_options), "chosen_option": current_options[3]})

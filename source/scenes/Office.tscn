@@ -853,7 +853,7 @@ playing = true
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 19 )
-frame = 14
+frame = 8
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -868,7 +868,7 @@ offset = Vector2( -234.74, -131.334 )
 position = Vector2( 2783.1, -140 )
 scale = Vector2( 1.08799, 1.08799 )
 frames = SubResource( 47 )
-frame = 4
+frame = 2
 playing = true
 flip_h = true
 
@@ -927,7 +927,7 @@ texture = ExtResource( 24 )
 position = Vector2( 662.297, -921.424 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 20 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -961,7 +961,7 @@ texture = ExtResource( 61 )
 position = Vector2( 967.708, -914.682 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 21 )
-frame = 7
+frame = 2
 playing = true
 flip_h = true
 
@@ -981,7 +981,7 @@ texture = ExtResource( 119 )
 position = Vector2( 296.776, -906.87 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 23 )
-frame = 9
+frame = 3
 playing = true
 flip_h = true
 
@@ -1089,7 +1089,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1600.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -1101,14 +1101,13 @@ texture = ExtResource( 173 )
 position = Vector2( 346.465, -1643.82 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 24 )
-frame = 20
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Background/Props/Floor3"]
 position = Vector2( 1261.43, -942.112 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 24 )
-frame = 18
+frame = 24
 playing = true
 flip_h = true
 
@@ -1116,7 +1115,7 @@ flip_h = true
 position = Vector2( 823.686, -1641.82 )
 scale = Vector2( 1.08799, 1.08799 )
 frames = SubResource( 47 )
-frame = 12
+frame = 10
 playing = true
 flip_h = true
 
@@ -1702,9 +1701,9 @@ shape = SubResource( 51 )
 
 [node name="SpeechBox" parent="Interactions/C3" instance=ExtResource( 5 )]
 margin_left = -216.14
-margin_top = 167.135
+margin_top = 175.135
 margin_right = 283.86
-margin_bottom = 277.135
+margin_bottom = 285.135
 bb_text = "The activity has begun, you are now halfway through."
 
 [node name="SpeechBox2" parent="Interactions/C3" instance=ExtResource( 5 )]
@@ -1716,9 +1715,9 @@ rect_min_size = Vector2( 350, 150 )
 bb_text = "Oh look! That team is not following the rules"
 
 [node name="SpeechBox3" parent="Interactions/C3" instance=ExtResource( 5 )]
-margin_left = -651.938
+margin_left = -444.938
 margin_top = -295.975
-margin_right = -301.938
+margin_right = -94.938
 margin_bottom = -145.975
 rect_min_size = Vector2( 350, 150 )
 bb_text = "Let’s sort this out, what do you guys suggest we do?"
@@ -1769,6 +1768,8 @@ bb_text = "That was fun, let’s go for lunch"
 position = Vector2( 2045.5, -1031.9 )
 next_prompt = NodePath("../L1")
 objective_text = "Use Elevator"
+elevator_path = NodePath("../../Elevator/Elevator")
+active_floor = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/W3"]
 shape = SubResource( 54 )

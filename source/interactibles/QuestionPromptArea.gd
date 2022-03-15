@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 		if stop_for_question:
 			player.movement_modifier = 0.0
 		entry_audio.play(0.0)
-		GlobalUi.ask_question(question, [option_a, option_b, option_c, option_d])
+		GlobalUi.ask_question(self, question, [option_a, option_b, option_c, option_d])
 
 func _ready() -> void:
 	if first_objective:
@@ -46,8 +46,8 @@ func _ready() -> void:
 	var _throw = GlobalUi.connect("question_answered", self, "on_question_answered")
 	pass
 
-func on_question_answered():
-	if player != null:
+func on_question_answered(area):
+	if area == self and player != null:
 		var next = get_node_or_null(next_prompt)
 		if next != null:
 			# if ERROR: make sure next_prompt is of type QuestionPromptArea!!!
