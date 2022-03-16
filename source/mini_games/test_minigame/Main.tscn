@@ -1,26 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/ui/MinigameEndButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/ui/form_background.jpg" type="Texture" id=2]
+[ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=3]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1200.0
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Control"]
 margin_left = 267.0
 margin_top = 158.0
 margin_right = 731.0
 margin_bottom = 485.0
 text = "Testing mini game"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Control"]
 margin_left = 296.0
 margin_top = 241.0
 margin_right = 400.0
 margin_bottom = 261.0
 text = "exit minigame"
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

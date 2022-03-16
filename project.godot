@@ -70,9 +70,9 @@ config/icon="res://icon.png"
 
 GlobalDetails="*res://source/autoloads/GlobalDetails.tscn"
 GlobalTimer="*res://source/autoloads/GlobalTimer.tscn"
-GlobalUi="*res://source/autoloads/GlobalUi.tscn"
 MinigameController="*res://source/autoloads/MinigameController.tscn"
 ObjectiveController="*res://source/autoloads/ObjectiveController.tscn"
+GlobalUi="*res://source/autoloads/GlobalUi.tscn"
 
 [display]
 

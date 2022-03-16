@@ -38,9 +38,6 @@ size = Vector2( 32, 32 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 json_path = "res://assets/more_details_options.json"
 
 [node name="background" type="TextureRect" parent="."]
@@ -77,10 +74,10 @@ custom_constants/separation = 20
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 424.0
 margin_bottom = 47.0
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0.490196, 0.254902, 0.254902, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 2 )
 text = "Tell us more."
 align = 1
 

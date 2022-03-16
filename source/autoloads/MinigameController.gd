@@ -7,9 +7,12 @@ var minigame_scene: Node = null
 
 func quit_minigame():
 	print("queue_free minigame")
-	minigame_scene.queue_free()
-	GlobalTimer.paused = false
-	emit_signal("minigame_end")
+	if minigame_scene != null:
+		minigame_scene.queue_free()
+		GlobalTimer.paused = false
+		emit_signal("minigame_end")
+	else:
+		get_tree().quit()
 	pass
 
 func start_minigame(minigame: PackedScene):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://source/ui/DefaultTheme.theme" type="Theme" id=1]
 [ext_resource path="res://source/scenes/DetailsForm.gd" type="Script" id=2]
@@ -6,9 +6,15 @@
 [ext_resource path="res://source/ui/font_ui_entry.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/scenes/Cab.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/ui/SceneTransitionButton.gd" type="Script" id=6]
+[ext_resource path="res://assets/textures/ui/form_background.jpg" type="Texture" id=7]
 
 [node name="DetailsForm" type="Control"]
 script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0

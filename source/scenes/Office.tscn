@@ -1,4 +1,4 @@
-[gd_scene load_steps=301 format=2]
+[gd_scene load_steps=302 format=2]
 
 [ext_resource path="res://source/scenes/level_scripts/GlobalTimerStart.gd" type="Script" id=1]
 [ext_resource path="res://source/ui/ObjectiveMarker.tscn" type="PackedScene" id=2]
@@ -224,7 +224,6 @@
 [ext_resource path="res://source/interactibles/WaypointArea.tscn" type="PackedScene" id=222]
 [ext_resource path="res://source/mini_games/more_details/MoreDetailsForm.tscn" type="PackedScene" id=223]
 [ext_resource path="res://assets/textures/office_props/Cafe Seating 02.png" type="Texture" id=224]
-[ext_resource path="res://source/mini_games/test_minigame/Main.tscn" type="PackedScene" id=225]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (7).png" type="Texture" id=226]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (8).png" type="Texture" id=227]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (19).png" type="Texture" id=228]
@@ -244,6 +243,8 @@
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (3).png" type="Texture" id=242]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (15).png" type="Texture" id=243]
 [ext_resource path="res://assets/textures/characters/npcs/npc_female_standing/npc_female_standing (1).png" type="Texture" id=244]
+[ext_resource path="res://source/mini_games/hoax/Main.tscn" type="PackedScene" id=245]
+[ext_resource path="res://source/mini_games/candy_store/Main.tscn" type="PackedScene" id=246]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 184.533, 40.6575 )
@@ -846,14 +847,14 @@ texture = ExtResource( 15 )
 position = Vector2( 3122.87, -141.415 )
 scale = Vector2( 1.07127, 1.07127 )
 frames = SubResource( 18 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background/Props/Floor1"]
 position = Vector2( 966.479, -133.277 )
 scale = Vector2( 1.07857, 1.07857 )
 frames = SubResource( 19 )
-frame = 8
+frame = 11
 playing = true
 
 [node name="Plant 06" type="Sprite" parent="Background/Props/Floor1"]
@@ -868,7 +869,6 @@ offset = Vector2( -234.74, -131.334 )
 position = Vector2( 2783.1, -140 )
 scale = Vector2( 1.08799, 1.08799 )
 frames = SubResource( 47 )
-frame = 2
 playing = true
 flip_h = true
 
@@ -927,7 +927,7 @@ texture = ExtResource( 24 )
 position = Vector2( 662.297, -921.424 )
 scale = Vector2( 0.889251, 0.889251 )
 frames = SubResource( 20 )
-frame = 1
+frame = 10
 playing = true
 
 [node name="Conference Table 01" type="Sprite" parent="Background/Props/Floor2"]
@@ -961,7 +961,7 @@ texture = ExtResource( 61 )
 position = Vector2( 967.708, -914.682 )
 scale = Vector2( 0.956959, 0.956959 )
 frames = SubResource( 21 )
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 
@@ -969,7 +969,7 @@ flip_h = true
 position = Vector2( 490.259, -931.742 )
 scale = Vector2( 1.10547, 1.10547 )
 frames = SubResource( 22 )
-frame = 15
+frame = 4
 playing = true
 
 [node name="Conference Table 02" type="Sprite" parent="Background/Props/Floor2"]
@@ -981,7 +981,7 @@ texture = ExtResource( 119 )
 position = Vector2( 296.776, -906.87 )
 scale = Vector2( 0.830756, 0.830756 )
 frames = SubResource( 23 )
-frame = 3
+frame = 6
 playing = true
 flip_h = true
 
@@ -1089,7 +1089,7 @@ texture = ExtResource( 74 )
 position = Vector2( 3369.2, -1600.41 )
 scale = Vector2( 0.783055, 0.783055 )
 frames = SubResource( 25 )
-frame = 4
+frame = 14
 playing = true
 
 [node name="Desk 04" type="Sprite" parent="Background/Props/Floor3"]
@@ -1101,13 +1101,14 @@ texture = ExtResource( 173 )
 position = Vector2( 346.465, -1643.82 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 24 )
+frame = 13
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Background/Props/Floor3"]
 position = Vector2( 1261.43, -942.112 )
 scale = Vector2( 1.05274, 1.05274 )
 frames = SubResource( 24 )
-frame = 24
+frame = 11
 playing = true
 flip_h = true
 
@@ -1115,7 +1116,7 @@ flip_h = true
 position = Vector2( 823.686, -1641.82 )
 scale = Vector2( 1.08799, 1.08799 )
 frames = SubResource( 47 )
-frame = 10
+frame = 8
 playing = true
 flip_h = true
 
@@ -1534,7 +1535,7 @@ We are shooting a team video, we would like you to be a part of it."
 [node name="Video" parent="Interactions" instance=ExtResource( 8 )]
 position = Vector2( 494.864, -1646.13 )
 next_prompt = NodePath("../M2")
-minigame = ExtResource( 225 )
+minigame = ExtResource( 246 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Video"]
 shape = SubResource( 40 )
@@ -1583,7 +1584,7 @@ bb_text = "Sure this sounds fun!"
 [node name="Minigame01" parent="Interactions" instance=ExtResource( 8 )]
 position = Vector2( 3349.37, -1646.13 )
 next_prompt = NodePath("../D2")
-minigame = ExtResource( 225 )
+minigame = ExtResource( 245 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Minigame01"]
 shape = SubResource( 43 )
@@ -1776,6 +1777,7 @@ shape = SubResource( 54 )
 
 [node name="L1" parent="Interactions" instance=ExtResource( 219 )]
 position = Vector2( 2956.2, -2378.13 )
+next_prompt = NodePath("../Minigame02")
 objective_text = "Lunch time"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/L1"]
@@ -1799,6 +1801,7 @@ bb_text = "Sounds fun! I’m ready!"
 
 [node name="Minigame02" parent="Interactions" instance=ExtResource( 8 )]
 position = Vector2( 2956.2, -2378.13 )
+minigame = ExtResource( 246 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Minigame02"]
 shape = SubResource( 56 )
